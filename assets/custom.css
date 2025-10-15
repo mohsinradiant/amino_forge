@@ -68,8 +68,12 @@
 
 .home_ingredients_desc_top_container_left p {
     margin: 0;
+    font-size: 13px;
 }
 
 .home_ingredients_desc_top_container_left h2 {
     margin: 0;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
 }
