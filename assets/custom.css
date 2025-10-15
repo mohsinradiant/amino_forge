@@ -1,5 +1,6 @@
 .home-images-strip {
     background: #9E3EB2 !important;
+    z-index: 3;
 }
 
 .home-images-strip-container {
@@ -7,6 +8,8 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-top: -50px;
+    margin-bottom: 40px;
 }
 
 .home-images-strip-item {
