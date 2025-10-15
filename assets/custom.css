@@ -93,3 +93,10 @@
     font-size: 14px;
     line-height: 2.2;
 }
+
+.home_ingredients_desc_bottom_container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: end;
+}
