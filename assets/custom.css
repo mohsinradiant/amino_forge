@@ -99,4 +99,9 @@
     width: 100%;
     align-items: center;
     justify-content: end;
+    gap: 30px;
+}
+
+.home_ingredients_desc_bottom_container img {
+    width: 20%;
 }
