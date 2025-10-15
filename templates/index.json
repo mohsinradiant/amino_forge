@@ -145,6 +145,40 @@
       "name": "Home Images Strip",
       "settings": {}
     },
+    "home_ingredient_description_z7hiHj": {
+      "type": "home_ingredient_description",
+      "blocks": {
+        "image_tUCNRU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/home_ingredients_desc_1.png"
+          }
+        },
+        "image_ECNpKh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/home_ingredients_desc_2.png"
+          }
+        },
+        "image_dFpeyM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/home_ingredients_desc_3.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_tUCNRU",
+        "image_ECNpKh",
+        "image_dFpeyM"
+      ],
+      "name": "Home Ingredients Desc",
+      "settings": {
+        "left_subheading": "Luxury Wellness, Redefined at the Core",
+        "left_heading": "Wellbeing Starts With Well Doing.",
+        "right_content": "The Advanced Liposomal Amino Supplement represents the pinnacle of intelligent nutrition — where scientific precision meets purposeful wellbeing. By combining next-generation liposomal delivery technology with clinically trusted, bioavailable amino acids, it ensures optimal cellular absorption and long-lasting vitality from within."
+      }
+    },
     "collection_links_Ut4aMz": {
       "type": "collection-links",
       "blocks": {
@@ -695,11 +729,6 @@
         "padding-block-start": 0,
         "padding-block-end": 40
       }
-    },
-    "home_ingredient_description_z7hiHj": {
-      "type": "home_ingredient_description",
-      "name": "Home Ingredients Desc",
-      "settings": {}
     }
   },
   "order": [
