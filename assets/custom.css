@@ -1,3 +1,7 @@
+.home-images-strip {
+    background: #9E3EB2;
+}
+
 .home-images-strip-container {
     display: flex;
     justify-content: center;
