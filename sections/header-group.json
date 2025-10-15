@@ -21,7 +21,7 @@
             "link": "",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
-            "weight": "",
+            "weight": "600",
             "letter_spacing": "normal",
             "case": "none"
           },
