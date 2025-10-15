@@ -56,7 +56,7 @@
         {% endif %}
         {{
           block_settings.image_1
-          | img_url: large
+          | image_url: large
           | image_tag: height: height, sizes: sizes, widths: widths, class: 'slide__image', loading: loading, fetchpriority: fetchpriority
         }}
         {% if block.settings.url != null %}
