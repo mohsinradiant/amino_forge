@@ -70,7 +70,8 @@
 .home_ingredients_desc_top_container_left p {
     margin: 0;
     font-size: 13px;
-    color: #9E3EB2;
+    width: 50%;
+    text-transform: uppercase;
 }
 
 .home_ingredients_desc_top_container_left h2 {
