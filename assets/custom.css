@@ -64,6 +64,7 @@
 .home_ingredients_desc_top_container_left {
     display: flex;
     flex-direction: column;
+    width: 35%;
 }
 
 .home_ingredients_desc_top_container_left p {
