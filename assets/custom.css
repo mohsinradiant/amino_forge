@@ -65,6 +65,7 @@
     display: flex;
     flex-direction: column;
     width: 35%;
+    gap: 5px;
 }
 
 .home_ingredients_desc_top_container_left p {
