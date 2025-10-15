@@ -4,3 +4,7 @@
     align-items: center;
     gap: 10px;
 }
+
+.home-images-strip-item {
+    display: flex;
+}
