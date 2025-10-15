@@ -695,11 +695,17 @@
         "padding-block-start": 0,
         "padding-block-end": 40
       }
+    },
+    "home_ingredient_description_z7hiHj": {
+      "type": "home_ingredient_description",
+      "name": "Home Ingredients Desc",
+      "settings": {}
     }
   },
   "order": [
     "slideshow_Pb7dBN",
     "home_images_strip_yTNNik",
+    "home_ingredient_description_z7hiHj",
     "collection_links_Ut4aMz",
     "featured_product_mTUbKC",
     "product_list_UwRqN4",
