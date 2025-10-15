@@ -3228,10 +3228,14 @@ slideshow-slides {
       min-height: 35rem;
     }
 
-    /* &[size='large'] {
-      min-height: 45rem;
-    } */
+    &[size='large'] {
+      /* min-height: 45rem; */
+    }
   }
+}
+
+&[size='large'] {
+  aspect-ratio: 1920/790;
 }
 
 slideshow-component[disabled='true'] slideshow-slides {
