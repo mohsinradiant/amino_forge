@@ -3228,9 +3228,9 @@ slideshow-slides {
       min-height: 35rem;
     }
 
-    &[size='large'] {
+    /* &[size='large'] {
       min-height: 45rem;
-    }
+    } */
   }
 }
 
