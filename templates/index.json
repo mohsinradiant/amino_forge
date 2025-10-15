@@ -17,6 +17,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/hero_banner.png",
+            "url": "shopify://collections/all",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -43,6 +44,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/hero_banner.png",
+            "url": "",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -69,6 +71,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/hero_banner.png",
+            "url": "",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
