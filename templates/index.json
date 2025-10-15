@@ -109,6 +109,42 @@
         "padding-block-end": 0
       }
     },
+    "home_images_strip_yTNNik": {
+      "type": "home_images_strip",
+      "blocks": {
+        "image_FxptCX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/home-images-strip-1.png",
+            "link": "",
+            "text": "Validated by 3rd Party Testing"
+          }
+        },
+        "image_PdecjH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/home-images-strip-2.png",
+            "link": "",
+            "text": "Science-Backed Formulas"
+          }
+        },
+        "image_tAzQ7P": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/home-images-strip-3.png",
+            "link": "",
+            "text": "Clinically Studied Ingredients"
+          }
+        }
+      },
+      "block_order": [
+        "image_FxptCX",
+        "image_PdecjH",
+        "image_tAzQ7P"
+      ],
+      "name": "Home Images Strip",
+      "settings": {}
+    },
     "collection_links_Ut4aMz": {
       "type": "collection-links",
       "blocks": {
@@ -663,6 +699,7 @@
   },
   "order": [
     "slideshow_Pb7dBN",
+    "home_images_strip_yTNNik",
     "collection_links_Ut4aMz",
     "featured_product_mTUbKC",
     "product_list_UwRqN4",
