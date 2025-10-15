@@ -8,11 +8,28 @@
       <p></p>
     </div>
   </div>
+  <div class="home_ingredients_desc_bottom_container">
+    {% for block in section.blocks %}
+      <img src="{{ block.settings.image | img_url }}">
+    {% endfor %}
+  </div>
 </div>
 {% schema %}
 {
   "name": "Home Ingredients Desc",
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
   "settings": [],
   "presets": [
     {
