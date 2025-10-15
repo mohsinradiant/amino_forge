@@ -78,3 +78,8 @@
     font-weight: 600;
     font-size: 40px;
 }
+
+.home_ingredients_desc_top_container_right {
+    display: flex;
+    width: 60%;
+}
