@@ -38,3 +38,13 @@
 #shopify-section-template--25358822277399__slideshow_Pb7dBN slideshow-slides {
     aspect-ratio: 1920 / 790;
 }
+
+.slide__image-container a {
+    height: 100%;
+    width: 100%;
+}
+
+.slide__image-container a img {
+    height: 100%;
+    width: 100%;
+}
