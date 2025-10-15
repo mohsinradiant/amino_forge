@@ -3216,7 +3216,7 @@ slideshow-slides {
   }
 
   &[size='large'] {
-    min-height: 25rem;
+    /* min-height: 25rem; */
   }
 
   @media screen and (min-width: 750px) {
