@@ -87,3 +87,9 @@
     display: flex;
     width: 60%;
 }
+
+.home_ingredients_desc_top_container_right p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 2.2;
+}
