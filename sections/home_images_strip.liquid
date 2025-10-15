@@ -1,0 +1,54 @@
+<div class="home-images-strip">
+  <div class="home-images-strip-container">
+    {% for block in section.blocks %}
+      <div class="home-images-strip-item">
+        {% if block.settings.link %}
+          <a href="{{ block.settings.link }}">
+        {% endif %}
+        {% if block.settings.image %}
+          <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.text | escape }}">
+        {% endif %}
+        {% if block.settings.text %}
+          <p>{{ block.settings.text }}</p>
+        {% endif %}
+        {% if block.settings.link %}
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Home Images Strip",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "URL"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Home Images Strip"
+    }
+  ]
+}
+{% endschema %}
