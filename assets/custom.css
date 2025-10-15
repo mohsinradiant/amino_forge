@@ -65,3 +65,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.home_ingredients_desc_top_container_left p {
+    margin: 0;
+}
+
+.home_ingredients_desc_top_container_left h2 {
+    margin: 0;
+}
