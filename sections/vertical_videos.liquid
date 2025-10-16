@@ -1,0 +1,356 @@
+{% comment %}
+  Vertical Video Carousel Section (using Flickity for smooth swiping)
+{% endcomment %}
+
+{% comment %}
+  1. Load Flickity Library (CDN)
+  Using Flickity for performant, touch-enabled carousels.
+{% endcomment %}
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<style>
+  /* Section Layout and Colors */
+  .vertical-video-section {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px 0;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  /* Flickity Carousel Container Styling */
+  .video-carousel {
+    max-width: {{ section.settings.section_width }}px;
+    margin: 0 auto;
+    cursor: grab;
+    user-select: none;
+    padding-left: 20px; /* Add some padding to see the next slide */
+    padding-right: 20px;
+  }
+
+  /* Individual Video Cell Styling */
+  .carousel-cell {
+    width: {{ section.settings.video_width }}%; /* Control width of the video box */
+    margin-right: 15px;
+    height: 100%;
+    max-height: 80vh; /* Limit height relative to viewport */
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Video Element */
+  .carousel-cell video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures vertical video fills the cell */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Controls Overlay */
+  .video-controls-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  /* Play/Pause Button */
+  .play-pause-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border: none;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.2s;
+    pointer-events: none; /* Default state: hidden and not clickable */
+    z-index: 20;
+  }
+  .is-paused .play-pause-btn {
+    opacity: 1;
+    pointer-events: auto; /* Visible and clickable when paused */
+  }
+  .carousel-cell:hover .play-pause-btn {
+    opacity: 0.8; /* Slight visibility on hover, even when playing */
+  }
+
+  /* Volume Controls */
+  .volume-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 20;
+    transition: opacity 0.2s;
+  }
+
+  /* Flickity Navigation Buttons */
+  .flickity-prev-next-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6) !important;
+    opacity: 1;
+    transition: opacity 0.2s;
+  }
+  .flickity-prev-next-button.previous { left: 0; }
+  .flickity-prev-next-button.next { right: 0; }
+  .flickity-button-icon {
+    fill: white;
+  }
+</style>
+
+<section class="vertical-video-section" data-section-id="{{ section.id }}">
+  <div
+    class="video-carousel"
+    data-flickity='
+      {
+        "cellAlign": "left",
+        "contain": true,
+        "pageDots": false,
+        "prevNextButtons": true,
+        "wrapAround": false,
+        "groupCells": true,
+        "lazyLoad": 1
+      }
+    '
+  >
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'video' and block.settings.video_url != blank -%}
+        {%- assign video_url = block.settings.video_url -%}
+        {%- assign media_id = video_url | split: '/' | last -%}
+
+        <div
+          class="carousel-cell"
+          data-video-cell
+          data-media-id="{{ media_id }}"
+          {{ block.shopify_attributes }}
+        >
+          <video
+            data-video-player
+            src="{{ video_url }}"
+            poster="{% if block.settings.video_poster != blank %}{{ block.settings.video_poster | image_url: width: 720 }}{% endif %}"
+            loop
+            muted
+            playsinline
+            preload="none"
+          ></video>
+
+          <div class="video-controls-overlay">
+            <button class="volume-btn" data-volume-toggle title="Toggle Volume">
+              <span data-icon-muted>🔈</span>
+              <span data-icon-unmuted style="display: none;">🔊</span>
+            </button>
+          </div>
+
+          <button class="play-pause-btn" data-play-pause-toggle title="Play/Pause">
+            <span data-icon-play>▶</span>
+            <span data-icon-pause style="display: none;">⏸</span>
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector(`[data-section-id="{{ section.id }}"]`);
+    if (!section) return;
+
+    const flkty = new Flickity(section.querySelector('.video-carousel'), {});
+    const videoCells = section.querySelectorAll('.carousel-cell');
+
+    const togglePlayPause = (cell, video, btn) => {
+      const isPaused = video.paused;
+      if (isPaused) {
+        video.play().catch((error) => console.log('Video Play Error:', error));
+        cell.classList.remove('is-paused');
+        btn.querySelector('[data-icon-play]').style.display = 'none';
+        btn.querySelector('[data-icon-pause]').style.display = 'block';
+      } else {
+        video.pause();
+        cell.classList.add('is-paused');
+        btn.querySelector('[data-icon-play]').style.display = 'block';
+        btn.querySelector('[data-icon-pause]').style.display = 'none';
+      }
+    };
+
+    const toggleVolume = (video, volumeBtn) => {
+      const isMuted = video.muted;
+      video.muted = !isMuted;
+      volumeBtn.querySelector('[data-icon-muted]').style.display = isMuted ? 'none' : 'inline';
+      volumeBtn.querySelector('[data-icon-unmuted]').style.display = isMuted ? 'inline' : 'none';
+    };
+
+    // ------------------------------------
+    // 1. Initial State and Event Listeners
+    // ------------------------------------
+    videoCells.forEach((cell) => {
+      const video = cell.querySelector('[data-video-player]');
+      const playPauseBtn = cell.querySelector('[data-play-pause-toggle]');
+      const volumeBtn = cell.querySelector('[data-volume-toggle]');
+
+      // Initial state: all videos paused and cell marked 'is-paused'
+      video.pause();
+      cell.classList.add('is-paused');
+      video.muted = true; // Ensure muted for autoplay compliance
+
+      // Click on video cell/overlay to toggle play/pause
+      cell.addEventListener('click', (e) => {
+        // Prevent toggling if clicking the volume button
+        if (e.target.closest('[data-volume-toggle]')) return;
+        togglePlayPause(cell, video, playPauseBtn);
+      });
+
+      // Click volume button to toggle mute
+      volumeBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Stop click from bubbling to cell click listener
+        toggleVolume(video, volumeBtn);
+      });
+    });
+
+    // ------------------------------------
+    // 2. Flickity Playback Logic
+    // ------------------------------------
+    const handleCellChange = (index) => {
+      videoCells.forEach((cell, i) => {
+        const video = cell.querySelector('[data-video-player]');
+        const playPauseBtn = cell.querySelector('[data-play-pause-toggle]');
+
+        if (i === index) {
+          // Current Cell: Autoplay (muted)
+          video.currentTime = 0; // Rewind for seamless loop
+          video.play().catch((error) => console.log('Autoplay Error:', error));
+          cell.classList.remove('is-paused');
+          playPauseBtn.querySelector('[data-icon-play]').style.display = 'none';
+          playPauseBtn.querySelector('[data-icon-pause]').style.display = 'block';
+        } else {
+          // Other Cells: Pause
+          video.pause();
+          cell.classList.add('is-paused');
+          playPauseBtn.querySelector('[data-icon-play]').style.display = 'block';
+          playPauseBtn.querySelector('[data-icon-pause]').style.display = 'none';
+        }
+      });
+    };
+
+    // Flickity event: when a new slide settles
+    flkty.on('change', handleCellChange);
+
+    // Initial load: start the first video
+    handleCellChange(0);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Vertical Video Carousel",
+  "tag": "section",
+  "class": "vertical-video-section-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Layout"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "range",
+      "id": "section_width",
+      "min": 800,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "label": "Maximum Carousel Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "video_width",
+      "min": 25,
+      "max": 40,
+      "step": 1,
+      "unit": "%",
+      "label": "Video Width (Relative)",
+      "default": 30,
+      "info": "Sets the width of each video cell relative to the carousel width (e.g., 30% shows about 3 videos)."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Vertical Video",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video File URL",
+          "info": "Upload your vertical MP4 video file to your Shopify 'Files' and paste the URL here."
+        },
+        {
+          "type": "image_picker",
+          "id": "video_poster",
+          "label": "Poster Image (Fallback)",
+          "info": "An image to display before the video loads or if playback fails. Important for performance."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vertical Video Stories",
+      "blocks": [{ "type": "video" }, { "type": "video" }, { "type": "video" }]
+    }
+  ]
+}
+{% endschema %}
