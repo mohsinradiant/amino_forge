@@ -95,8 +95,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      will-change: transform;
     }
-
     /* profile image (circle) */
     .testimonials-profile-img {
       width: 120px;
@@ -306,50 +306,61 @@
         // direction = 1 (next): images move left; direction = -1 (prev): images move right
         // We'll animate the set of involved items: current, prev, next, target, and neighbors to keep continuity.
 
-        // For NEXT (direction = 1): current -> leftOffset, next -> center (0), next's next -> rightOffset
+        // For NEXT (direction = 1): move WHOLE ITEMS so image and text stay together.
         if (direction === 1) {
           const currImg = currentItem.querySelector('.testimonials-profile-img');
-          const nextImg = items[idxNext(current)].querySelector('.testimonials-profile-img');
+          const nextItem = items[idxNext(current)];
+          const nextImg = nextItem.querySelector('.testimonials-profile-img');
           const nextNextIndex = idxNext(idxNext(current));
           const nextNext = items[nextNextIndex];
 
-          // current image slides to left position, shrinks and fades
-          tl.to(currImg, { x: leftOffset - 0, scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
-          // next image moves from rightOffset to center
+          // current item slides to left position
+          tl.to(currentItem, { x: leftOffset, zIndex: 30, duration: 0.6 }, 0.12);
+          tl.to(currImg, { scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+
+          // next item moves from right to center
+          tl.fromTo(nextItem, { x: rightOffset, zIndex: 40 }, { x: 0, zIndex: 40, duration: 0.6 }, 0.12);
           tl.fromTo(
             nextImg,
-            { x: rightOffset, scale: sideScale, opacity: sideOpacity },
-            { x: 0, scale: centerScale, opacity: centerOpacity, duration: 0.6 },
+            { scale: sideScale, opacity: sideOpacity },
+            { scale: centerScale, opacity: centerOpacity, duration: 0.6 },
             0.12
           );
-          // bring into view the next-next image to appear at rightOffset
+
+          // bring the next-next item into right position
           if (nextNext) {
             const nextNextImg = nextNext.querySelector('.testimonials-profile-img');
-            tl.to(nextNextImg, { x: rightOffset, scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+            tl.to(nextNext, { x: rightOffset, zIndex: 30, duration: 0.6 }, 0.12);
+            tl.to(nextNextImg, { scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
           }
         } else {
           // PREV (direction = -1)
           const currImg = currentItem.querySelector('.testimonials-profile-img');
-          const prevImg = items[idxPrev(current)].querySelector('.testimonials-profile-img');
+          const prevItem = items[idxPrev(current)];
+          const prevImg = prevItem.querySelector('.testimonials-profile-img');
           const prevPrevIndex = idxPrev(idxPrev(current));
           const prevPrev = items[prevPrevIndex];
 
-          // current image slides to right
-          tl.to(currImg, { x: rightOffset, scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
-          // prev image moves from leftOffset to center
+          // current item slides to right
+          tl.to(currentItem, { x: rightOffset, zIndex: 30, duration: 0.6 }, 0.12);
+          tl.to(currImg, { scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+
+          // prev item moves from left to center
+          tl.fromTo(prevItem, { x: leftOffset, zIndex: 40 }, { x: 0, zIndex: 40, duration: 0.6 }, 0.12);
           tl.fromTo(
             prevImg,
-            { x: leftOffset, scale: sideScale, opacity: sideOpacity },
-            { x: 0, scale: centerScale, opacity: centerOpacity, duration: 0.6 },
+            { scale: sideScale, opacity: sideOpacity },
+            { scale: centerScale, opacity: centerOpacity, duration: 0.6 },
             0.12
           );
-          // bring into view prev-prev image to leftOffset
+
+          // bring the prev-prev item into left position
           if (prevPrev) {
             const prevPrevImg = prevPrev.querySelector('.testimonials-profile-img');
-            tl.to(prevPrevImg, { x: leftOffset, scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+            tl.to(prevPrev, { x: leftOffset, zIndex: 30, duration: 0.6 }, 0.12);
+            tl.to(prevPrevImg, { scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
           }
         }
-
         // 3) after images moved, fade in the new active content
         tl.to(targetItem.querySelector('.testimonials-content'), { autoAlpha: 1, duration: 0.36 }, '+=0.04');
 
