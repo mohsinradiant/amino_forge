@@ -29,7 +29,18 @@
     align-items: start;
     gap: 40px;
   }
-
+   .ai-product-feature__benefits-pillar-{{ ai_gen_id }}::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #F3EEF6;
+    border-radius: 2px;
+    z-index: -1;
+   }
   /* Keep your existing icon wrapper but make it image-friendly */
   .ai-product-feature__benefit-icon-{{ ai_gen_id }} {
     width: 56px;
