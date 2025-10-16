@@ -1,7 +1,9 @@
 <div class="home_health_benefits section">
-  <h2 class="section_heading">{{ section.settings.heading_1 }}</h2>
-  <p class="section_subheading">{{ section.settings.subheading }}</p>
-  <img src="{{ section.settings.image | img_url: 'master' }}" alt="Health Benefits Image">
+  <div class="home_health_benefits_inner">
+    <h2 class="section_heading">{{ section.settings.heading_1 }}</h2>
+    <p class="section_subheading">{{ section.settings.subheading }}</p>
+    <img src="{{ section.settings.image | img_url: 'master' }}" alt="Health Benefits Image">
+  </div>
 </div>
 {% schema %}
 {

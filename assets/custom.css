@@ -203,7 +203,7 @@
     color: #FFD800;
     transition: all 0.3s ease;
 }
-.home_health_benefits{
+.home_health_benefits_inner{
     display: flex;
     flex-direction: column;
     justify-content: center;
