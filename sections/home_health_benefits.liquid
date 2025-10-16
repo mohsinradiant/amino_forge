@@ -1,0 +1,32 @@
+<div class="home_health_benefits section">
+  <h2>{{ section.settings.heading_1 }}</h2>
+  <p>{{ section.settings.subheading }}</p>
+  <img src="{{ section.settings.image | img_url: 'master' }}" alt="Health Benefits Image">
+</div>
+{% schema %}
+{
+  "name": "Home Health Benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading 1"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Health Benefits"
+    }
+  ]
+}
+{% endschema %}
