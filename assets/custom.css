@@ -142,3 +142,9 @@
     font-weight: 400;
     width: 65%;
 }
+
+.home_science_container_blocks {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
