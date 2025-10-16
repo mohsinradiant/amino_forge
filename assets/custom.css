@@ -288,10 +288,10 @@
 .testimonials-profile-item.is-active .testimonials-profile-img::before {
     content: "";
     position: absolute;
-    top: -5px;
-    right: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
+    top: -3px;
+    right: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
     border-radius: 50%;
     background: linear-gradient(135deg, #EC68A8 0%, #6C22B7 100%);
     pointer-events: none;
