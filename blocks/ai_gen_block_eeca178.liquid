@@ -452,7 +452,7 @@
               {{ product.description | strip_html | truncate: 200 }}
             </div>
           {% endif %}
-
+          <hr>
           {% if product.metafields.custom.weight != blank %}
             <div class="ai-product-feature__weight-{{ ai_gen_id }}">
               {{ product.metafields.custom.weight }}
