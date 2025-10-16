@@ -442,7 +442,13 @@ footer .text-block h3 {
     font-weight: 400 !important;
     font-size: 13px !important;
 }
-.ai-product-feature 
+
+.ai-product-feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
