@@ -139,7 +139,7 @@
 .section_subheading {
     font-size: 16px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 300;
     width: 65%;
 }
 
@@ -442,7 +442,7 @@ footer .text-block h3 {
     font-weight: 400 !important;
     font-size: 13px !important;
 }
-
+.ai-product-feature 
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
