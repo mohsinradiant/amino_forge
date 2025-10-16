@@ -81,6 +81,18 @@
         {%- endfor -%}
       </div>
     {% endfor %}
+    {% for i in (1..2) %}
+      <div class="marquee-track" data-track-index="{{ i }}">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'text_item' -%}
+            <span class="marquee-item" {{ block.shopify_attributes }}>
+              {{ block.settings.text | escape }}
+              <p class="bullet-point">•</p>
+            </span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {% endfor %}
   </div>
 </div>
 
