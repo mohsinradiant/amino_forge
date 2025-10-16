@@ -179,4 +179,10 @@
     font-size: 13px;
     color: #9E3EB2;
     font-weight: 400;
+    text-transform: uppercase;
+}
+
+.home_science_cta_2 {
+    margin: 5px 0 20px 0px;
+    font-size: 20px;
 }
