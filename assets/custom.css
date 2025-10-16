@@ -112,7 +112,7 @@
     padding-top: 100px;
     position: relative;
     padding-bottom: 100px;
-    background-image: url(https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Rectangle_439.png?v=1760621291);
+    background-image: url(https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Rectangle_439.png?v=1760621291) !important;
 }
 
 .home_science_container_inner {
