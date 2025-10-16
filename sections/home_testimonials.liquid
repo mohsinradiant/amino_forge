@@ -1,0 +1,127 @@
+{% comment %}
+  Testimonials Section with GSAP Infinite Carousel
+{% endcomment %}
+
+<section id="testimonials" class="testimonials-section py-12 text-center bg-white">
+  <div class="max-w-3xl mx-auto relative">
+    <div class="profile-container flex justify-center items-center space-x-8 relative">
+      <button class="prev absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full shadow-md p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <div class="profiles flex justify-center items-center space-x-6 overflow-hidden relative">
+        {% for block in section.blocks %}
+          <div
+            class="profile-item text-center opacity-0 scale-75 absolute inset-0 flex flex-col items-center transition-all duration-500"
+            data-index="{{ forloop.index0 }}"
+          >
+            <div class="profile-img w-24 h-24 rounded-full border-4 border-transparent overflow-hidden mb-4 transition-all duration-500">
+              <img
+                src="{{ block.settings.image | img_url: '200x200' }}"
+                alt="{{ block.settings.name }}"
+                class="w-full h-full object-cover"
+              >
+            </div>
+            <h3 class="font-bold text-lg">{{ block.settings.name }}</h3>
+            <p class="text-gray-500 text-sm mb-2">{{ block.settings.role }}</p>
+            <div class="stars text-yellow-500 mb-3">★★★★★</div>
+            <h4 class="font-semibold text-[#004b50] mb-2">{{ block.settings.title }}</h4>
+            <p class="text-gray-700 italic">{{ block.settings.text }}</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button class="next absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full shadow-md p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const profiles = gsap.utils.toArray('.profile-item');
+      let current = 0;
+
+      function showProfile(index, direction = 1) {
+        gsap.to(profiles[current], {
+          opacity: 0,
+          scale: 0.75,
+          duration: 0.6,
+          ease: 'power2.out',
+        });
+
+        current = (index + profiles.length) % profiles.length;
+
+        gsap.fromTo(
+          profiles[current],
+          { opacity: 0, scale: 0.75 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: 'power3.out',
+            delay: 0.1,
+          }
+        );
+
+        profiles.forEach((profile, i) => {
+          if (i !== current) {
+            gsap.to(profile, { opacity: 0, scale: 0.75, duration: 0.6 });
+          }
+        });
+      }
+
+      function next() {
+        showProfile(current + 1, 1);
+      }
+      function prev() {
+        showProfile(current - 1, -1);
+      }
+
+      document.querySelector('.next').addEventListener('click', next);
+      document.querySelector('.prev').addEventListener('click', prev);
+
+      // Auto play every 6s
+      setInterval(next, 6000);
+
+      // Initial
+      showProfile(0);
+    });
+  </script>
+
+  <style>
+    .profile-item.active .profile-img {
+      border-color: #be1e28;
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Home Testimonials",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Profile Image" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "role", "label": "Role & Location" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "text", "label": "Testimonial Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Testimonials"
+    }
+  ]
+}
+{% endschema %}
