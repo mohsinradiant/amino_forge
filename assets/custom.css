@@ -107,9 +107,9 @@
     width: 25.5%;
 }
 
-.home_science_container section {
+.home_science_container {
     border: solid red;
-    background: #F5EFF8;
+    background: #F5EFF8 !important;
 }
 
 .home_science_container_inner {
