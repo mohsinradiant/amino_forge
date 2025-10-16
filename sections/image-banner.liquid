@@ -1,9 +1,27 @@
-<img class="image_desktop_banner" src="{{section.settings.desktop_image}}">
-<img class="image_mobile_banner" src="{{section.settings.mobile_image}}">
+<a class="image_desktop_container" href="{{section.settings.url}}">
+  <img class="image_desktop_banner" src="{{section.settings.desktop_image}}">
+  <img class="image_mobile_banner" src="{{section.settings.mobile_image}}">
+</a>
 {% schema %}
 {
   "name": "Image Banner",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Link URL"
+    }
+  ],
   "presets": [
     {
       "name": "Image Banner"
