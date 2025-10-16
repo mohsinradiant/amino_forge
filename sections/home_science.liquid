@@ -1,19 +1,21 @@
 <div class="home_science_container section">
-  <h2>{{ section.settings.heading_1 }}</h2>
-  <h3>{{ section.settings.heading_2 }}</h3>
-  <p>{{ section.settings.subheading }}</p>
-  <div class="home_science_container_blocks">
-    {% for block in section.blocks %}
-      <div class="home_science_container_block">
-        <img src="{{ block.settings.image | img_url: 'large' }}">
-        <h3>{{ block.settings.caption }}</h3>
-        <p>{{ block.settings.caption_2 }}</p>
-      </div>
-    {% endfor %}
+  <div class="home_science_container_inner">
+    <h2>{{ section.settings.heading_1 }}</h2>
+    <h3>{{ section.settings.heading_2 }}</h3>
+    <p>{{ section.settings.subheading }}</p>
+    <div class="home_science_container_blocks">
+      {% for block in section.blocks %}
+        <div class="home_science_container_block">
+          <img src="{{ block.settings.image | img_url: 'large' }}">
+          <h3>{{ block.settings.caption }}</h3>
+          <p>{{ block.settings.caption_2 }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <p>{{ section.settings.cta_caption_1 }}</p>
+    <p>{{ section.settings.cta_caption_2 }}</p>
+    <a href="{{section.settings.cta_url}}">{{ section.settings.cta_button }}</a>
   </div>
-  <p>{{ section.settings.cta_caption_1 }}</p>
-  <p>{{ section.settings.cta_caption_2 }}</p>
-  <a href="{{section.settings.cta_url}}">{{ section.settings.cta_button }}</a>
 </div>
 {% schema %}
 {
