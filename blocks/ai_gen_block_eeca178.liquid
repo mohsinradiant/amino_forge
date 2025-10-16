@@ -50,27 +50,46 @@
     align-items: center;
   }
 
-  .ai-product-feature__benefits-{{ ai_gen_id }} {
+   .ai-product-feature__benefits-{{ ai_gen_id }} {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    padding-left: 88px; /* space for the rail + icons */
+  }
+
+  .ai-product-feature__benefits-rail-{{ ai_gen_id }} {
+    position: absolute;
+    left: 16px;
+    top: 0;
+    bottom: 0;
+    width: 56px;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, {{ block.settings.benefits_rail_bg_start }} 0%, {{ block.settings.benefits_rail_bg_end }} 100%);
+    pointer-events: none;
   }
 
   .ai-product-feature__benefit-item-{{ ai_gen_id }} {
     display: flex;
     align-items: center;
     gap: 16px;
+    min-height: 56px; /* ensures even spacing over the rail */
   }
 
-  .ai-product-feature__benefit-icon-{{ ai_gen_id }} {
+  .ai-product-feature__benefit-media-{{ ai_gen_id }} {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
-    display: flex;
+    flex-shrink: 0;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    font-size: 24px;
+  }
+
+  .ai-product-feature__benefit-media-{{ ai_gen_id }} img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
   }
 
   .ai-product-feature__benefit-text-{{ ai_gen_id }} {
@@ -79,7 +98,6 @@
     font-weight: 500;
     line-height: 1.4;
   }
-
   .ai-product-feature__media-{{ ai_gen_id }} {
     position: relative;
     width: 100%;
@@ -324,7 +342,7 @@
     {% if block.settings.section_title != blank %}
       <div class="ai-product-feature__header-{{ ai_gen_id }}">
         <h2 class="section_heading">{{ block.settings.section_title }}</h2>
-        <h2 class="section_subheading">{{ block.settings.section_subtitle }}</h2>
+        <p class="section_subheading">{{ block.settings.section_subtitle }}</p>
       </div>
     {% endif %}
 
@@ -334,130 +352,34 @@
 
       <div class="ai-product-feature__grid-{{ ai_gen_id }}">
         <div class="ai-product-feature__benefits-{{ ai_gen_id }}">
+          <div class="ai-product-feature__benefits-rail-{{ ai_gen_id }}"></div>
           {% for i in (1..4) %}
             {% liquid
               assign benefit_text_key = 'benefit_' | append: i | append: '_text'
-              assign benefit_icon_key = 'benefit_' | append: i | append: '_icon'
-              assign benefit_color_key = 'benefit_' | append: i | append: '_color'
+              assign benefit_image_key = 'benefit_' | append: i | append: '_image'
 
               assign benefit_text = block.settings[benefit_text_key]
-              assign benefit_icon = block.settings[benefit_icon_key]
-              assign benefit_color = block.settings[benefit_color_key]
+              assign benefit_image = block.settings[benefit_image_key]
             %}
 
             {% if benefit_text != blank %}
               <div class="ai-product-feature__benefit-item-{{ ai_gen_id }}">
-                <div
-                  class="ai-product-feature__benefit-icon-{{ ai_gen_id }}"
-                  style="background-color: {{ benefit_color }};"
-                >
-                  {{ benefit_icon }}
+                <div class="ai-product-feature__benefit-media-{{ ai_gen_id }}">
+                  {% if benefit_image != blank %}
+                    <img
+                      src="{{ benefit_image | image_url: width: 96 }}"
+                      alt="{{ benefit_text | escape }}"
+                      loading="lazy"
+                      width="{{ benefit_image.width }}"
+                      height="{{ benefit_image.height }}"
+                    >
+                  {% endif %}
                 </div>
                 <div class="ai-product-feature__benefit-text-{{ ai_gen_id }}">{{ benefit_text }}</div>
               </div>
             {% endif %}
           {% endfor %}
         </div>
-
-        <div class="ai-product-feature__media-{{ ai_gen_id }}">
-          {% if product.featured_image %}
-            <img
-              src="{{ product.featured_image | image_url: width: 1000 }}"
-              alt="{{ product.featured_image.alt | escape }}"
-              loading="lazy"
-              width="{{ product.featured_image.width }}"
-              height="{{ product.featured_image.height }}"
-              class="ai-product-feature__image-{{ ai_gen_id }}"
-            >
-          {% else %}
-            <div class="ai-product-feature__image-placeholder-{{ ai_gen_id }}">
-              {{ 'product-1' | placeholder_svg_tag }}
-            </div>
-          {% endif %}
-        </div>
-
-        <div class="ai-product-feature__details-{{ ai_gen_id }}">
-          <h3 class="ai-product-feature__product-title-{{ ai_gen_id }}">{{ product.title }}</h3>
-
-          {% if product.description != blank %}
-            <div class="ai-product-feature__product-description-{{ ai_gen_id }}">
-              {{ product.description | strip_html | truncate: 200 }}
-            </div>
-          {% endif %}
-
-          {% if product.metafields.custom.weight != blank %}
-            <div class="ai-product-feature__weight-{{ ai_gen_id }}">
-              {{ product.metafields.custom.weight }}
-            </div>
-          {% endif %}
-
-          <div class="ai-product-feature__pricing-{{ ai_gen_id }}">
-            <div class="ai-product-feature__price-{{ ai_gen_id }}">
-              {{ selected_variant.price | money }}
-            </div>
-
-            {% if selected_variant.compare_at_price > selected_variant.price %}
-              <div class="ai-product-feature__compare-price-{{ ai_gen_id }}">
-                {{ selected_variant.compare_at_price | money }}
-              </div>
-
-              {% assign discount_percentage = selected_variant.compare_at_price
-                | minus: selected_variant.price
-                | times: 100
-                | divided_by: selected_variant.compare_at_price
-              %}
-              <div class="ai-product-feature__discount-badge-{{ ai_gen_id }}">-{{ discount_percentage }}%</div>
-            {% endif %}
-          </div>
-
-          <div class="ai-product-feature__actions-{{ ai_gen_id }}">
-            <div class="ai-product-feature__quantity-wrapper-{{ ai_gen_id }}">
-              <span class="ai-product-feature__quantity-label-{{ ai_gen_id }}">Quantity</span>
-              <div class="ai-product-feature__quantity-selector-{{ ai_gen_id }}">
-                <button
-                  type="button"
-                  class="ai-product-feature__quantity-button-{{ ai_gen_id }}"
-                  data-action="decrease"
-                  aria-label="Decrease quantity"
-                >
-                  −
-                </button>
-                <input
-                  type="number"
-                  class="ai-product-feature__quantity-input-{{ ai_gen_id }}"
-                  value="1"
-                  min="1"
-                  aria-label="Quantity"
-                  readonly
-                >
-                <button
-                  type="button"
-                  class="ai-product-feature__quantity-button-{{ ai_gen_id }}"
-                  data-action="increase"
-                  aria-label="Increase quantity"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              class="ai-product-feature__add-to-cart-{{ ai_gen_id }}"
-              data-variant-id="{{ selected_variant.id }}"
-              {% unless selected_variant.available %}
-                disabled
-              {% endunless %}
-            >
-              {% if selected_variant.available %}
-                {{ block.settings.button_text }}
-              {% else %}
-                Sold Out
-              {% endif %}
-            </button>
-          </div>
-        </div>
-      </div>
     {% else %}
       <div class="ai-product-feature__empty-product-{{ ai_gen_id }}">Next, select a product to feature</div>
     {% endif %}
@@ -562,37 +484,19 @@
   "settings": [
     {
       "type": "header",
-      "content": "Section"
-    },
-    {
-      "type": "text",
-      "id": "section_title",
-      "label": "Section title",
-      "default": "Amino Forge's AF 9"
-    },
-    {
-      "type": "text",
-      "id": "section_subtitle",
-      "label": "Section Subtitle"
-    },
-    {
-      "type": "range",
-      "id": "title_size",
-      "min": 24,
-      "max": 72,
-      "step": 2,
-      "unit": "px",
-      "label": "Title size",
-      "default": 48
-    },
-    {
-      "type": "product",
-      "id": "product",
-      "label": "Featured product"
-    },
-    {
-      "type": "header",
       "content": "Benefits"
+    },
+    {
+      "type": "color",
+      "id": "benefits_rail_bg_start",
+      "label": "Benefits rail color (top)",
+      "default": "#F0D0FF"
+    },
+    {
+      "type": "color",
+      "id": "benefits_rail_bg_end",
+      "label": "Benefits rail color (bottom)",
+      "default": "#B154FF"
     },
     {
       "type": "text",
@@ -601,144 +505,42 @@
       "default": "5x better uptake"
     },
     {
-      "type": "text",
-      "id": "benefit_1_icon",
-      "label": "Benefit 1 icon",
-      "default": "⚡",
-      "info": "Use emoji or single character"
-    },
-    {
-      "type": "color",
-      "id": "benefit_1_color",
-      "label": "Benefit 1 color",
-      "default": "#FF9D00"
+      "type": "image_picker",
+      "id": "benefit_1_image",
+      "label": "Benefit 1 image"
     },
     {
       "type": "text",
       "id": "benefit_2_text",
       "label": "Benefit 2 text",
-      "default": "Train harder"
+      "default": "Train harder, more often"
     },
     {
-      "type": "text",
-      "id": "benefit_2_icon",
-      "label": "Benefit 2 icon",
-      "default": "💪",
-      "info": "Use emoji or single character"
-    },
-    {
-      "type": "color",
-      "id": "benefit_2_color",
-      "label": "Benefit 2 color",
-      "default": "#000000"
+      "type": "image_picker",
+      "id": "benefit_2_image",
+      "label": "Benefit 2 image"
     },
     {
       "type": "text",
       "id": "benefit_3_text",
       "label": "Benefit 3 text",
-      "default": "Faster recovery"
+      "default": "Rapid muscle repair + sustained energy"
     },
     {
-      "type": "text",
-      "id": "benefit_3_icon",
-      "label": "Benefit 3 icon",
-      "default": "🔄",
-      "info": "Use emoji or single character"
-    },
-    {
-      "type": "color",
-      "id": "benefit_3_color",
-      "label": "Benefit 3 color",
-      "default": "#666666"
+      "type": "image_picker",
+      "id": "benefit_3_image",
+      "label": "Benefit 3 image"
     },
     {
       "type": "text",
       "id": "benefit_4_text",
       "label": "Benefit 4 text",
-      "default": "Premium quality"
+      "default": "Gain a metabolic advantage"
     },
     {
-      "type": "text",
-      "id": "benefit_4_icon",
-      "label": "Benefit 4 icon",
-      "default": "✓",
-      "info": "Use emoji or single character"
-    },
-    {
-      "type": "color",
-      "id": "benefit_4_color",
-      "label": "Benefit 4 color",
-      "default": "#FF9D00"
-    },
-    {
-      "type": "header",
-      "content": "Style"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background",
-      "default": "#FFFFFF"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text",
-      "default": "#000000"
-    },
-    {
-      "type": "range",
-      "id": "image_border_radius",
-      "min": 0,
-      "max": 40,
-      "step": 2,
-      "unit": "px",
-      "label": "Image border radius",
-      "default": 0
-    },
-    {
-      "type": "header",
-      "content": "Button"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button text",
-      "default": "Add to Cart"
-    },
-    {
-      "type": "color",
-      "id": "button_color",
-      "label": "Button background",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text",
-      "default": "#FFFFFF"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_color",
-      "label": "Button hover background",
-      "default": "#383838"
-    },
-    {
-      "type": "header",
-      "content": "Discount badge"
-    },
-    {
-      "type": "color",
-      "id": "badge_color",
-      "label": "Badge background",
-      "default": "#FF9D00"
-    },
-    {
-      "type": "color",
-      "id": "badge_text_color",
-      "label": "Badge text",
-      "default": "#000000"
+      "type": "image_picker",
+      "id": "benefit_4_image",
+      "label": "Benefit 4 image"
     }
   ],
   "presets": [
