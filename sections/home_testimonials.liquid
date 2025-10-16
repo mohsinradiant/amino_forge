@@ -6,6 +6,9 @@
 {% endcomment %}
 
 <section class="testimonials-carousel-section">
+  <p class="section_caption">{{ section.settings.caption }}</p>
+  <h2 class="section_heading">{{ section.settings.heading_1 }}</h2>
+
   <div class="testimonials-carousel-container">
     <!-- Prev Button -->
     <button class="testimonials-prev-btn" aria-label="Previous">
@@ -273,7 +276,10 @@
 {% schema %}
 {
   "name": "Home Testimonials",
-  "settings": [],
+  "settings": [
+    { "type": "text", "id": "caption", "label": "Caption" },
+    { "type": "text", "id": "heading_1", "label": "Heading" }
+  ],
   "blocks": [
     {
       "type": "testimonial",
