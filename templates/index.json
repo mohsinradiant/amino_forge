@@ -290,6 +290,16 @@
         "heading_1": "What Customers have to Say?"
       }
     },
+    "image_banner_HtzUcM": {
+      "type": "image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Group_323.png",
+        "mobile_image": "shopify://shop_images/Group_323.png",
+        "url": "shopify://collections/all",
+        "layout": "full_width"
+      }
+    },
     "collection_links_Ut4aMz": {
       "type": "collection-links",
       "blocks": {
@@ -850,6 +860,7 @@
     "home_health_benefits_icPjxx",
     "image_banner_9CTyFG",
     "home_testimonials_aBLFNr",
+    "image_banner_HtzUcM",
     "collection_links_Ut4aMz",
     "featured_product_mTUbKC",
     "product_list_UwRqN4",
