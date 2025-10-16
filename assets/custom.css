@@ -176,7 +176,7 @@
 
 .home_science_cta_1 {
     margin: 0;
-    font-size: 13px;
+    font-size: 13px !important;
     color: #9E3EB2;
     font-weight: 400;
     text-transform: uppercase;
@@ -184,13 +184,13 @@
 
 .home_science_cta_2 {
     margin: 5px 0 20px 0px;
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
 .home_science_cta_button {
     background-color: gold;
     border-radius: 1000px;
-    font-size: 10px;
+    font-size: 10px !important;
     text-align: center;
     padding: 10px 20px;
     text-transform: uppercase;
