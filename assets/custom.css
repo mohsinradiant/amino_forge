@@ -435,6 +435,10 @@ footer .menu__item {
     margin-bottom: 20px;
 }
 
+.drv-brand-mark {
+    display: none !important;
+}
+
 footer .text-block h3 {
     font-family: Gotham, sans-serif !important;
     color: #333333 !important;
