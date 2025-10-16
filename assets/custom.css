@@ -285,7 +285,7 @@
     will-change: transform, opacity;
 }
 
-.testimonials-profile-img.is-active::before {
+.testimonials-profile-item.is-active .testimonials-profile-img::before {
     content: "";
     position: absolute;
     top: -5px;
