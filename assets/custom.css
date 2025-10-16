@@ -399,6 +399,11 @@
     transform: translateY(-50%) scale(1.05);
 }
 
+.section_caption {
+    color: #9E3EB2;
+    font-size: 13px;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
