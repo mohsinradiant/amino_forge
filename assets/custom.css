@@ -106,3 +106,8 @@
 .home_ingredients_desc_bottom_container img {
     width: 25.5%;
 }
+
+.home_science_container section {
+    border: solid red;
+    background: #F5EFF8;
+}
