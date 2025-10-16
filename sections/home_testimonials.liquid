@@ -1,5 +1,8 @@
 {% comment %}
-  GSAP Infinite Testimonials Carousel — Clean Fixed Version
+  GSAP Infinite Testimonials Carousel — precise animation:
+  - center testimonial fully visible (image + texts)
+  - only prev/next images visible on sides (small + faded)
+  - on change: texts fade out completely, then images slide/grow, then new texts fade in
 {% endcomment %}
 
 <section class="testimonials-carousel-section">
@@ -21,17 +24,21 @@
     </button>
 
     <!-- Profiles Wrapper -->
-    <div class="testimonials-profiles">
+    <div class="testimonials-profiles" aria-live="polite">
       {% for block in section.blocks %}
         <div class="testimonials-profile-item" data-index="{{ forloop.index0 }}">
           <div class="testimonials-profile-img">
-            <img src="{{ block.settings.image | img_url: '200x200' }}" alt="{{ block.settings.name }}">
+            <img src="{{ block.settings.image | img_url: '300x300' }}" alt="{{ block.settings.name }}">
           </div>
-          <h3 class="testimonials-name">{{ block.settings.name }}</h3>
-          <p class="testimonials-role">{{ block.settings.role }}</p>
-          <div class="testimonials-stars">★★★★★</div>
-          <h4 class="testimonials-title">{{ block.settings.title }}</h4>
-          <p class="testimonials-text">{{ block.settings.text }}</p>
+
+          <!-- content wrapper that will fade in/out (only visible for active) -->
+          <div class="testimonials-content">
+            <h3 class="testimonials-name">{{ block.settings.name }}</h3>
+            <p class="testimonials-role">{{ block.settings.role }}</p>
+            <div class="testimonials-stars">★★★★★</div>
+            <h4 class="testimonials-title">{{ block.settings.title }}</h4>
+            <p class="testimonials-text">{{ block.settings.text }}</p>
+          </div>
         </div>
       {% endfor %}
     </div>
@@ -54,6 +61,7 @@
   </div>
 
   <style>
+    /* Container */
     .testimonials-carousel-section {
       padding: 80px 0;
       text-align: center;
@@ -61,89 +69,106 @@
       overflow: hidden;
       position: relative;
     }
-
     .testimonials-carousel-container {
-      max-width: 760px;
+      max-width: 900px;
       margin: 0 auto;
       position: relative;
+      padding: 0 80px; /* space for side images and buttons */
     }
 
+    /* Profiles area */
     .testimonials-profiles {
       position: relative;
       height: 420px;
-      overflow: hidden;
+      overflow: visible;
     }
 
+    /* Each profile is absolute but we will position only prev/current/next visually */
     .testimonials-profile-item {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%) scale(0.85);
       width: 100%;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.6s ease;
+      max-width: 700px;
+      pointer-events: none; /* default - only active gets pointer-events */
       display: flex;
       flex-direction: column;
       align-items: center;
-      pointer-events: none;
     }
 
-    .testimonials-profile-item.active {
-      opacity: 1 !important;
-      transform: scale(1);
-      z-index: 5;
-      pointer-events: auto;
-    }
-
+    /* profile image (circle) */
     .testimonials-profile-img {
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       overflow: hidden;
       border: 4px solid transparent;
+      box-sizing: border-box;
       margin-bottom: 18px;
-      transition: all 0.4s ease;
+      will-change: transform, opacity;
     }
-
     .testimonials-profile-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
+    /* content (name, role, stars, title, text) */
+    .testimonials-content {
+      width: 86%;
+      max-width: 720px;
+      margin: 0 auto;
+      transition: opacity 0.3s linear;
+      will-change: opacity;
+    }
     .testimonials-name {
       font-weight: 700;
-      font-size: 18px;
+      font-size: 20px;
       margin: 0;
+      color: #111;
     }
-
     .testimonials-role {
       color: #777;
       font-size: 14px;
-      margin: 4px 0 8px;
+      margin: 6px 0 10px;
     }
-
     .testimonials-stars {
       color: #ffb400;
       font-size: 18px;
       margin-bottom: 10px;
     }
-
     .testimonials-title {
       font-weight: 600;
       color: #004b50;
       font-size: 17px;
       margin-bottom: 10px;
     }
-
     .testimonials-text {
       color: #444;
       font-style: italic;
       line-height: 1.6;
-      width: 90%;
       margin: 0 auto;
     }
 
+    /* active profile - shows full content and pointer events */
+    .testimonials-profile-item.is-active {
+      pointer-events: auto;
+      z-index: 40;
+    }
+    .testimonials-profile-item .testimonials-content {
+      opacity: 1;
+    }
+
+    /* non-active: we hide text, only profile image should be visible (we will position them left/right)
+       but keep them accessible for animation using gsap. */
+    .testimonials-profile-item:not(.is-active) .testimonials-content {
+      opacity: 0; /* hidden */
+      pointer-events: none;
+    }
+
+    /* controls */
     .testimonials-prev-btn,
     .testimonials-next-btn {
       position: absolute;
@@ -152,82 +177,238 @@
       background: #fff;
       border: none;
       border-radius: 50%;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       width: 44px;
       height: 44px;
       cursor: pointer;
-      z-index: 10;
+      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.2s ease;
     }
-
+    .testimonials-prev-btn {
+      left: 10px;
+    }
+    .testimonials-next-btn {
+      right: 10px;
+    }
     .testimonials-prev-btn:hover,
     .testimonials-next-btn:hover {
       transform: translateY(-50%) scale(1.05);
     }
 
-    .testimonials-prev-btn {
-      left: -60px;
-    }
-
-    .testimonials-next-btn {
-      right: -60px;
-    }
-
+    /* small-screen tweaks */
     @media (max-width: 768px) {
-      .testimonials-prev-btn {
-        left: 10px;
+      .testimonials-carousel-container {
+        padding: 0 20px;
       }
-      .testimonials-next-btn {
-        right: 10px;
+      .testimonials-profile-img {
+        width: 92px;
+        height: 92px;
+      }
+      .testimonials-profiles {
+        height: auto;
+        padding-bottom: 20px;
       }
     }
   </style>
 
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const profiles = gsap.utils.toArray('.testimonials-profile-item');
+      const items = gsap.utils.toArray('.testimonials-profile-item');
+      if (!items.length) return;
+
       let current = 0;
+      let isAnimating = false;
+      const leftOffset = -160; // x position for left side image (pixels)
+      const rightOffset = 160; // x position for right side image (pixels)
+      const sideScale = 0.78; // scale for side images
+      const sideOpacity = 0.35; // opacity for side images
+      const centerScale = 1; // center image scale
+      const centerOpacity = 1;
 
-      function showProfile(index, direction = 1) {
-        const prev = profiles[current];
-        const next = profiles[index];
-        if (prev === next) return;
+      // helper: get prev/next indices
+      function idxPrev(i) {
+        return (i - 1 + items.length) % items.length;
+      }
+      function idxNext(i) {
+        return (i + 1) % items.length;
+      }
 
-        gsap.to(prev, { opacity: 0, x: -50 * direction, duration: 0.5, scale: 0.9, ease: 'power2.out' });
-        gsap.fromTo(
-          next,
-          { opacity: 0, x: 50 * direction, scale: 0.9 },
-          { opacity: 1, x: 0, duration: 0.6, scale: 1, ease: 'power2.out' }
+      // initial setup: place current center, prev left, next right, others hidden off & transparent
+      function placeInitial() {
+        items.forEach((el, i) => {
+          gsap.set(el, { clearProps: 'all' }); // clear previous inline transforms
+          const img = el.querySelector('.testimonials-profile-img');
+
+          if (i === current) {
+            el.classList.add('is-active');
+            // center: at x:0 scale 1, image highlighted border
+            gsap.set(el, { x: 0, zIndex: 40 });
+            gsap.set(img, { scale: centerScale, opacity: centerOpacity, x: 0 });
+            img.style.borderColor = '#be1e28';
+            // content visible
+            gsap.set(el.querySelector('.testimonials-content'), { autoAlpha: 1 });
+          } else if (i === idxPrev(current)) {
+            el.classList.remove('is-active');
+            gsap.set(el, { x: leftOffset, zIndex: 30 });
+            gsap.set(img, { scale: sideScale, opacity: sideOpacity, x: 0 });
+            img.style.borderColor = 'transparent';
+            gsap.set(el.querySelector('.testimonials-content'), { autoAlpha: 0 });
+          } else if (i === idxNext(current)) {
+            el.classList.remove('is-active');
+            gsap.set(el, { x: rightOffset, zIndex: 30 });
+            gsap.set(img, { scale: sideScale, opacity: sideOpacity, x: 0 });
+            img.style.borderColor = 'transparent';
+            gsap.set(el.querySelector('.testimonials-content'), { autoAlpha: 0 });
+          } else {
+            // place offscreen and invisible
+            el.classList.remove('is-active');
+            gsap.set(el, { x: 0, zIndex: 10 });
+            gsap.set(img, { scale: sideScale * 0.9, opacity: 0, x: 0 });
+            img.style.borderColor = 'transparent';
+            gsap.set(el.querySelector('.testimonials-content'), { autoAlpha: 0 });
+          }
+        });
+      }
+
+      // orchestrated transition to targetIndex
+      function transitionTo(targetIndex, direction = 1) {
+        if (isAnimating || targetIndex === current) return;
+        isAnimating = true;
+
+        const prevIndex = idxPrev(current);
+        const nextIndex = idxNext(current);
+
+        const currentItem = items[current];
+        const targetItem = items[targetIndex];
+        const leftItem = items[idxPrev(targetIndex)];
+        const rightItem = items[idxNext(targetIndex)];
+
+        const tl = gsap.timeline({
+          defaults: { ease: 'power2.out' },
+          onComplete: () => {
+            current = targetIndex;
+            // reset classes and inline transforms then placeInitial to ensure stable state
+            items.forEach((i) => i.classList.remove('is-active'));
+            items[current].classList.add('is-active');
+            placeInitial();
+            isAnimating = false;
+          },
+        });
+
+        // 1) fade out current texts fully (quick)
+        tl.to(currentItem.querySelector('.testimonials-content'), { autoAlpha: 0, duration: 0.28 }, 0);
+
+        // 2) move & animate images (slide left/right and scale/opacity)
+        // direction = 1 (next): images move left; direction = -1 (prev): images move right
+        // We'll animate the set of involved items: current, prev, next, target, and neighbors to keep continuity.
+
+        // For NEXT (direction = 1): current -> leftOffset, next -> center (0), next's next -> rightOffset
+        if (direction === 1) {
+          const currImg = currentItem.querySelector('.testimonials-profile-img');
+          const nextImg = items[idxNext(current)].querySelector('.testimonials-profile-img');
+          const nextNextIndex = idxNext(idxNext(current));
+          const nextNext = items[nextNextIndex];
+
+          // current image slides to left position, shrinks and fades
+          tl.to(currImg, { x: leftOffset - 0, scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+          // next image moves from rightOffset to center
+          tl.fromTo(
+            nextImg,
+            { x: rightOffset, scale: sideScale, opacity: sideOpacity },
+            { x: 0, scale: centerScale, opacity: centerOpacity, duration: 0.6 },
+            0.12
+          );
+          // bring into view the next-next image to appear at rightOffset
+          if (nextNext) {
+            const nextNextImg = nextNext.querySelector('.testimonials-profile-img');
+            tl.to(nextNextImg, { x: rightOffset, scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+          }
+        } else {
+          // PREV (direction = -1)
+          const currImg = currentItem.querySelector('.testimonials-profile-img');
+          const prevImg = items[idxPrev(current)].querySelector('.testimonials-profile-img');
+          const prevPrevIndex = idxPrev(idxPrev(current));
+          const prevPrev = items[prevPrevIndex];
+
+          // current image slides to right
+          tl.to(currImg, { x: rightOffset, scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+          // prev image moves from leftOffset to center
+          tl.fromTo(
+            prevImg,
+            { x: leftOffset, scale: sideScale, opacity: sideOpacity },
+            { x: 0, scale: centerScale, opacity: centerOpacity, duration: 0.6 },
+            0.12
+          );
+          // bring into view prev-prev image to leftOffset
+          if (prevPrev) {
+            const prevPrevImg = prevPrev.querySelector('.testimonials-profile-img');
+            tl.to(prevPrevImg, { x: leftOffset, scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+          }
+        }
+
+        // 3) after images moved, fade in the new active content
+        tl.to(targetItem.querySelector('.testimonials-content'), { autoAlpha: 1, duration: 0.36 }, '+=0.04');
+
+        // small safety: ensure borders updated
+        tl.call(
+          () => {
+            items.forEach((el, i) => {
+              const img = el.querySelector('.testimonials-profile-img');
+              img.style.borderColor = i === targetIndex ? '#be1e28' : 'transparent';
+            });
+          },
+          null,
+          '-=0.02'
         );
-
-        prev.classList.remove('active');
-        next.classList.add('active');
-        current = index;
       }
 
-      function nextSlide() {
-        const nextIndex = (current + 1) % profiles.length;
-        showProfile(nextIndex, 1);
+      // next / prev handlers
+      function goNext() {
+        if (isAnimating) return;
+        const nextIndex = idxNext(current);
+        transitionTo(nextIndex, 1);
+      }
+      function goPrev() {
+        if (isAnimating) return;
+        const prevIndex = idxPrev(current);
+        transitionTo(prevIndex, -1);
       }
 
-      function prevSlide() {
-        const prevIndex = (current - 1 + profiles.length) % profiles.length;
-        showProfile(prevIndex, -1);
+      // attach controls
+      const btnNext = document.querySelector('.testimonials-next-btn');
+      const btnPrev = document.querySelector('.testimonials-prev-btn');
+      btnNext &&
+        btnNext.addEventListener('click', () => {
+          goNext();
+        });
+      btnPrev &&
+        btnPrev.addEventListener('click', () => {
+          goPrev();
+        });
+
+      // autoplay (pauses on hover)
+      let autoplayId = null;
+      function startAutoplay() {
+        autoplayId = setInterval(goNext, 6000);
+      }
+      function stopAutoplay() {
+        if (autoplayId) {
+          clearInterval(autoplayId);
+          autoplayId = null;
+        }
       }
 
-      document.querySelector('.testimonials-next-btn').addEventListener('click', nextSlide);
-      document.querySelector('.testimonials-prev-btn').addEventListener('click', prevSlide);
+      const wrapper = document.querySelector('.testimonials-profiles');
+      wrapper.addEventListener('mouseenter', stopAutoplay);
+      wrapper.addEventListener('mouseleave', startAutoplay);
 
-      // Autoplay
-      setInterval(nextSlide, 6000);
-
-      // Init
-      profiles[current].classList.add('active');
-      gsap.set(profiles[current], { opacity: 1, scale: 1 });
+      // initialize
+      placeInitial();
+      startAutoplay();
     });
   </script>
 </section>
@@ -249,10 +430,6 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "name": "Home Testimonials"
-    }
-  ]
+  "presets": [{ "name": "Home Testimonials" }]
 }
 {% endschema %}
