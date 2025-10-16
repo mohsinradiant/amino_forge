@@ -110,6 +110,8 @@
 .home_science_container {
     border: solid red;
     background: #F5EFF8 !important;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .home_science_container_inner {
