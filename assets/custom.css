@@ -113,7 +113,12 @@
     position: relative;
     padding-bottom: 100px;
 }
-
+.background-home_science_container{
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
 .home_science_container_inner {
     display: flex;
     flex-direction: column;
