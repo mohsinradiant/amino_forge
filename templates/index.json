@@ -285,7 +285,10 @@
         "testimonial_K7Mrc8"
       ],
       "name": "Home Testimonials",
-      "settings": {}
+      "settings": {
+        "caption": "CUSTOMER TESTIMONIALS",
+        "heading_1": "What Customers have to Say?"
+      }
     },
     "collection_links_Ut4aMz": {
       "type": "collection-links",
