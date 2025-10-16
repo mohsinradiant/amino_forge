@@ -28,6 +28,7 @@
     justify-content: start;
     align-items: start;
     gap: 40px;
+    z-index: 2;
   }
    .ai-product-feature__benefits-pillar-{{ ai_gen_id }}::before {
     content: "";
@@ -38,7 +39,7 @@
     height: 100%;
     background-color: #F3EEF6;
     border-radius: 999px;
-    z-index: -1;
+    z-index: 0;
    }
   /* Keep your existing icon wrapper but make it image-friendly */
   .ai-product-feature__benefit-icon-{{ ai_gen_id }} {
