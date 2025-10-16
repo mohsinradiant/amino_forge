@@ -284,6 +284,7 @@
     margin-bottom: 18px;
     will-change: transform, opacity;
 }
+
 .testimonials-profile-img::before {
     content: "";
     position: absolute;
@@ -295,6 +296,7 @@
     background-color: linear-gradient(135deg, #EC68A8 0%, #6C22B7 100%);
     pointer-events: none;
 }
+
 .testimonials-profile-img img {
     width: 100%;
     height: 100%;
