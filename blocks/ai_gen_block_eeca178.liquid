@@ -21,6 +21,41 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
+   .ai-product-feature__benefits-pillar-{{ ai_gen_id }} {
+    position: relative;
+    padding: 24px 20px;
+    border-radius: 999px;
+  }
+
+  /* When pillar is enabled, fill with gradient */
+  .ai-product-feature__benefits-pillar--gradient-{{ ai_gen_id }} {
+    background-image: linear-gradient(
+      {{ block.settings.pill_gradient_angle | default: 90 }}deg,
+      {{ block.settings.pill_gradient_start | default: '#F7E9FF' }},
+      {{ block.settings.pill_gradient_end | default: '#FFE8E8' }}
+    );
+  }
+
+  /* Keep your existing icon wrapper but make it image-friendly */
+  .ai-product-feature__benefit-icon-{{ ai_gen_id }} {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 24px;
+    overflow: hidden; /* allows image masking inside */
+  }
+
+  /* Image inside the icon background */
+  .ai-product-feature__benefit-img-{{ ai_gen_id }} {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    display: block;
+  }
   .ai-product-feature-{{ ai_gen_id }} {
     padding: 60px 20px;
     background-color: {{ block.settings.background_color }};
@@ -334,29 +369,50 @@
 
       <div class="ai-product-feature__grid-{{ ai_gen_id }}">
         <div class="ai-product-feature__benefits-{{ ai_gen_id }}">
-          {% for i in (1..4) %}
-            {% liquid
-              assign benefit_text_key = 'benefit_' | append: i | append: '_text'
-              assign benefit_icon_key = 'benefit_' | append: i | append: '_icon'
-              assign benefit_color_key = 'benefit_' | append: i | append: '_color'
+          {% assign use_pillar = block.settings.enable_benefits_pill %}
+          <div class="ai-product-feature__benefits-pillar-{{ ai_gen_id }} {% if use_pillar %}ai-product-feature__benefits-pillar--gradient-{{ ai_gen_id }}{% endif %}">
+            {% for i in (1..4) %}
+              {% liquid
+                assign benefit_text_key = 'benefit_' | append: i | append: '_text'
+                assign benefit_icon_key = 'benefit_' | append: i | append: '_icon'
+                assign benefit_color_key = 'benefit_' | append: i | append: '_color'
+                assign benefit_color2_key = 'benefit_' | append: i | append: '_color_2'
+                assign benefit_image_key = 'benefit_' | append: i | append: '_image'
 
-              assign benefit_text = block.settings[benefit_text_key]
-              assign benefit_icon = block.settings[benefit_icon_key]
-              assign benefit_color = block.settings[benefit_color_key]
-            %}
+                assign benefit_text = block.settings[benefit_text_key]
+                assign benefit_icon = block.settings[benefit_icon_key]
+                assign benefit_color = block.settings[benefit_color_key]
+                assign benefit_color2 = block.settings[benefit_color2_key]
+                assign benefit_image = block.settings[benefit_image_key]
+              %}
 
-            {% if benefit_text != blank %}
-              <div class="ai-product-feature__benefit-item-{{ ai_gen_id }}">
-                <div
-                  class="ai-product-feature__benefit-icon-{{ ai_gen_id }}"
-                  style="background-color: {{ benefit_color }};"
-                >
-                  {{ benefit_icon }}
+              {% if benefit_text != blank %}
+                {% capture bg_style %}
+                  {% if benefit_color2 != blank %}
+                    background-image: linear-gradient(180deg, {{ benefit_color }}, {{ benefit_color2 }});
+                  {% else %}
+                    background-color: {{ benefit_color }};
+                  {% endif %}
+                {% endcapture %}
+
+                <div class="ai-product-feature__benefit-item-{{ ai_gen_id }}">
+                  <div class="ai-product-feature__benefit-icon-{{ ai_gen_id }}" style="{{ bg_style | strip }}">
+                    {% if benefit_image %}
+                      <img
+                        src="{{ benefit_image | image_url: width: 96 }}"
+                        alt="{{ benefit_text | escape }}"
+                        class="ai-product-feature__benefit-img-{{ ai_gen_id }}"
+                        loading="lazy"
+                      >
+                    {% else %}
+                      {{ benefit_icon }}
+                    {% endif %}
+                  </div>
+                  <div class="ai-product-feature__benefit-text-{{ ai_gen_id }}">{{ benefit_text }}</div>
                 </div>
-                <div class="ai-product-feature__benefit-text-{{ ai_gen_id }}">{{ benefit_text }}</div>
-              </div>
-            {% endif %}
-          {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
 
         <div class="ai-product-feature__media-{{ ai_gen_id }}">
@@ -739,6 +795,77 @@
       "id": "badge_text_color",
       "label": "Badge text",
       "default": "#000000"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_1_image",
+      "label": "Benefit 1 image"
+    },
+    {
+      "type": "color",
+      "id": "benefit_1_color_2",
+      "label": "Benefit 1 secondary color (for gradient)",
+      "info": "Leave empty to use a solid background"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "benefit_2_image",
+      "label": "Benefit 2 image"
+    },
+    {
+      "type": "color",
+      "id": "benefit_2_color_2",
+      "label": "Benefit 2 secondary color (for gradient)"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "benefit_3_image",
+      "label": "Benefit 3 image"
+    },
+    {
+      "type": "color",
+      "id": "benefit_3_color_2",
+      "label": "Benefit 3 secondary color (for gradient)"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "benefit_4_image",
+      "label": "Benefit 4 image"
+    },
+    {
+      "type": "color",
+      "id": "benefit_4_color_2",
+      "label": "Benefit 4 secondary color (for gradient)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_benefits_pill",
+      "label": "Enable vertical gradient pillar",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "pill_gradient_start",
+      "label": "Pillar gradient start",
+      "default": "#F7E9FF"
+    },
+    {
+      "type": "color",
+      "id": "pill_gradient_end",
+      "label": "Pillar gradient end",
+      "default": "#FFE8E8"
+    },
+    {
+      "type": "range",
+      "id": "pill_gradient_angle",
+      "label": "Pillar gradient angle",
+      "min": 0,
+      "max": 360,
+      "step": 4,
+      "default": 80
     }
   ],
   "presets": [
