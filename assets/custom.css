@@ -332,7 +332,7 @@
 .testimonials-role {
     color: #777;
     font-size: 12px;
-    margin: 6px 0 10px;
+    margin: 6px 0 0;
     font-weight: 400;
 }
 
@@ -343,10 +343,11 @@
 }
 
 .testimonials-title {
-    font-weight: 600;
-    color: #004b50;
+    font-weight: 400;
+    color: #000;
     font-size: 17px;
     margin-bottom: 10px;
+    margin-top: 0;
 }
 
 .testimonials-text {
