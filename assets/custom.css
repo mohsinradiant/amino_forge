@@ -243,7 +243,7 @@
 
 .testimonials-carousel-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto 0;
     position: relative;
     padding: 0 80px;
     /* space for side images and buttons */
