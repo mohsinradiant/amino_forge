@@ -226,6 +226,11 @@
     display: none;
 }
 
+.image_desktop_container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
 @media(max-width: 768px) {
     .image_desktop_banner {
         display: none;
