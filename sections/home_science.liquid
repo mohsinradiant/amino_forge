@@ -1,0 +1,54 @@
+<div class="home_science_container section">
+  <h2>{{ section.settings.heading_1 }}</h2>
+  <h3>{{ section.settings.heading_2 }}</h3>
+  <p>{{ section.settings.subheading }}</p>
+  <div class="home_science_container_blocks">
+    {% for block in section.blocks %}
+      <div class="home_science_container_block">
+        <img src="{{ block.settings.image | img_url: 'large' }}">
+        <h3>{{ block.settings.caption }}</h3>
+        <p>{{ block.settings.caption_2 }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Home Science",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "left_subheading",
+      "label": "Left Subheading"
+    },
+    {
+      "type": "text",
+      "id": "left_heading",
+      "label": "Left Heading"
+    },
+    {
+      "type": "text",
+      "id": "right_content",
+      "label": "Right Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Science"
+    }
+  ]
+}
+{% endschema %}
