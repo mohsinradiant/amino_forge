@@ -323,7 +323,7 @@
   <div class="ai-product-feature__container-{{ ai_gen_id }}">
     {% if block.settings.section_title != blank %}
       <div class="ai-product-feature__header-{{ ai_gen_id }}">
-        <h2 class="ai-product-feature__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+        <h2 class="section_heading">{{ block.settings.section_title }}</h2>
       </div>
     {% endif %}
 
@@ -400,10 +400,12 @@
                 {{ selected_variant.compare_at_price | money }}
               </div>
 
-              {% assign discount_percentage = selected_variant.compare_at_price | minus: selected_variant.price | times: 100 | divided_by: selected_variant.compare_at_price %}
-              <div class="ai-product-feature__discount-badge-{{ ai_gen_id }}">
-                -{{ discount_percentage }}%
-              </div>
+              {% assign discount_percentage = selected_variant.compare_at_price
+                | minus: selected_variant.price
+                | times: 100
+                | divided_by: selected_variant.compare_at_price
+              %}
+              <div class="ai-product-feature__discount-badge-{{ ai_gen_id }}">-{{ discount_percentage }}%</div>
             {% endif %}
           </div>
 
@@ -442,7 +444,9 @@
               type="button"
               class="ai-product-feature__add-to-cart-{{ ai_gen_id }}"
               data-variant-id="{{ selected_variant.id }}"
-              {% unless selected_variant.available %}disabled{% endunless %}
+              {% unless selected_variant.available %}
+                disabled
+              {% endunless %}
             >
               {% if selected_variant.available %}
                 {{ block.settings.button_text }}
@@ -454,9 +458,7 @@
         </div>
       </div>
     {% else %}
-      <div class="ai-product-feature__empty-product-{{ ai_gen_id }}">
-        Next, select a product to feature
-      </div>
+      <div class="ai-product-feature__empty-product-{{ ai_gen_id }}">Next, select a product to feature</div>
     {% endif %}
   </div>
 </product-feature-{{ ai_gen_id }}>
@@ -521,14 +523,14 @@
           .then(response => response.json())
           .then(data => {
             this.addToCartButton.textContent = 'Added!';
-            
+
             setTimeout(() => {
               this.addToCartButton.disabled = false;
               this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-original-text') || 'Add to Cart';
             }, 2000);
 
             document.dispatchEvent(new CustomEvent('cart:refresh'));
-            
+
             if (window.theme && window.theme.cart) {
               window.theme.cart.refresh();
             }
@@ -537,7 +539,7 @@
             console.error('Error adding to cart:', error);
             this.addToCartButton.disabled = false;
             this.addToCartButton.textContent = 'Error - Try Again';
-            
+
             setTimeout(() => {
               this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-original-text') || 'Add to Cart';
             }, 2000);
