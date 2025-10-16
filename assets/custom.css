@@ -279,12 +279,22 @@
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid transparent;
+    border: 4px solid #fff;
     box-sizing: border-box;
     margin-bottom: 18px;
     will-change: transform, opacity;
 }
-
+.testimonials-profile-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: linear-gradient(135deg, #EC68A8 0%, #6C22B7 100%);
+    pointer-events: none;
+}
 .testimonials-profile-img img {
     width: 100%;
     height: 100%;
