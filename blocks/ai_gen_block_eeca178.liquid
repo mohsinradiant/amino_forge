@@ -324,6 +324,7 @@
     {% if block.settings.section_title != blank %}
       <div class="ai-product-feature__header-{{ ai_gen_id }}">
         <h2 class="section_heading">{{ block.settings.section_title }}</h2>
+        <h2 class="section_subheading">{{ block.settings.section_subtitle }}</h2>
       </div>
     {% endif %}
 
@@ -568,6 +569,11 @@
       "id": "section_title",
       "label": "Section title",
       "default": "Amino Forge's AF 9"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle"
     },
     {
       "type": "range",
