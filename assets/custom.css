@@ -243,11 +243,16 @@
 
 .testimonials-carousel-container {
     max-width: 900px;
-    font-family: 'Gotham', sans-serif !important;
     margin: 20px auto 0;
     position: relative;
     padding: 0 80px;
     /* space for side images and buttons */
+}
+
+.testimonials-content h3,
+.testimonials-content p,
+.testimonials-content h4 {
+    font-family: 'Gotham', sans-serif !important;
 }
 
 /* Profiles area */
