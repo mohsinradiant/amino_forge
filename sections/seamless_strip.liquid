@@ -8,45 +8,45 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <style>
-  /* Basic styling for the marquee section */
-  .marquee-wrapper {
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 1rem 0;
-    margin: 0;
-    /* Apply settings from liquid */
-    background-color: {{ section.settings.bg_color }};
-    color: {{ section.settings.text_color }};
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  }
-
-  /* Container holding the duplicated tracks - this is the element animated by GSAP */
-  .marquee-container {
-    display: flex;
-    width: fit-content; /* Ensure it's wide enough to hold two tracks side-by-side */
-    will-change: transform; /* Performance optimization */
-  }
-
-  /* The actual track containing the content (rendered twice) */
-  .marquee-track {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0; /* Prevents tracks from shrinking */
-  }
-
-  /* Style for each text block item */
-  .marquee-item {
-    display: flex;
-    align-items: center;
-    font-size: {{ section.settings.font_size }};
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0 20px 0 0px; /* Spacing between items and around the icon */
-  }
-    .bullet-point {
-        margin: 0 0  0 20px;
+    /* Basic styling for the marquee section */
+    .marquee-wrapper {
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 1rem 0;
+      margin: 0;
+      /* Apply settings from liquid */
+      background-color: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }};
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     }
+
+    /* Container holding the duplicated tracks - this is the element animated by GSAP */
+    .marquee-container {
+      display: flex;
+      width: fit-content; /* Ensure it's wide enough to hold two tracks side-by-side */
+      will-change: transform; /* Performance optimization */
+    }
+
+    /* The actual track containing the content (rendered twice) */
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0; /* Prevents tracks from shrinking */
+    }
+
+    /* Style for each text block item */
+    .marquee-item {
+  display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      padding: 0 20px 0 0px;
+      }
+      .bullet-point {
+          margin: 0 0  0 20px;
+      }
 </style>
 
 <div class="marquee-wrapper" data-section-id="{{ section.id }}">
