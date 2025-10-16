@@ -141,10 +141,10 @@
       ],
       "name": "Seamless Strip",
       "settings": {
-        "bg_color": "#1a533c",
-        "text_color": "#ffffff",
-        "font_size": "1.25rem",
-        "speed_pps": 50
+        "bg_color": "#ffcc00",
+        "text_color": "#000000",
+        "font_size": "1rem",
+        "speed_pps": 75
       }
     },
     "home_images_strip_yTNNik": {
