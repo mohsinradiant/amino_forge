@@ -1,3 +1,16 @@
+<style>
+  .image_desktop_container {
+    margin-top: {{ section.settings.margin_top_desktop | default: 0 }}px;
+    margin-bottom: {{ section.settings.margin_bottom_desktop | default: 0 }}px;
+  }
+
+  @media (max-width: 749px) {
+    .image_desktop_container {
+      margin-top: {{ section.settings.margin_top_mobile | default: 0 }}px;
+      margin-bottom: {{ section.settings.margin_bottom_mobile | default: 0 }}px;
+    }
+  }
+</style>
 <a
   class="image_desktop_container {%if section.settings.layout == 'contained'%}section{% endif %}"
   href="{{section.settings.url}}"
@@ -38,6 +51,46 @@
           "label": "Contained"
         }
       ]
+    },
+    {
+      "type": "range",
+      "id": "margin_top_desktop",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_desktop",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "default": 0
     }
   ],
   "presets": [
