@@ -302,9 +302,9 @@
         "mobile_image": "shopify://shop_images/Group_323.png",
         "url": "shopify://collections/all",
         "layout": "full_width",
-        "margin_top_desktop": 0,
+        "margin_top_desktop": 80,
         "margin_bottom_desktop": 0,
-        "margin_top_mobile": 0,
+        "margin_top_mobile": 50,
         "margin_bottom_mobile": 0
       }
     },
