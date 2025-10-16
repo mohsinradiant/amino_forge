@@ -27,15 +27,6 @@
     border-radius: 999px;
   }
 
-  /* When pillar is enabled, fill with gradient */
-  .ai-product-feature__benefits-pillar--gradient-{{ ai_gen_id }} {
-    background-image: linear-gradient(
-      {{ block.settings.pill_gradient_angle | default: 90 }}deg,
-      {{ block.settings.pill_gradient_start | default: '#F7E9FF' }},
-      {{ block.settings.pill_gradient_end | default: '#FFE8E8' }}
-    );
-  }
-
   /* Keep your existing icon wrapper but make it image-friendly */
   .ai-product-feature__benefit-icon-{{ ai_gen_id }} {
     width: 56px;
