@@ -203,9 +203,15 @@
     color: #FFD800;
     transition: all 0.3s ease;
 }
-.home_health_benefits_inner{
+
+.home_health_benefits_inner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 80px;
+}
+
+.home_health_benefits_inner .section_subheading {
+    font-weight: 300;
 }
