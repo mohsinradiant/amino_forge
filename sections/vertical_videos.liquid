@@ -141,19 +141,18 @@
     '
   >
     {%- for block in section.blocks -%}
-      {%- if block.type == 'video' and block.settings.video_url != blank -%}
-        {%- assign video_url = block.settings.video_url -%}
-        {%- assign media_id = video_url | split: '/' | last -%}
+      {%- if block.type == 'video' and block.settings.video_file != blank -%}
+        {%- assign video_src = block.settings.video_file | file_url -%}
 
         <div
           class="carousel-cell"
           data-video-cell
-          data-media-id="{{ media_id }}"
+          data-media-id="{{ block.id }}"
           {{ block.shopify_attributes }}
         >
           <video
             data-video-player
-            src="{{ video_url }}"
+            src="{{ video_src }}"
             poster="{% if block.settings.video_poster != blank %}{{ block.settings.video_poster | image_url: width: 720 }}{% endif %}"
             loop
             muted
@@ -332,10 +331,9 @@
       "name": "Vertical Video",
       "settings": [
         {
-          "type": "url",
-          "id": "video_url",
-          "label": "Video File URL",
-          "info": "Upload your vertical MP4 video file to your Shopify 'Files' and paste the URL here."
+          "type": "video",
+          "id": "video_file",
+          "label": "Video file (from Files)"
         },
         {
           "type": "image_picker",
