@@ -1,4 +1,7 @@
-<a class="image_desktop_container" href="{{section.settings.url}}">
+<a
+  class="image_desktop_container {%if section.settings.layout == 'contained'%}section{% endif %}"
+  href="{{section.settings.url}}"
+>
   <img class="image_desktop_banner" src="{{section.settings.desktop_image | img_url: 'master'}}">
   <img class="image_mobile_banner" src="{{section.settings.mobile_image | img_url: 'master'}}">
 </a>
@@ -20,6 +23,21 @@
       "type": "url",
       "id": "url",
       "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "full_width",
+          "label": "Full Width"
+        },
+        {
+          "value": "contained",
+          "label": "Contained"
+        }
+      ]
     }
   ],
   "presets": [
