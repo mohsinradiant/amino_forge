@@ -182,6 +182,50 @@
         "right_content": "The Advanced Liposomal Amino Supplement represents the pinnacle of intelligent nutrition — where scientific precision meets purposeful wellbeing. By combining next-generation liposomal delivery technology with clinically trusted, bioavailable amino acids, it ensures optimal cellular absorption and long-lasting vitality from within."
       }
     },
+    "home_science_w9dXe3": {
+      "type": "home_science",
+      "blocks": {
+        "block_GiWMLa": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/home_science_1.png",
+            "caption": "Rapid Absorption",
+            "caption_2": "Free-form amino acids bypass digestion, entering your bloodstream within 20 minutes for immediate utilization."
+          }
+        },
+        "block_jhH8J7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/home_science_1.png",
+            "caption": "Muscle Protein Synthesis",
+            "caption_2": "Triggers the mTOR pathway, the body's master regulator of muscle growth and cellular repair."
+          }
+        },
+        "block_RmxrVW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/home_science_3.png",
+            "caption": "Systemic Benefits",
+            "caption_2": "Supports neurotransmitter production, immune function, and metabolic processes throughout your body"
+          }
+        }
+      },
+      "block_order": [
+        "block_GiWMLa",
+        "block_jhH8J7",
+        "block_RmxrVW"
+      ],
+      "name": "Home Science",
+      "settings": {
+        "heading_1": "The Science Behind",
+        "heading_2": "AF 9’s Maximum Results",
+        "subheading": "For those who redefine wellness. Our premium liposomal amino formula fuels your body’s natural potential—enhancing recovery, energy, and vitality with precision and purity.",
+        "cta_caption_1": "Need More Information?",
+        "cta_caption_2": "Talk to Our Nutrition Expert",
+        "cta_button": "CONTACT NOW",
+        "cta_url": "shopify://pages/contact"
+      }
+    },
     "collection_links_Ut4aMz": {
       "type": "collection-links",
       "blocks": {
@@ -738,6 +782,7 @@
     "slideshow_Pb7dBN",
     "home_images_strip_yTNNik",
     "home_ingredient_description_z7hiHj",
+    "home_science_w9dXe3",
     "collection_links_Ut4aMz",
     "featured_product_mTUbKC",
     "product_list_UwRqN4",
