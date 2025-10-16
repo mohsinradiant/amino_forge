@@ -427,6 +427,7 @@ footer .menu__item a {
     margin-bottom: 10px;
     font-weight: 300 !important;
     font-size: 12px !important;
+    text-transform: capitalize;
 }
 
 @media(max-width: 768px) {
