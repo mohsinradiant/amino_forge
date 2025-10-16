@@ -331,8 +331,9 @@
 
 .testimonials-role {
     color: #777;
-    font-size: 14px;
+    font-size: 12px;
     margin: 6px 0 10px;
+    font-weight: 400;
 }
 
 .testimonials-stars {
