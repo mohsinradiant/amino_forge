@@ -11,40 +11,37 @@
       </div>
     {% endfor %}
   </div>
+  <p>{{ section.settings.cta_caption_1 }}</p>
+  <p>{{ section.settings.cta_caption_2 }}</p>
+  <a href="{{section.settings.cta_url}}">{{ section.settings.cta_button }}</a>
 </div>
 {% schema %}
 {
   "name": "Home Science",
   "blocks": [
     {
-      "type": "image",
-      "name": "Image",
+      "type": "block",
+      "name": "Block",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        },
+        {
+          "type": "text",
+          "id": "caption_2",
+          "label": "Caption 2"
         }
       ]
     }
   ],
-  "settings": [
-    {
-      "type": "text",
-      "id": "left_subheading",
-      "label": "Left Subheading"
-    },
-    {
-      "type": "text",
-      "id": "left_heading",
-      "label": "Left Heading"
-    },
-    {
-      "type": "text",
-      "id": "right_content",
-      "label": "Right Content"
-    }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "Home Science"
