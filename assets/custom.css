@@ -111,3 +111,10 @@
     border: solid red;
     background: #F5EFF8;
 }
+
+.home_science_container_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
