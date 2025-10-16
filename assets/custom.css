@@ -120,7 +120,7 @@
     align-items: center;
 }
 
-.home_science_container_inner h2 {
+.section_heading {
     margin: 0;
     font-family: 'Gotham', sans-serif;
     font-size: 40px;
@@ -135,7 +135,7 @@
     color: #9E3EB2;
 }
 
-.home_science_container_inner p {
+.section_subheading {
     font-size: 16px;
     text-align: center;
     font-weight: 400;
