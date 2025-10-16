@@ -227,8 +227,6 @@
 }
 
 .image_desktop_container {
-    margin-top: 80px;
-    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
 }
