@@ -148,3 +148,10 @@
     justify-content: space-between;
     align-items: start;
 }
+
+.home_science_container_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
