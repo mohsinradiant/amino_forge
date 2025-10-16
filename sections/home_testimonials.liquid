@@ -168,6 +168,21 @@
     .testimonials-next-btn {
       right: -60px;
     }
+
+    .carousel-track {
+      display: flex;
+      gap: 40px;
+      animation: scroll-right 25s linear infinite;
+    }
+
+    @keyframes scroll-right {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
   </style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
