@@ -158,7 +158,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Follow us on</strong></p>",
+                    "text": "<p>Follow us on</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
