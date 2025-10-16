@@ -112,6 +112,41 @@
         "padding-block-end": 0
       }
     },
+    "seamless_strip_NhmNRQ": {
+      "type": "seamless_strip",
+      "blocks": {
+        "text_item_6xeb4G": {
+          "type": "text_item",
+          "settings": {
+            "text": "Validated by 3rd Party Testing"
+          }
+        },
+        "text_item_bQzPad": {
+          "type": "text_item",
+          "settings": {
+            "text": "Science-Backed Formulas"
+          }
+        },
+        "text_item_nUeXhT": {
+          "type": "text_item",
+          "settings": {
+            "text": "Clinically Studied Ingredients"
+          }
+        }
+      },
+      "block_order": [
+        "text_item_6xeb4G",
+        "text_item_bQzPad",
+        "text_item_nUeXhT"
+      ],
+      "name": "Seamless Strip",
+      "settings": {
+        "bg_color": "#1a533c",
+        "text_color": "#ffffff",
+        "font_size": "1.25rem",
+        "speed_pps": 50
+      }
+    },
     "home_images_strip_yTNNik": {
       "type": "home_images_strip",
       "blocks": {
@@ -145,6 +180,7 @@
         "image_PdecjH",
         "image_tAzQ7P"
       ],
+      "disabled": true,
       "name": "Home Images Strip",
       "settings": {}
     },
@@ -465,6 +501,7 @@
   },
   "order": [
     "slideshow_Pb7dBN",
+    "seamless_strip_NhmNRQ",
     "home_images_strip_yTNNik",
     "home_ingredient_description_z7hiHj",
     "featured_product_mTUbKC",
