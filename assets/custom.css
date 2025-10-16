@@ -416,7 +416,7 @@
 footer .menu__heading {
     font-family: Gotham, sans-serif !important;
     color: #333333 !important;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 400 !important;
     font-size: 13px !important;
 }
@@ -437,7 +437,7 @@ footer .menu__item {
 footer .text-block h3 {
     font-family: Gotham, sans-serif !important;
     color: #333333 !important;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 400 !important;
     font-size: 13px !important;
 }
