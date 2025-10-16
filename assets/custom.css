@@ -51,8 +51,8 @@
 
 .home_ingredients_desc {
     background-color: #F5EFF8 !important;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .home_ingredients_desc_top_container {
@@ -99,7 +99,7 @@
     width: 100%;
     align-items: center;
     justify-content: end;
-    padding-top: 120px;
+    padding-top: 100px;
     gap: 30px;
 }
 
