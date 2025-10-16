@@ -258,7 +258,7 @@
 /* Profiles area */
 .testimonials-profiles {
     position: relative;
-    height: 420px;
+    height: 300px;
     overflow: visible;
 }
 
@@ -426,7 +426,6 @@
     }
 
     .testimonials-profiles {
-        height: auto;
         padding-bottom: 20px;
     }
 
