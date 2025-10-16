@@ -184,13 +184,13 @@
                   "type": "social-links",
                   "name": "t:names.social_media_links",
                   "settings": {
-                    "facebook_url": "https://facebook.com",
-                    "instagram_url": "https://instagram.com",
-                    "youtube_url": "https://youtube.com",
+                    "facebook_url": "shopify://collections/all",
+                    "instagram_url": "shopify://collections/all",
+                    "youtube_url": "shopify://collections/all",
                     "tiktok_url": "",
-                    "twitter_url": "https://x.com",
+                    "twitter_url": "shopify://collections/all",
                     "threads_url": "",
-                    "linkedin_url": "https://linkedin.com",
+                    "linkedin_url": "shopify://collections/all",
                     "bluesky_url": "",
                     "snapchat_url": "",
                     "pinterest_url": "",
@@ -460,7 +460,7 @@
         "gap": 0,
         "color_scheme": "",
         "padding-block-start": 64,
-        "padding-block-end": 0
+        "padding-block-end": 64
       }
     },
     "utilities": {
@@ -469,7 +469,7 @@
         "copyright": {
           "type": "footer-copyright",
           "settings": {
-            "show_powered_by": true,
+            "show_powered_by": false,
             "font_size": "0.75rem",
             "case": "none"
           },
@@ -494,8 +494,8 @@
         "gap": 24,
         "divider_thickness": 1,
         "color_scheme": "",
-        "padding-block-start": 12,
-        "padding-block-end": 16
+        "padding-block-start": 26,
+        "padding-block-end": 26
       }
     }
   },
