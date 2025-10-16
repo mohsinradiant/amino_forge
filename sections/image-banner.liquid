@@ -1,6 +1,6 @@
 <a class="image_desktop_container" href="{{section.settings.url}}">
-  <img class="image_desktop_banner" src="{{section.settings.desktop_image}}">
-  <img class="image_mobile_banner" src="{{section.settings.mobile_image}}">
+  <img class="image_desktop_banner" src="{{section.settings.desktop_image | img_url: 'master'}}">
+  <img class="image_mobile_banner" src="{{section.settings.mobile_image | img_url: 'master'}}">
 </a>
 {% schema %}
 {
