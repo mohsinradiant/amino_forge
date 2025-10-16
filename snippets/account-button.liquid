@@ -35,20 +35,20 @@
       {{- initial -}}
     </span>
   {%- else -%}
+    <span
+      class="account-button__icon"
+      aria-hidden="true"
+    >
+      {{- 'icon-account.svg' | inline_asset_content -}}
+    </span>
     {% comment %}
       <span
         class="account-button__icon"
         aria-hidden="true"
       >
-        {{- 'icon-account.svg' | inline_asset_content -}}
+        {{- 'sign-in-figma.svg' | inline_asset_content -}}
       </span>
     {% endcomment %}
-    <span
-      class="account-button__icon"
-      aria-hidden="true"
-    >
-      {{- 'sign-in-figma.svg' | inline_asset_content -}}
-    </span>
   {%- endif -%}
 </{{ tag }}>
 
