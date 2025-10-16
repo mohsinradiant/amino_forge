@@ -55,7 +55,7 @@
           {%- if block.type == 'text_item' -%}
             <span class="marquee-item" {{ block.shopify_attributes }}>
               {{ block.settings.text | escape }}
-              •
+              <p class="bullet-point">•</p>
             </span>
           {%- endif -%}
         {%- endfor -%}
