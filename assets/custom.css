@@ -421,6 +421,14 @@ footer .menu__heading {
     font-size: 13px !important;
 }
 
+footer .menu__item a {
+    font-family: Gotham, sans-serif !important;
+    color: #000 !important;
+    margin-bottom: 10px;
+    font-weight: 300 !important;
+    font-size: 12px !important;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
