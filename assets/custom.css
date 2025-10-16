@@ -353,10 +353,11 @@
 }
 
 .testimonials-text {
-    color: #444;
-    font-style: italic;
+    color: #000;
+    font-weight: 300;
     line-height: 1.6;
     margin: 0 auto;
+    font-size: 13px;
 }
 
 /* active profile - shows full content and pointer events */
