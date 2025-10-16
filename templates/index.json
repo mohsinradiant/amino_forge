@@ -425,13 +425,27 @@
         "image": "shopify://shop_images/home_health_benefits.png"
       }
     },
+    "image_banner_9CTyFG": {
+      "type": "image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Group_322.png",
+        "mobile_image": "shopify://shop_images/Group_322.png",
+        "url": "shopify://collections/all",
+        "layout": "full_width",
+        "margin_top_desktop": 80,
+        "margin_bottom_desktop": 80,
+        "margin_top_mobile": 50,
+        "margin_bottom_mobile": 50
+      }
+    },
     "vertical_videos_y7aXNQ": {
       "type": "vertical_videos",
       "blocks": {
         "video_L6qCmw": {
           "type": "video",
           "settings": {
-            "video_url": ""
+            "video_file": "shopify://files/videos/AQM9jYTv0LP7eH3MA1jCz_HoU1qD46UGgT9dENM6dOPciWkd0KZ9iZKgWbZCetayfeAeaT8HQPy0YRx4Ab2Dy83L5OHcy2InFmKLuUM.mp4"
           }
         }
       },
@@ -445,20 +459,6 @@
         "video_width": 30,
         "padding_top": 40,
         "padding_bottom": 40
-      }
-    },
-    "image_banner_9CTyFG": {
-      "type": "image-banner",
-      "name": "Image Banner",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Group_322.png",
-        "mobile_image": "shopify://shop_images/Group_322.png",
-        "url": "shopify://collections/all",
-        "layout": "full_width",
-        "margin_top_desktop": 80,
-        "margin_bottom_desktop": 80,
-        "margin_top_mobile": 50,
-        "margin_bottom_mobile": 50
       }
     },
     "home_testimonials_aBLFNr": {
@@ -530,8 +530,8 @@
     "176061028945f61dec",
     "home_science_w9dXe3",
     "home_health_benefits_icPjxx",
-    "vertical_videos_y7aXNQ",
     "image_banner_9CTyFG",
+    "vertical_videos_y7aXNQ",
     "home_testimonials_aBLFNr",
     "image_banner_HtzUcM"
   ]
