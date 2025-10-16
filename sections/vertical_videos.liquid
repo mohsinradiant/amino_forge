@@ -134,7 +134,7 @@
         >
           <video
             data-video-player
-            src="{{ video_src }}"
+            src="{{ video_src |  video_tag }}"
             poster="{% if block.settings.video_poster != blank %}{{ block.settings.video_poster | image_url: width: 720 }}{% endif %}"
             loop
             muted
