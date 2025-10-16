@@ -1,0 +1,184 @@
+{% comment %}
+  GSAP Marquee Text Strip Section
+
+  This section creates a horizontally scrolling text strip with customizable text blocks
+  and background/text colors. It uses GSAP for a smooth, performant, and unlimited loop.
+{% endcomment %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+  /* Basic styling for the marquee section */
+  .marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1rem 0;
+    margin: 0;
+    /* Apply settings from liquid */
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  }
+
+  /* Container holding the duplicated tracks - this is the element animated by GSAP */
+  .marquee-container {
+    display: flex;
+    width: fit-content; /* Ensure it's wide enough to hold two tracks side-by-side */
+    will-change: transform; /* Performance optimization */
+  }
+
+  /* The actual track containing the content (rendered twice) */
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevents tracks from shrinking */
+  }
+
+  /* Style for each text block item */
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    font-size: {{ section.settings.font_size }};
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0 2rem; /* Spacing between items and around the icon */
+  }
+
+  /* Style for the decorative icon (star) */
+  .star-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0 1rem; /* Spacing around the icon */
+    stroke: currentColor;
+    fill: none;
+    display: block;
+    flex-shrink: 0;
+  }
+</style>
+
+<div class="marquee-wrapper" data-section-id="{{ section.id }}">
+  <div class="marquee-container" data-marquee-container>
+    {% comment %} Render the content track twice for seamless looping {% endcomment %}
+    {% for i in (1..2) %}
+      <div class="marquee-track" data-track-index="{{ i }}">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'text_item' -%}
+            <span class="marquee-item" {{ block.shopify_attributes }}>
+              {{ block.settings.text | escape }}
+              {% comment %} Star Icon SVG - Matches the screenshot style {% endcomment %}
+              <svg
+                class="star-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sectionId = "{{ section.id }}";
+    const wrapper = document.querySelector(`[data-section-id="${sectionId}"]`);
+    if (!wrapper) return;
+
+    const container = wrapper.querySelector('[data-marquee-container]');
+    const trackOne = wrapper.querySelector('.marquee-track[data-track-index="1"]');
+    if (!container || !trackOne) return;
+
+    // Get the total width of a single track
+    const trackWidth = trackOne.offsetWidth;
+    // Get the desired speed from section settings (in pixels per second)
+    const speed = {{ section.settings.speed_pps | default: 50 }};
+    // Calculate duration based on width and speed
+    const duration = trackWidth / speed;
+
+    // Use GSAP to create the seamless infinite loop
+    gsap.to(container, {
+      x: -trackWidth, // Move the container by the width of one track
+      duration: duration,
+      ease: "none",
+      repeat: -1, // Infinite loop
+      overwrite: true,
+      // When the animation completes, it instantly jumps back to the start (x: 0)
+      // and immediately starts the next repeat cycle, creating a seamless loop.
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "GSAP Running Marquee",
+  "tag": "section",
+  "class": "section-running-marquee",
+  "max_blocks": 15,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Marquee Settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#1a533c"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "font_size",
+      "label": "Font Size",
+      "default": "1.25rem",
+      "options": [
+        { "value": "1rem", "label": "Small" },
+        { "value": "1.25rem", "label": "Medium" },
+        { "value": "1.5rem", "label": "Large" },
+        { "value": "1.75rem", "label": "Extra Large" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "speed_pps",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "unit": "p/s",
+      "label": "Scroll Speed (pixels/second)",
+      "default": 50,
+      "info": "Adjusts the scroll speed of the text strip. Higher value is faster."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Feature Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seamless Strip"
+    }
+  ]
+}
+{% endschema %}
