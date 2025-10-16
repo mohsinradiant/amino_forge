@@ -235,6 +235,15 @@
         "image": "shopify://shop_images/home_health_benefits.png"
       }
     },
+    "image_banner_9CTyFG": {
+      "type": "image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Group_322.png",
+        "mobile_image": "shopify://shop_images/Group_322.png",
+        "url": "shopify://collections/all"
+      }
+    },
     "collection_links_Ut4aMz": {
       "type": "collection-links",
       "blocks": {
@@ -793,6 +802,7 @@
     "home_ingredient_description_z7hiHj",
     "home_science_w9dXe3",
     "home_health_benefits_icPjxx",
+    "image_banner_9CTyFG",
     "collection_links_Ut4aMz",
     "featured_product_mTUbKC",
     "product_list_UwRqN4",
