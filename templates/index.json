@@ -226,6 +226,15 @@
         "cta_url": "shopify://pages/contact"
       }
     },
+    "home_health_benefits_icPjxx": {
+      "type": "home_health_benefits",
+      "name": "Home Health Benefits",
+      "settings": {
+        "heading_1": "Key Health Benefits",
+        "subheading": "Liposomal technology significantly enhances nutrient absorption, ensuring your body receives optimal benefits.",
+        "image": "shopify://shop_images/home_health_benefits.png"
+      }
+    },
     "collection_links_Ut4aMz": {
       "type": "collection-links",
       "blocks": {
@@ -783,6 +792,7 @@
     "home_images_strip_yTNNik",
     "home_ingredient_description_z7hiHj",
     "home_science_w9dXe3",
+    "home_health_benefits_icPjxx",
     "collection_links_Ut4aMz",
     "featured_product_mTUbKC",
     "product_list_UwRqN4",
