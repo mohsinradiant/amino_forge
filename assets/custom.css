@@ -108,17 +108,13 @@
 }
 
 .home_science_container {
-    background: #F5EFF8 !important;
+    /* background: #F5EFF8 !important; */
     padding-top: 100px;
     position: relative;
     padding-bottom: 100px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Rectangle_439.png?v=1760621291);
 }
-.background-home_science_container{
-    position: absolute;
-    z-index: 0;
-    height: 100%;
-    width: 100%;
-}
+
 .home_science_container_inner {
     display: flex;
     flex-direction: column;
