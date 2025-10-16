@@ -447,11 +447,47 @@
           "settings": {
             "video_file": "shopify://files/videos/AQM9jYTv0LP7eH3MA1jCz_HoU1qD46UGgT9dENM6dOPciWkd0KZ9iZKgWbZCetayfeAeaT8HQPy0YRx4Ab2Dy83L5OHcy2InFmKLuUM.mp4"
           }
+        },
+        "video_ggwNmU": {
+          "type": "video",
+          "settings": {
+            "video_file": "shopify://files/videos/AQM9jYTv0LP7eH3MA1jCz_HoU1qD46UGgT9dENM6dOPciWkd0KZ9iZKgWbZCetayfeAeaT8HQPy0YRx4Ab2Dy83L5OHcy2InFmKLuUM.mp4"
+          }
+        },
+        "video_MKGthY": {
+          "type": "video",
+          "settings": {
+            "video_file": "shopify://files/videos/AQM9jYTv0LP7eH3MA1jCz_HoU1qD46UGgT9dENM6dOPciWkd0KZ9iZKgWbZCetayfeAeaT8HQPy0YRx4Ab2Dy83L5OHcy2InFmKLuUM.mp4"
+          }
+        },
+        "video_94XJmM": {
+          "type": "video",
+          "settings": {
+            "video_file": "shopify://files/videos/AQM9jYTv0LP7eH3MA1jCz_HoU1qD46UGgT9dENM6dOPciWkd0KZ9iZKgWbZCetayfeAeaT8HQPy0YRx4Ab2Dy83L5OHcy2InFmKLuUM.mp4"
+          }
+        },
+        "video_xdkjAJ": {
+          "type": "video",
+          "settings": {
+            "video_file": "shopify://files/videos/AQM9jYTv0LP7eH3MA1jCz_HoU1qD46UGgT9dENM6dOPciWkd0KZ9iZKgWbZCetayfeAeaT8HQPy0YRx4Ab2Dy83L5OHcy2InFmKLuUM.mp4"
+          }
+        },
+        "video_bn9HXD": {
+          "type": "video",
+          "settings": {
+            "video_file": "shopify://files/videos/AQM9jYTv0LP7eH3MA1jCz_HoU1qD46UGgT9dENM6dOPciWkd0KZ9iZKgWbZCetayfeAeaT8HQPy0YRx4Ab2Dy83L5OHcy2InFmKLuUM.mp4"
+          }
         }
       },
       "block_order": [
-        "video_L6qCmw"
+        "video_L6qCmw",
+        "video_ggwNmU",
+        "video_MKGthY",
+        "video_94XJmM",
+        "video_xdkjAJ",
+        "video_bn9HXD"
       ],
+      "disabled": true,
       "name": "Vertical Video Stories",
       "settings": {
         "bg_color": "#f5f5f5",
