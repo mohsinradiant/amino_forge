@@ -241,8 +241,51 @@
       "settings": {
         "desktop_image": "shopify://shop_images/Group_322.png",
         "mobile_image": "shopify://shop_images/Group_322.png",
-        "url": "shopify://collections/all"
+        "url": "shopify://collections/all",
+        "layout": "full_width"
       }
+    },
+    "home_testimonials_aBLFNr": {
+      "type": "home_testimonials",
+      "blocks": {
+        "testimonial_7XeGGd": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_368.png",
+            "name": "Priya Sharma",
+            "role": "Marathon Runner, Delhi",
+            "title": "My Secret Weapon for Long Runs on My Daily Routine!",
+            "text": "\"This product is a revelation. It doesn't upset my stomach like other supplements, and I genuinely feel it helps my muscles recover faster after those 20+ km runs. I feel stronger and less fatigued, which is crucial for my training.\""
+          }
+        },
+        "testimonial_EB9XxF": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_368.png",
+            "name": "Priya Sharma",
+            "role": "Marathon Runner, Delhi",
+            "title": "My Secret Weapon for Long Runs on My Daily Routine!",
+            "text": "\"This product is a revelation. It doesn't upset my stomach like other supplements, and I genuinely feel it helps my muscles recover faster after those 20+ km runs. I feel stronger and less fatigued, which is crucial for my training.\""
+          }
+        },
+        "testimonial_K7Mrc8": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_368.png",
+            "name": "Priya Sharma",
+            "role": "Marathon Runner, Delhi",
+            "title": "My Secret Weapon for Long Runs on My Daily Routine!",
+            "text": "\"This product is a revelation. It doesn't upset my stomach like other supplements, and I genuinely feel it helps my muscles recover faster after those 20+ km runs. I feel stronger and less fatigued, which is crucial for my training.\""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_7XeGGd",
+        "testimonial_EB9XxF",
+        "testimonial_K7Mrc8"
+      ],
+      "name": "Home Testimonials",
+      "settings": {}
     },
     "collection_links_Ut4aMz": {
       "type": "collection-links",
@@ -803,6 +846,7 @@
     "home_science_w9dXe3",
     "home_health_benefits_icPjxx",
     "image_banner_9CTyFG",
+    "home_testimonials_aBLFNr",
     "collection_links_Ut4aMz",
     "featured_product_mTUbKC",
     "product_list_UwRqN4",
