@@ -125,7 +125,7 @@
     font-family: 'Gotham', sans-serif;
     font-size: 40px;
     text-align: center;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 .home_science_container_inner h3 {
@@ -401,6 +401,7 @@
 .section_caption {
     color: #9E3EB2;
     font-size: 13px;
+    margin: 0;
 }
 
 @media(max-width: 768px) {
