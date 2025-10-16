@@ -6,6 +6,7 @@
 {% endcomment %}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ModifiersPlugin.min.js"></script>
 
 <style>
     /* Basic styling for the marquee section */
@@ -18,6 +19,7 @@
       background-color: {{ section.settings.bg_color }};
       color: {{ section.settings.text_color }};
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      font-size: {{ section.settings.font_size }};
     }
 
     /* Container holding the duplicated tracks - this is the element animated by GSAP */
@@ -69,6 +71,9 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    if (window.ModifiersPlugin) {
+      gsap.registerPlugin(ModifiersPlugin);
+    }
     const sectionId = "{{ section.id }}";
     const wrapper = document.querySelector(`[data-section-id="${sectionId}"]`);
     if (!wrapper) return;
@@ -77,23 +82,60 @@
     const trackOne = wrapper.querySelector('.marquee-track[data-track-index="1"]');
     if (!container || !trackOne) return;
 
-    // Get the total width of a single track
-    const trackWidth = trackOne.offsetWidth;
-    // Get the desired speed from section settings (in pixels per second)
-    const speed = {{ section.settings.speed_pps | default: 50 }};
-    // Calculate duration based on width and speed
-    const duration = trackWidth / speed;
+    const speed = {{ section.settings.speed_pps | default: 50 }}; // pixels per second
 
-    // Use GSAP to create the seamless infinite loop
-    gsap.to(container, {
-      x: -trackWidth, // Move the container by the width of one track
-      duration: duration,
-      ease: "none",
-      repeat: -1, // Infinite loop
-      overwrite: true,
-      // When the animation completes, it instantly jumps back to the start (x: 0)
-      // and immediately starts the next repeat cycle, creating a seamless loop.
-    });
+    function initMarquee() {
+      // Kill any existing tween before re-initializing
+      if (container._marqueeTween) {
+        container._marqueeTween.kill();
+        container._marqueeTween = null;
+      }
+
+      // Reset position for fresh measurement and animation
+      gsap.set(container, { x: 0 });
+
+      // Measure after layout
+      const trackWidth = trackOne.getBoundingClientRect().width;
+      if (!trackWidth || trackWidth <= 0) {
+        // Try again on next frame if fonts/images/layout aren't ready yet
+        requestAnimationFrame(initMarquee);
+        return;
+      }
+
+      const duration = trackWidth / speed;
+
+      // Seamless loop: wrap x between [-trackWidth, 0)
+      const wrapX = gsap.utils.wrap(-trackWidth, 0);
+      container._marqueeTween = gsap.to(container, {
+        x: -trackWidth,
+        duration: duration,
+        ease: "none",
+        repeat: -1,
+        overwrite: true,
+        modifiers: {
+          x: function(value) {
+            const numeric = parseFloat(value) || 0;
+            return wrapX(numeric) + "px";
+          }
+        }
+      });
+    }
+
+    // Initialize once layout is ready
+    requestAnimationFrame(initMarquee);
+
+    // Recompute on resize for responsiveness
+    let resizeObserver;
+    if (window.ResizeObserver) {
+      resizeObserver = new ResizeObserver(() => initMarquee());
+      resizeObserver.observe(trackOne);
+    } else {
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(initMarquee, 150);
+      });
+    }
   });
 </script>
 
