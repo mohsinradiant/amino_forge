@@ -1,0 +1,49 @@
+<div class="ai-product-feature__certifications">
+  <p class="ai-product-feature__certifications_heading">CERTIFICATIONS</p>
+  <p class="ai-product-feature__certifications_subheading"></p>
+  <div class="ai-product-feature__certifications-images">
+    <img src="{{ section.settings.certificate_1 | image_tag }}">
+    <img src="{{ section.settings.certificate_2 | image_tag }}">
+    <img src="{{ section.settings.certificate_3 | image_tag }}">
+    <img src="{{ section.settings.certificate_4 | image_tag }}">
+    <img src="{{ section.settings.certificate_5 | image_tag }}">
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Certifications",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "CERTIFICATIONS"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub Heading",
+      "default": "We prioritize your health with rigorous testing for purity, potency, and safety. Every batch is lab-tested to ensure you receive the highest quality supplement."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Certification Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Certifications"
+    }
+  ]
+}
+{% endschema %}
