@@ -2,7 +2,20 @@
   <div class="home_health_benefits_inner">
     <h2 class="section_heading">{{ section.settings.heading_1 }}</h2>
     <p class="section_subheading">{{ section.settings.subheading }}</p>
-    <img src="{{ section.settings.image | img_url: 'master' }}" alt="Health Benefits Image">
+    {% comment %} <img src="{{ section.settings.image | img_url: 'master' }}" alt="Health Benefits Image"> {% endcomment %}
+    <div class="home_health_benefits-images_container">
+      <div class="home_health_benefits-images_column">
+        <img src="https://cdn.shopify.com/s/files/1/0961/3190/7863/files/top-left.png?v=1760683120" alt="Benefit 1">
+        <img src="https://cdn.shopify.com/s/files/1/0961/3190/7863/files/bottom-left.png?v=1760683123" alt="Benefit 1">
+      </div>
+      <div class="home_health_benefits-images_column">
+        <img src="https://cdn.shopify.com/s/files/1/0961/3190/7863/files/center.png?v=1760683123" alt="Benefit 1">
+      </div>
+      <div class="home_health_benefits-images_column">
+        <img src="https://cdn.shopify.com/s/files/1/0961/3190/7863/files/top-right.png?v=1760683123" alt="Benefit 1">
+        <img src="https://cdn.shopify.com/s/files/1/0961/3190/7863/files/bottom-right.png?v=1760683122" alt="Benefit 1">
+      </div>
+    </div>
   </div>
 </div>
 {% schema %}

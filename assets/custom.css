@@ -237,12 +237,21 @@
 .image_mobile_banner {
     display: none;
 }
-slideshow-arrows{
+
+slideshow-arrows {
     display: none !important;
 }
+
 .image_desktop_container {
     display: flex;
     flex-direction: column;
+}
+
+.home_health_benefits-images_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 /* Container */
