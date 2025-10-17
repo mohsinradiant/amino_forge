@@ -372,6 +372,53 @@
         "padding-block-end": 0
       }
     },
+    "home_certifications_7rCrbc": {
+      "type": "home-certifications",
+      "blocks": {
+        "image_XQk4NE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_209.png"
+          }
+        },
+        "image_8WrBHa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_208.png"
+          }
+        },
+        "image_xJREf6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_207.png"
+          }
+        },
+        "image_Ui8yVC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_206.png"
+          }
+        },
+        "image_6LWfHV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_205.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_XQk4NE",
+        "image_8WrBHa",
+        "image_xJREf6",
+        "image_Ui8yVC",
+        "image_6LWfHV"
+      ],
+      "name": "Home Certifications",
+      "settings": {
+        "heading": "CERTIFICATIONS",
+        "subheading": "We prioritize your health with rigorous testing for purity, potency, and safety. Every batch is lab-tested to ensure you receive the highest quality supplement."
+      }
+    },
     "home_science_w9dXe3": {
       "type": "home_science",
       "blocks": {
@@ -620,6 +667,7 @@
     "home_ingredient_description_z7hiHj",
     "featured_product_mTUbKC",
     "176061028945f61dec",
+    "home_certifications_7rCrbc",
     "home_science_w9dXe3",
     "home_health_benefits_icPjxx",
     "image_banner_9CTyFG",
