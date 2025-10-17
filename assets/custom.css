@@ -260,6 +260,18 @@ slideshow-arrows {
     flex-direction: column;
     gap: 20px;
 }
+.benefit_img {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: box-shadow 0.3s ease;
+}
+
+.benefit_img:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
 
 /* Container */
 .testimonials-carousel-section {
