@@ -3,20 +3,23 @@
     <h2 class="section_heading">{{ section.settings.heading_1 }}</h2>
     <h3>{{ section.settings.heading_2 }}</h3>
     <p class="section_subheading">{{ section.settings.subheading }}</p>
+
     <div class="home_science_container_blocks">
       {% for block in section.blocks %}
         <div class="home_science_container_block">
-          <img src="{{ block.settings.image | img_url: 'large' }}">
+          <img src="{{ block.settings.image | img_url: 'large' }}" alt="Science Image">
           <h3>{{ block.settings.caption }}</h3>
           <p>{{ block.settings.caption_2 }}</p>
         </div>
       {% endfor %}
     </div>
+
     <p class="home_science_cta_1">{{ section.settings.cta_caption_1 }}</p>
     <p class="home_science_cta_2">{{ section.settings.cta_caption_2 }}</p>
     <a href="{{section.settings.cta_url}}" class="home_science_cta_button">{{ section.settings.cta_button }}</a>
   </div>
 </div>
+
 {% schema %}
 {
   "name": "Home Science",
@@ -25,65 +28,67 @@
       "type": "block",
       "name": "Block",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "caption",
-          "label": "Caption"
-        },
-        {
-          "type": "text",
-          "id": "caption_2",
-          "label": "Caption 2"
-        }
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "caption", "label": "Caption" },
+        { "type": "text", "id": "caption_2", "label": "Caption 2" }
       ]
     }
   ],
   "settings": [
-    {
-      "type": "text",
-      "id": "heading_1",
-      "label": "Heading 1"
-    },
-    {
-      "type": "text",
-      "id": "heading_2",
-      "label": "Heading 2"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading"
-    },
-    {
-      "type": "text",
-      "id": "cta_caption_1",
-      "label": "CTA Caption 1"
-    },
-    {
-      "type": "text",
-      "id": "cta_caption_2",
-      "label": "CTA Caption 2"
-    },
-    {
-      "type": "text",
-      "id": "cta_button",
-      "label": "CTA Button Text"
-    },
-    {
-      "type": "url",
-      "id": "cta_url",
-      "label": "CTA URL"
-    }
+    { "type": "text", "id": "heading_1", "label": "Heading 1" },
+    { "type": "text", "id": "heading_2", "label": "Heading 2" },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "text", "id": "cta_caption_1", "label": "CTA Caption 1" },
+    { "type": "text", "id": "cta_caption_2", "label": "CTA Caption 2" },
+    { "type": "text", "id": "cta_button", "label": "CTA Button Text" },
+    { "type": "url", "id": "cta_url", "label": "CTA URL" }
   ],
-  "presets": [
-    {
-      "name": "Home Science"
-    }
-  ]
+  "presets": [{ "name": "Home Science" }]
 }
 {% endschema %}
+
+<style>
+  .home_science_container_block img,
+  .home_science_container_block h3,
+  .home_science_container_block p {
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: transform, opacity;
+    transition: none;
+  }
+</style>
+
+<!-- GSAP Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('.home_science_container_block').forEach((block) => {
+      const img = block.querySelector('img');
+      const heading = block.querySelector('h3');
+      const para = block.querySelector('p');
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: block,
+          start: 'top 85%', // when 85% of viewport height
+          toggleActions: 'play none none reverse',
+        },
+      });
+
+      // Animate image first
+      tl.to(block, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: 'power2.out',
+      })
+        .fromTo(img, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.1)
+        // Animate text sequentially
+        .to(heading, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '+=0.1')
+        .to(para, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '+=0.1');
+    });
+  });
+</script>
