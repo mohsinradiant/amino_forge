@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -29,6 +30,7 @@
             "color": "",
             "background": false,
             "background_color": "#00000026",
+            "corner_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -54,6 +56,7 @@
             "color": "",
             "background": false,
             "background_color": "#00000026",
+            "corner_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -72,6 +75,53 @@
         "color_scheme": "",
         "padding-block-start": 40,
         "padding-block-end": 0
+      }
+    },
+    "home_certifications_LWXL4C": {
+      "type": "home-certifications",
+      "blocks": {
+        "image_7VXDgV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_209.png"
+          }
+        },
+        "image_JcNy4F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_208.png"
+          }
+        },
+        "image_bcqU6A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_207.png"
+          }
+        },
+        "image_jhHtVm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_206.png"
+          }
+        },
+        "image_mhXkPn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_205.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_7VXDgV",
+        "image_JcNy4F",
+        "image_bcqU6A",
+        "image_jhHtVm",
+        "image_mhXkPn"
+      ],
+      "name": "Home Certifications",
+      "settings": {
+        "heading": "CERTIFICATIONS",
+        "subheading": "We prioritize your health with rigorous testing for purity, potency, and safety. Every batch is lab-tested to ensure you receive the highest quality supplement."
       }
     },
     "form": {
@@ -126,6 +176,7 @@
         "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "scheme-1",
+        "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
         "border": "none",
@@ -143,6 +194,7 @@
   },
   "order": [
     "main",
+    "home_certifications_LWXL4C",
     "form"
   ]
 }
