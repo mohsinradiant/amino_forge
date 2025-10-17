@@ -2,50 +2,9 @@
   <div class="home_health_benefits_inner">
     <h2 class="section_heading">{{ section.settings.heading_1 }}</h2>
     <p class="section_subheading">{{ section.settings.subheading }}</p>
-
-    <div class="benefits_grid">
-      <div class="benefit_box" data-animate-box>
-        <div class="benefit_icon">⬆️</div>
-        <h3>MORE ENERGY, NATURALLY</h3>
-        <p>
-          Fight afternoon slumps without coffee or sugar crashes. Feel a clean, steady flow of energy that helps you
-          power.
-        </p>
-      </div>
-
-      <div class="benefit_box" data-animate-box>
-        <div class="benefit_icon">🧠</div>
-        <h3>CLEARER, SHARPER FOCUS</h3>
-        <p>
-          Fight afternoon slumps without coffee or sugar crashes. Feel a clean, steady flow of energy that helps you
-          power.
-        </p>
-      </div>
-
-      <div class="benefit_box" data-animate-box>
-        <div class="benefit_icon">🧬</div>
-        <h3>SUPERIOR ABSORPTION, REAL RESULTS</h3>
-        <p>
-          Fight afternoon slumps without coffee or sugar crashes. Feel a clean, steady flow of energy that helps you
-          power.
-        </p>
-      </div>
-
-      <div class="benefit_box" data-animate-box>
-        <img src="{{ 'running_couple.jpg' | asset_url }}" alt="Running Couple">
-      </div>
-
-      <div class="benefit_box" data-animate-box>
-        <img src="{{ 'laptop_guy.jpg' | asset_url }}" alt="Laptop Person">
-      </div>
-
-      <div class="benefit_box" data-animate-box>
-        <img src="{{ 'dna_tech.jpg' | asset_url }}" alt="DNA Technology">
-      </div>
-    </div>
+    <img src="{{ section.settings.image | img_url: 'master' }}" alt="Health Benefits Image">
   </div>
 </div>
-
 {% schema %}
 {
   "name": "Home Health Benefits",
@@ -53,12 +12,17 @@
     {
       "type": "text",
       "id": "heading_1",
-      "label": "Heading"
+      "label": "Heading 1"
     },
     {
       "type": "text",
       "id": "subheading",
       "label": "Subheading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
     }
   ],
   "presets": [
@@ -68,95 +32,3 @@
   ]
 }
 {% endschema %}
-
-<style>
-  .home_health_benefits_inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 0;
-    text-align: center;
-  }
-
-  .section_heading {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
-  .section_subheading {
-    font-weight: 300;
-    width: 60%;
-    margin-bottom: 50px;
-  }
-
-  .benefits_grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    width: 90%;
-    max-width: 1100px;
-  }
-
-  .benefit_box {
-    background: #f8f8f8;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    padding: 30px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-  }
-
-  .benefit_box:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  }
-
-  .benefit_box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .benefit_icon {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-
-  .benefit_box h3 {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-
-  .benefit_box p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-</style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script>
-  document.querySelectorAll('[data-animate-box]').forEach((box) => {
-    const hoverIn = () => {
-      gsap.to(box, {
-        scale: 1.05,
-        y: -5,
-        boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
-        duration: 0.4,
-        ease: 'power2.out',
-      });
-    };
-    const hoverOut = () => {
-      gsap.to(box, {
-        scale: 1,
-        y: 0,
-        boxShadow: '0 0 0 rgba(0,0,0,0)',
-        duration: 0.4,
-        ease: 'power2.inOut',
-      });
-    };
-    box.addEventListener('mouseenter', hoverIn);
-    box.addEventListener('mouseleave', hoverOut);
-  });
-</script>
