@@ -10,7 +10,7 @@
   </div>
   <div class="home_ingredients_desc_bottom_container">
     {% for block in section.blocks %}
-      <img src="{{ block.settings.image | img_url: 'large' }}">
+      <img class="ingredient_img" src="{{ block.settings.image | img_url: 'large' }}">
     {% endfor %}
   </div>
 </div>
