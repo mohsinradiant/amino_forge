@@ -272,7 +272,17 @@ slideshow-arrows {
 .benefit_img:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+.ingredient_img {
+  width: 250px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  transform-origin: center center;
+}
 
+.ingredient_img:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 /* Container */
 .testimonials-carousel-section {
     text-align: center;

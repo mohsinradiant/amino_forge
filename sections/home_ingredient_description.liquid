@@ -14,6 +14,39 @@
     {% endfor %}
   </div>
 </div>
+<!-- GSAP Animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+  document.querySelectorAll('.ingredient_img').forEach((img) => {
+    const hoverIn = () => {
+      gsap.to(img, {
+        scale: 1.05,
+        rotation: 1,
+        y: -5,
+        duration: 0.5,
+        ease: 'power3.out',
+        boxShadow: '0 15px 30px rgba(0,0,0,0.2)',
+        overwrite: 'auto',
+      });
+    };
+
+    const hoverOut = () => {
+      gsap.to(img, {
+        scale: 1,
+        rotation: 0,
+        y: 0,
+        duration: 0.5,
+        ease: 'power3.inOut',
+        boxShadow: '0 0 0 rgba(0,0,0,0)',
+        filter: 'brightness(1)',
+        overwrite: 'auto',
+      });
+    };
+
+    img.addEventListener('mouseenter', hoverIn);
+    img.addEventListener('mouseleave', hoverOut);
+  });
+</script>
 {% schema %}
 {
   "name": "Home Ingredients Desc",
