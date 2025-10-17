@@ -252,6 +252,7 @@ slideshow-arrows {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    margin-bottom: 80px;
 }
 
 .home_health_benefits-images_column {
