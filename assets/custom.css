@@ -209,10 +209,10 @@
 }
 
 .header-sign-in-img {
-    display: flex
+    display: flex   
 ;
     height: 22px;
-    margin-left: -2px;
+    margin-left: 7px;
     width: auto;
     align-self: center;
 }
