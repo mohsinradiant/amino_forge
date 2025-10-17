@@ -254,6 +254,12 @@ slideshow-arrows {
     gap: 20px;
 }
 
+.home_health_benefits-images_column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 /* Container */
 .testimonials-carousel-section {
     text-align: center;
