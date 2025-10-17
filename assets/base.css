@@ -1396,7 +1396,7 @@ button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
   color: inherit;
   border: 0;
   border-radius: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: none;
   font-family: var(--font-paragraph--family);
   font-style: var(--font-paragraph--style);
