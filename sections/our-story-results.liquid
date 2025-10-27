@@ -23,6 +23,14 @@
           </div>
         {% endfor %}
       </div>
+
+      <div class="our-story-results-cta-cutout">
+        <div class="our-story-results-cta-cutout-left">
+          <p>NEED MORE INFORMATION?</p>
+          <p>Talk to Our Nutrition Expert</p>
+        </div>
+        <a href="{{ section.settings.url }}">ASK A QUESTION</a>
+      </div>
     </div>
   </div>
 </div>
@@ -61,11 +69,12 @@
     gap: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
     margin-top: 50px;
+    position: relative;
   }
   .our-story-results-items {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: repeat(3, auto); /* 3 rows = 1,4 | 2,5 | 3 */
+    grid-template-rows: repeat(3, auto);
     column-gap: 40px;
     row-gap: 40px;
   }
@@ -107,6 +116,11 @@
     font-size: 0.9rem;
     color: #444444;
   }
+  .our-story-results-cta-cutout {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 </style>
 {% schema %}
 {
@@ -129,6 +143,11 @@
       "id": "inner_heading",
       "label": "Inner Section Heading",
       "default": "Results with Amino Forge"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "CTA URL"
     }
   ],
   "blocks": [
