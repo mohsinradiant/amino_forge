@@ -6,28 +6,28 @@
         {{ section.settings.content }}
       </div>
     </div>
-  </div>
 
-  <div class="our-story-founders-container-right">
-    <div class="our-story-founders-container-right-top">
-      {% for block in section.blocks %}
-        <div class="our-story-founders-container-right-top-founder">
-          {% if block.settings.image %}
-            <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading }}">
-          {% endif %}
-          <h4>{{ block.settings.heading }}</h4>
-          <p>{{ block.settings.subheading }}</p>
-        </div>
-      {% endfor %}
+    <div class="our-story-founders-container-right">
+      <div class="our-story-founders-container-right-top">
+        {% for block in section.blocks %}
+          <div class="our-story-founders-container-right-top-founder">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading }}">
+            {% endif %}
+            <h4>{{ block.settings.heading }}</h4>
+            <p>{{ block.settings.subheading }}</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.settings.right_bottom_img != blank %}
+        <img
+          class="our-story-founders-container-right-bottom-img"
+          src="{{ section.settings.right_bottom_img | img_url: 'master' }}"
+          alt="Founders bottom image"
+        >
+      {% endif %}
     </div>
-
-    {% if section.settings.right_bottom_img != blank %}
-      <img
-        class="our-story-founders-container-right-bottom-img"
-        src="{{ section.settings.right_bottom_img | img_url: 'master' }}"
-        alt="Founders bottom image"
-      >
-    {% endif %}
   </div>
 </div>
 <style>
