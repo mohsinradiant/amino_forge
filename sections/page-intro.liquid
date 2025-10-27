@@ -1,7 +1,24 @@
-<div class="page-intro-container">
+<div
+  class="page-intro-container"
+  style="    background-image: url('{{ section.settings.desktop_image | image_url: width: 1600 }}');"
+>
   <p>{{ section.settings.caption }}</p>
   <h2>{{ section.settings.heading }}</h2>
 </div>
+
+<style>
+  @media (max-width: 768px) {
+    .page-intro-container {
+      background-image: url('{{ section.settings.mobile_image | image_url: width: 768 }}') !important;
+    }
+  }
+
+  .page-intro-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
 
 {% schema %}
 {
