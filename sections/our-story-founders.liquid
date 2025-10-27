@@ -1,0 +1,84 @@
+<div class="page-width our-story-founders-container">
+  <div class="our-story-founders-container-left">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="our-story-founders-content">
+      {{ section.settings.content }}
+    </div>
+  </div>
+
+  <div class="our-story-founders-container-right">
+    <div class="our-story-founders-container-right-top">
+      {% for block in section.blocks %}
+        <div class="our-story-founders-container-right-top-founder">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading }}">
+          {% endif %}
+          <h4>{{ block.settings.heading }}</h4>
+          <p>{{ block.settings.subheading }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.right_bottom_img != blank %}
+      <img
+        class="our-story-founders-container-right-bottom-img"
+        src="{{ section.settings.right_bottom_img | img_url: 'master' }}"
+        alt="Founders bottom image"
+      >
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Our Story Founders",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "Fuelling the Future of Cellular Nutrition"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bottom_img",
+      "label": "Right Bottom Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "founder",
+      "name": "Founder",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Founder Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Founder Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Founder Title",
+          "default": "Co-Founder & CEO"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Story Founders"
+    }
+  ]
+}
+{% endschema %}
