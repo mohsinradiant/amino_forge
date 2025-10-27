@@ -56,9 +56,20 @@
         "padding-block-start": 40,
         "padding-block-end": 80
       }
+    },
+    "page_intro_ABmNi7": {
+      "type": "page-intro",
+      "name": "Page Intro",
+      "settings": {
+        "heading": "Amino Forge",
+        "caption": "THE STORY OF",
+        "desktop_image": "shopify://shop_images/Baner_1_1.png",
+        "mobile_image": "shopify://shop_images/Baner_1_1.png"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "page_intro_ABmNi7"
   ]
 }
