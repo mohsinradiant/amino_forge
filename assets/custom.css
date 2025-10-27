@@ -208,8 +208,7 @@
 }
 
 .header-sign-in-img {
-    display: flex   
-;
+    display: flex;
     height: 22px;
     margin-left: 7px;
     width: auto;
@@ -260,29 +259,32 @@ slideshow-arrows {
     flex-direction: column;
     gap: 20px;
 }
+
 .benefit_img {
-  width: 100%;
-  border-radius: 15px;
-  overflow: hidden;
-  cursor: pointer;
-  transform-origin: center center;
-  transition: box-shadow 0.3s ease;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transform-origin: center center;
+    transition: box-shadow 0.3s ease;
 }
 
 .benefit_img:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 .ingredient_img {
-  width: 250px;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-  transform-origin: center center;
+    width: 250px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    transform-origin: center center;
 }
 
 .ingredient_img:hover {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 /* Container */
 .testimonials-carousel-section {
     text-align: center;
@@ -463,6 +465,10 @@ slideshow-arrows {
     color: #9E3EB2;
     font-size: 13px;
     margin: 0;
+}
+
+footer {
+    background-color: #F9F4FD;
 }
 
 footer .menu__heading {
