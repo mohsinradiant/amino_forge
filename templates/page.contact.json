@@ -69,12 +69,23 @@
         "title",
         "content"
       ],
+      "disabled": true,
       "settings": {
         "content_direction": "column",
         "gap": 32,
         "color_scheme": "",
         "padding-block-start": 40,
         "padding-block-end": 0
+      }
+    },
+    "page_intro_Q9CJXd": {
+      "type": "page-intro",
+      "name": "Page Intro",
+      "settings": {
+        "heading": "Get in Touch",
+        "caption": "",
+        "desktop_image": "shopify://shop_images/Baner_1_2.png",
+        "mobile_image": "shopify://shop_images/Baner_1_2.png"
       }
     },
     "form": {
@@ -147,6 +158,7 @@
   },
   "order": [
     "main",
+    "page_intro_Q9CJXd",
     "form"
   ]
 }
