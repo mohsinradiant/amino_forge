@@ -63,10 +63,16 @@
     margin-top: 50px;
   }
   .our-story-results-items {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
+    row-gap: 40px; */
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto); /* 3 rows = 1,4 | 2,5 | 3 */
+    column-gap: 40px;
     row-gap: 40px;
   }
   .our-story-results-item {
