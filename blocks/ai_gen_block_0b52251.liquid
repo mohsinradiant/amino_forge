@@ -100,19 +100,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
-    background-color: {{ block.settings.button_background }};
-    color: {{ block.settings.button_text_color }};
     border: none;
-    border-radius: {{ block.settings.button_border_radius }}px;
-    font-size: {{ block.settings.button_font_size }}px;
-    text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    {% if block.settings.button_uppercase %}
-      text-transform: uppercase;
-    {% endif %}
-    letter-spacing: 1px;
+    background: #4b0082;
+    color: #fff;
+    border-radius: 100px;
+    padding: 20px 40px;
+    font-weight: 300;
+    font-size: 0.8rem;
+    text-decoration: none;
   }
 
   .ai-product-highlight-button-{{ ai_gen_id }}:hover {
