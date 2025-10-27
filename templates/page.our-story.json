@@ -97,11 +97,65 @@
         "content": "<p>Amino Forge is the brainchild of Ashim Matthan and Dr. Kanishka Jain born from a simple question — Why aren’t amino acids absorbed efficiently, even when we consume the best supplements?</p><p><br/>Amino acids are the foundation of life — vital for muscle repair, energy, and recovery. Yet, most supplements fail to deliver results because proteins and amino acids are hard to digest, especially for those on medications that impair nutrient absorption.</p><p><br/>That’s where liposomal technology provided the breakthrough. Used for decades in advanced drug and chemo delivery, liposomes encapsulate nutrients in a phospholipid layer — protecting them from stomach acid, maintaining alkaline pH, and dramatically enhancing absorption.</p><p><br/>After years of research, Ashim Matthan and Dr. Kanishka Jain discovered that no one in India had ever applied this delivery system to essential amino acids. This led to the creation of Amino Forge — a unique blend of all 9 essential amino acids in liposomal form.<br/><br/></p>",
         "right_bottom_img": "shopify://shop_images/Rectangle_497.png"
       }
+    },
+    "our_story_results_knEmKN": {
+      "type": "our-story-results",
+      "blocks": {
+        "result_3L4KGr": {
+          "type": "result",
+          "settings": {
+            "image": "shopify://shop_images/image_99.png",
+            "content": "Proven to deliver 2–3x higher absorption than regular amino acid formulations."
+          }
+        },
+        "result_qkFxh3": {
+          "type": "result",
+          "settings": {
+            "image": "shopify://shop_images/image_100.png",
+            "content": "Helps maintain alkaline balance, reducing acidity and digestive discomfort."
+          }
+        },
+        "result_BHKkJA": {
+          "type": "result",
+          "settings": {
+            "image": "shopify://shop_images/image_102.png",
+            "content": "Promotes lean muscle synthesis and reduced fatigue, even in compromised absorption states."
+          }
+        },
+        "result_EEBQVx": {
+          "type": "result",
+          "settings": {
+            "image": "shopify://shop_images/image_98.png",
+            "content": "Supports faster muscle recovery and improved endurance within weeks of use."
+          }
+        },
+        "result_CKcpJV": {
+          "type": "result",
+          "settings": {
+            "image": "shopify://shop_images/image_101.png",
+            "content": "Enhances cellular repair and regeneration — ideal for post-chemo recovery or high-performance demands."
+          }
+        }
+      },
+      "block_order": [
+        "result_3L4KGr",
+        "result_qkFxh3",
+        "result_BHKkJA",
+        "result_EEBQVx",
+        "result_CKcpJV"
+      ],
+      "name": "Our Story Results",
+      "settings": {
+        "heading": "The Science Inside Amino Forge",
+        "content": "<p>Liposomal technology works by enclosing nutrients within tiny, fat-based spheres called liposomes, which mimic the body’s natural cell membranes. This protects amino acids from stomach acid, ensures alkaline stability, and allows direct absorption into the bloodstream. Research shows liposomal formulations can increase nutrient bioavailability by up to 3–5 times, ensuring that your body actually utilizes what you consume. With Amino Forge, this means every amino acid reaches your cells faster, stronger, and more effectively.<br/><br/></p>",
+        "inner_heading": "Results with Amino Forge"
+      }
     }
   },
   "order": [
     "main",
     "page_intro_ABmNi7",
-    "our_story_founders_ti3F8w"
+    "our_story_founders_ti3F8w",
+    "our_story_results_knEmKN"
   ]
 }
