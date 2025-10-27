@@ -413,7 +413,7 @@ slideshow-arrows {
 /* active profile - shows full content and pointer events */
 .testimonials-profile-item.is-active {
     pointer-events: auto;
-    z-index: 40;
+    z-index: 2;
 }
 
 .testimonials-profile-item .testimonials-content {
@@ -440,7 +440,7 @@ slideshow-arrows {
     width: 44px;
     height: 44px;
     cursor: pointer;
-    z-index: 100;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
