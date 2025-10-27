@@ -66,10 +66,41 @@
         "desktop_image": "shopify://shop_images/Baner_1_1.png",
         "mobile_image": "shopify://shop_images/Baner_1_1.png"
       }
+    },
+    "our_story_founders_ti3F8w": {
+      "type": "our-story-founders",
+      "blocks": {
+        "founder_NFt9iK": {
+          "type": "founder",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_498.png",
+            "heading": "Ashim Matthan",
+            "subheading": "Some Qualifications Info Goes Here"
+          }
+        },
+        "founder_JhcdCb": {
+          "type": "founder",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_499.png",
+            "heading": "Dr. Kanishka Jain",
+            "subheading": "Some Qualifications Info Goes Here"
+          }
+        }
+      },
+      "block_order": [
+        "founder_NFt9iK",
+        "founder_JhcdCb"
+      ],
+      "name": "Our Story Founders",
+      "settings": {
+        "heading": "Fuelling the Future of Cellular Nutrition",
+        "content": ""
+      }
     }
   },
   "order": [
     "main",
-    "page_intro_ABmNi7"
+    "page_intro_ABmNi7",
+    "our_story_founders_ti3F8w"
   ]
 }
