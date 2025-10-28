@@ -960,7 +960,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-080aaf4b-b619-402e-98ee-a657a8a2a828",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -972,8 +972,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 50,
+        "padding-block-end": 50
       }
     }
   },
