@@ -467,7 +467,8 @@ slideshow-arrows {
     margin: 0;
 }
 
-footer, .footer-utilities {
+footer,
+.footer-utilities {
     background-color: #F9F4FD;
 }
 
@@ -508,6 +509,13 @@ footer .text-block h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#shopify-section-template--25510433456407__section_4GaFCd rte-formatter h3 {
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    color: #382D43;
+    font-size: 1.9rem;
 }
 
 @media(max-width: 768px) {
