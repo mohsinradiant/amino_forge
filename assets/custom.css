@@ -566,6 +566,7 @@ footer .text-block h3 {
 
 #shopify-section-template--25510433456407__section_4GaFCd .section-content-wrapper.section-content-wrapper {
     gap: 20px;
+    padding-bottom: 0;
 }
 
 @media(max-width: 768px) {
