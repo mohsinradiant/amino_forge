@@ -126,6 +126,7 @@
       "block_order": [
         "contact_form_UwiCkQ"
       ],
+      "disabled": true,
       "name": "t:names.contact_form",
       "settings": {
         "content_direction": "column",
@@ -154,11 +155,17 @@
         "padding-block-start": 32,
         "padding-block-end": 32
       }
+    },
+    "contact_page_form_mMFUay": {
+      "type": "contact-page-form",
+      "name": "About Contact Form",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "page_intro_Q9CJXd",
-    "form"
+    "form",
+    "contact_page_form_mMFUay"
   ]
 }
