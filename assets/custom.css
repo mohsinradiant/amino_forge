@@ -540,24 +540,27 @@ footer .text-block h3 {
     margin-top: 10px;
     z-index: 2;
 }
-
 #shopify-section-template--25510433456407__section_4GaFCd .details {
-    background: linear-gradient(100deg, #EC68A8, #6C22B7);
-    border-radius: 10px;
-    padding: 25px;
-    position: relative;
+  position: relative;
+  border-radius: 10px;
+  padding: 25px;
+  background: linear-gradient(100deg, #EC68A8, #6C22B7); /* this is the border gradient */
 }
 
 #shopify-section-template--25510433456407__section_4GaFCd .details::before {
-    content: '';
-    position: absolute;
-    left: 1px;
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    background: #fff;
-    border-radius: 10px;
+  content: '';
+  position: absolute;
+  inset: 1px; /* shorthand for top/right/bottom/left: 1px */
+  background: #fff; /* inner background */
+  border-radius: 9px; /* slightly smaller to fit inside the gradient */
+  z-index: 1;
 }
+
+#shopify-section-template--25510433456407__section_4GaFCd .details > * {
+  position: relative;
+  z-index: 2; /* ensures content is above the ::before layer */
+}
+
 
 @media(max-width: 768px) {
     .testimonials-carousel-container {
