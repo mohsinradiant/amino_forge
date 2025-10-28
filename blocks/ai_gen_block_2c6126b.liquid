@@ -71,19 +71,21 @@
     align-items: stretch;
     border: solid 1px #E1E1E1;
     border-radius: 15px;
+    overflow: hidden;
   }
 
   .ai-contact-split-left-{{ ai_gen_id }} {
     background-color: {{ block.settings.form_background }};
     padding: {{ block.settings.form_padding }}px;
-    border-radius: {{ block.settings.form_border_radius }}px;
+    border-radius: 60px;
   }
 
   .ai-contact-split-heading-{{ ai_gen_id }} {
-    font-size: {{ block.settings.heading_size }}px;
-    color: {{ block.settings.heading_color }};
-    margin: 0 0 12px;
-  }
+    font-size: 2.1rem;
+    color: #000000;
+    margin: 0 0 6px;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 600;  }
 
   .ai-contact-split-subheading-{{ ai_gen_id }} {
     font-size: {{ block.settings.subheading_size }}px;
