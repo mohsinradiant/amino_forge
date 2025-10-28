@@ -78,7 +78,7 @@
 
 .home_ingredients_desc_top_container_left h2 {
     margin: 0;
-    font-family: 'Gotham', sans-serif;
+    font-family: 'GothamPro', sans-serif;
     font-weight: 600;
     font-size: 40px;
 }
@@ -125,7 +125,7 @@
 
 .section_heading {
     margin: 0;
-    font-family: 'Gotham', sans-serif;
+    font-family: 'GothamPro', sans-serif;
     font-size: 40px;
     text-align: center;
     font-weight: 600;
@@ -133,7 +133,7 @@
 
 .home_science_container_inner h3 {
     margin: 0;
-    font-family: 'Gotham', sans-serif;
+    font-family: 'GothamPro', sans-serif;
     font-size: 40px;
     font-weight: 900;
     color: #9E3EB2;
@@ -304,7 +304,7 @@ slideshow-arrows {
 .testimonials-content h3,
 .testimonials-content p,
 .testimonials-content h4 {
-    font-family: 'Gotham', sans-serif !important;
+    font-family: 'GothamPro', sans-serif !important;
 }
 
 /* Profiles area */
@@ -472,7 +472,7 @@ footer, .footer-utilities {
 }
 
 footer .menu__heading {
-    font-family: Gotham, sans-serif !important;
+    font-family: GothamPro, sans-serif !important;
     color: #333333 !important;
     margin-bottom: 10px;
     font-weight: 400 !important;
@@ -480,7 +480,7 @@ footer .menu__heading {
 }
 
 footer .menu__item a {
-    font-family: Gotham, sans-serif !important;
+    font-family: GothamPro, sans-serif !important;
     color: #333333 !important;
     margin-bottom: 10px;
     font-weight: 300 !important;
@@ -497,7 +497,7 @@ footer .menu__item {
 }
 
 footer .text-block h3 {
-    font-family: Gotham, sans-serif !important;
+    font-family: GothamPro, sans-serif !important;
     color: #333333 !important;
     margin-bottom: 10px;
     font-weight: 400 !important;
