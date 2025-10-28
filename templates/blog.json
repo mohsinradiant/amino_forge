@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "page_intro_dbGGPw": {
+      "type": "page-intro",
+      "name": "Page Intro",
+      "settings": {
+        "heading": "LATEST BLOG",
+        "caption": "UPDATES & INSIGHTS",
+        "desktop_image": "shopify://shop_images/Baner_1_4.png",
+        "mobile_image": "shopify://shop_images/Baner_1_4.png"
+      }
+    },
     "main": {
       "type": "main-blog",
       "blocks": {
@@ -129,6 +139,7 @@
     }
   },
   "order": [
+    "page_intro_dbGGPw",
     "main"
   ]
 }
