@@ -505,11 +505,21 @@
     <p>Follow us on</p>
     <h3>Stay connected! Follow us on social media for updates, news, and more.</h3>
     <div class="social_media_links_container">
-      {% for block in section.blocks %}
-        <a href="{{block.settings.link}}">
-          <img src="{{block.settings.image |  img_url: 'master'}}">
-        </a>
-      {% endfor %}
+      <a href="{{section.settings.linkedin_link}}">
+        <img src="{{section.settings.linkeind_image |  img_url: 'master'}}">
+      </a>
+
+      <a href="{{section.settings.twitter_link}}">
+        <img src="{{section.settings.twitter_image |  img_url: 'master'}}">
+      </a>
+
+      <a href="{{section.settings.facebook_link}}">
+        <img src="{{section.settings.facebook_image |  img_url: 'master'}}">
+      </a>
+
+      <a href="{{section.settings.youtube_link}}">
+        <img src="{{section.settings.youtube_image |  img_url: 'master'}}">
+      </a>
     </div>
   </div>
 </div>
@@ -526,10 +536,6 @@
     {
       "type": "paragraph",
       "content": "Add your social media links and icons here."
-    },
-    {
-      "type": "header",
-      "content": "Social Media Links"
     },
     {
       "type": "image_picker",
