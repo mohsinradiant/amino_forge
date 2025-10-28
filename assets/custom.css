@@ -515,6 +515,7 @@ footer .text-block h3 {
     font-family: 'Gotham', sans-serif;
     font-weight: 700;
     color: #382D43;
+    padding: 0;
     font-size: 1.9rem;
 }
 
