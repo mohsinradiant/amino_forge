@@ -500,11 +500,77 @@
   </div>
 </div>
 
+<div class="section">
+  <div class="social-media-links">
+    <p>Follow us on</p>
+    <h3>Stay connected! Follow us on social media for updates, news, and more.</h3>
+    <div class="social_media_links_container">
+      {% for block in section.blocks %}
+        <a href="{{block.settings.link}}">
+          <img src="{{block.settings.image |  img_url: 'master'}}">
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
 {
   "name": "Contact us split section",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Social Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "Add your social media links and icons here."
+    },
+    {
+      "type": "header",
+      "content": "Social Media Links"
+    },
+    {
+      "type": "image_picker",
+      "id": "linkeind_image",
+      "label": "LinkedIn Icon"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_link",
+      "label": "LinkedIn Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "twitter_image",
+      "label": "Twitter Icon"
+    },
+    {
+      "type": "url",
+      "id": "twitter_link",
+      "label": "Twitter Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "facebook_image",
+      "label": "Facebook Icon"
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "youtube_image",
+      "label": "Youtube Icon"
+    },
+    {
+      "type": "url",
+      "id": "youtube_link",
+      "label": "Youtube Link"
+    },
     {
       "type": "header",
       "content": "Section settings"
