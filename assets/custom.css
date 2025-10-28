@@ -542,7 +542,7 @@ footer .text-block h3 {
 }
 #shopify-section-template--25510433456407__section_4GaFCd .details {
   position: relative;
-  border: 2px solid transparent; /* controls border thickness */
+  border: 1px solid transparent; /* controls border thickness */
   border-radius: 10px;
   background: 
     linear-gradient(#fff, #fff) padding-box, /* inner background */
