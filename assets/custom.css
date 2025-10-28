@@ -528,6 +528,13 @@ footer .text-block h3 {
     font-weight: 400;
 }
 
+#shopify-section-template--25510433456407__section_4GaFCd .details-content {
+    font-size: 1rem;
+    color: #382D43;
+    font-weight: 300;
+
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
