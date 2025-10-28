@@ -162,6 +162,14 @@
         "ai_gen_block_2c6126b_GMhqGJ": {
           "type": "ai_gen_block_2c6126b",
           "settings": {
+            "linkeind_image": "shopify://shop_images/Group_333.png",
+            "linkedin_link": "",
+            "twitter_image": "shopify://shop_images/Group_331.png",
+            "twitter_link": "",
+            "facebook_image": "shopify://shop_images/Group_332.png",
+            "facebook_link": "",
+            "youtube_image": "shopify://shop_images/Group_330.png",
+            "youtube_link": "",
             "section_padding": 60,
             "section_background": "#ffffff",
             "heading": "Write to us",
