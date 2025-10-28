@@ -542,7 +542,16 @@ footer .text-block h3 {
     padding: 25px;
     position: relative;
 }
-
+#shopify-section-template--25510433456407__section_4GaFCd .details::before {
+content: '';
+position: absolute;
+left: 1px;
+top: 1px;
+right: 1px;
+bottom: 1px;
+background: #fff;
+border-radius: 10px;
+}
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
