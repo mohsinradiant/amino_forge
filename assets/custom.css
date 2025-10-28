@@ -518,6 +518,10 @@ footer .text-block h3 {
     font-size: 1.9rem;
 }
 
+#shopify-section-template--25510433456407__section_4GaFCd .accordion {
+    width: 60%;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
