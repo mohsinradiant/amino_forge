@@ -6,8 +6,109 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
+    "1761721238380b63a1": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_66b59cf_FCrmAN": {
+          "type": "ai_gen_block_66b59cf",
+          "settings": {
+            "section_padding": 60,
+            "background_color": "#1a1a1a",
+            "image_border_radius": 0,
+            "placeholder_bg": "#2a2a2a",
+            "meta_font_size": 11,
+            "meta_color": "#999999",
+            "title_font_size": 48,
+            "title_color": "#ffffff",
+            "content_font_size": 16,
+            "content_color": "#cccccc",
+            "show_navigation": true,
+            "previous_label": "Previous",
+            "next_label": "Next",
+            "nav_bg_color": "#2a2a2a",
+            "nav_hover_bg": "#3a3a3a",
+            "nav_border_color": "#3a3a3a",
+            "nav_border_radius": 0,
+            "show_search": true,
+            "search_placeholder": "Search articles...",
+            "search_bg_color": "#2a2a2a",
+            "search_focus_bg": "#3a3a3a",
+            "search_border_color": "#3a3a3a",
+            "search_focus_border": "#9e3eb2",
+            "search_text_color": "#ffffff",
+            "search_placeholder_color": "#999999",
+            "search_icon_color": "#999999",
+            "search_border_radius": 0,
+            "sidebar_bg_color": "#2a2a2a",
+            "sidebar_border_radius": 0,
+            "sidebar_title_size": 14,
+            "sidebar_title_color": "#ffffff",
+            "divider_color": "#3a3a3a",
+            "show_hot_topics": true,
+            "hot_topics_title": "Hot Topics",
+            "tag_1": "",
+            "tag_1_link": "",
+            "tag_2": "",
+            "tag_2_link": "",
+            "tag_3": "",
+            "tag_3_link": "",
+            "tag_4": "",
+            "tag_4_link": "",
+            "tag_5": "",
+            "tag_5_link": "",
+            "tag_6": "",
+            "tag_6_link": "",
+            "tag_font_size": 11,
+            "tag_border_radius": 0,
+            "tag_bg_color": "#3a3a3a",
+            "tag_text_color": "#ffffff",
+            "tag_hover_bg": "#9e3eb2",
+            "tag_hover_text": "#ffffff",
+            "show_recent_articles": true,
+            "recent_articles_title": "Recent Articles",
+            "recent_blog": "",
+            "recent_articles_count": 5,
+            "recent_font_size": 14,
+            "recent_link_color": "#ffffff",
+            "recent_link_hover": "#9e3eb2"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_66b59cf_FCrmAN"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "section": {
       "type": "main-blog-post",
       "blocks": {
@@ -54,8 +155,7 @@
           "blocks": {}
         },
         "blog-post-image": {
-          "type": "image",
-          "name": "Featured image",
+          "type": "_blog-post-featured-image",
           "static": true,
           "settings": {
             "image_ratio": "adapt",
@@ -82,6 +182,7 @@
           "blocks": {}
         }
       },
+      "disabled": true,
       "settings": {
         "content_direction": "column",
         "gap": 32,
@@ -92,6 +193,7 @@
     }
   },
   "order": [
+    "1761721238380b63a1",
     "section"
   ]
 }
