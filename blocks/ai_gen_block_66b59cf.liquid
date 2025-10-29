@@ -547,43 +547,45 @@
         </div>
       {% endif %}
 
-      {% if block.settings.show_hot_topics %}
-        <div class="ai-blog-sidebar-block-{{ ai_gen_id }}">
-          <h3 class="ai-blog-sidebar-title-{{ ai_gen_id }}">{{ block.settings.hot_topics_title }}</h3>
-          <div class="ai-blog-tags-list-{{ ai_gen_id }}">
-            {% if block.settings.tag_1 != blank %}
-              <a href="{{ block.settings.tag_1_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
-                {{ block.settings.tag_1 }}
-              </a>
-            {% endif %}
-            {% if block.settings.tag_2 != blank %}
-              <a href="{{ block.settings.tag_2_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
-                {{ block.settings.tag_2 }}
-              </a>
-            {% endif %}
-            {% if block.settings.tag_3 != blank %}
-              <a href="{{ block.settings.tag_3_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
-                {{ block.settings.tag_3 }}
-              </a>
-            {% endif %}
-            {% if block.settings.tag_4 != blank %}
-              <a href="{{ block.settings.tag_4_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
-                {{ block.settings.tag_4 }}
-              </a>
-            {% endif %}
-            {% if block.settings.tag_5 != blank %}
-              <a href="{{ block.settings.tag_5_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
-                {{ block.settings.tag_5 }}
-              </a>
-            {% endif %}
-            {% if block.settings.tag_6 != blank %}
-              <a href="{{ block.settings.tag_6_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
-                {{ block.settings.tag_6 }}
-              </a>
-            {% endif %}
+      {% comment %}
+        {% if block.settings.show_hot_topics %}
+          <div class="ai-blog-sidebar-block-{{ ai_gen_id }}">
+            <h3 class="ai-blog-sidebar-title-{{ ai_gen_id }}">{{ block.settings.hot_topics_title }}</h3>
+            <div class="ai-blog-tags-list-{{ ai_gen_id }}">
+              {% if block.settings.tag_1 != blank %}
+                <a href="{{ block.settings.tag_1_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
+                  {{ block.settings.tag_1 }}
+                </a>
+              {% endif %}
+              {% if block.settings.tag_2 != blank %}
+                <a href="{{ block.settings.tag_2_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
+                  {{ block.settings.tag_2 }}
+                </a>
+              {% endif %}
+              {% if block.settings.tag_3 != blank %}
+                <a href="{{ block.settings.tag_3_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
+                  {{ block.settings.tag_3 }}
+                </a>
+              {% endif %}
+              {% if block.settings.tag_4 != blank %}
+                <a href="{{ block.settings.tag_4_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
+                  {{ block.settings.tag_4 }}
+                </a>
+              {% endif %}
+              {% if block.settings.tag_5 != blank %}
+                <a href="{{ block.settings.tag_5_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
+                  {{ block.settings.tag_5 }}
+                </a>
+              {% endif %}
+              {% if block.settings.tag_6 != blank %}
+                <a href="{{ block.settings.tag_6_link }}" class="ai-blog-tag-{{ ai_gen_id }}">
+                  {{ block.settings.tag_6 }}
+                </a>
+              {% endif %}
+            </div>
           </div>
-        </div>
-      {% endif %}
+        {% endif %}
+      {% endcomment %}
 
       {% if block.settings.show_recent_articles %}
         <div class="ai-blog-sidebar-block-{{ ai_gen_id }}">
