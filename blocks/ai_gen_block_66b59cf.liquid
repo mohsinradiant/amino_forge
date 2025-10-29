@@ -22,7 +22,7 @@
     A “Recent Articles” section that lists the latest blog posts with clickable titles.
     
     
-    Ensure the layout looks clean, modern, and readable — with balanced spacing, responsive design, and a dark background theme., add functional previous and next article buttons under description and add a search bar to search articles above hot topics  
+    Ensure the layout looks clean, modern, and readable — with balanced spacing, responsive design, and a dark background theme., add functional previous and next article buttons under description and add a search bar to search articles above hot topics
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
@@ -33,7 +33,7 @@
   }
 
   .ai-blog-layout-container-{{ ai_gen_id }} {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 350px;
@@ -439,7 +439,14 @@
           {% if blog.previous_article %}
             <a href="{{ blog.previous_article.url }}" class="ai-blog-nav-button-{{ ai_gen_id }} previous">
               <span class="ai-blog-nav-label-{{ ai_gen_id }}">
-                <svg class="ai-blog-nav-arrow-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <svg
+                  class="ai-blog-nav-arrow-{{ ai_gen_id }}"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
                 {{ block.settings.previous_label }}
@@ -449,7 +456,14 @@
           {% else %}
             <div class="ai-blog-nav-button-{{ ai_gen_id }} previous disabled">
               <span class="ai-blog-nav-label-{{ ai_gen_id }}">
-                <svg class="ai-blog-nav-arrow-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <svg
+                  class="ai-blog-nav-arrow-{{ ai_gen_id }}"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
                 {{ block.settings.previous_label }}
@@ -462,7 +476,14 @@
             <a href="{{ blog.next_article.url }}" class="ai-blog-nav-button-{{ ai_gen_id }} next">
               <span class="ai-blog-nav-label-{{ ai_gen_id }}">
                 {{ block.settings.next_label }}
-                <svg class="ai-blog-nav-arrow-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <svg
+                  class="ai-blog-nav-arrow-{{ ai_gen_id }}"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </span>
@@ -472,7 +493,14 @@
             <div class="ai-blog-nav-button-{{ ai_gen_id }} next disabled">
               <span class="ai-blog-nav-label-{{ ai_gen_id }}">
                 {{ block.settings.next_label }}
-                <svg class="ai-blog-nav-arrow-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <svg
+                  class="ai-blog-nav-arrow-{{ ai_gen_id }}"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </span>
@@ -495,7 +523,14 @@
               aria-label="Search articles"
             >
             <button type="submit" class="ai-blog-search-button-{{ ai_gen_id }}" aria-label="Submit search">
-              <svg class="ai-blog-search-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <svg
+                class="ai-blog-search-icon-{{ ai_gen_id }}"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
             </button>
@@ -559,12 +594,8 @@
             {% else %}
               {% for i in (1..3) %}
                 <li class="ai-blog-recent-item-{{ ai_gen_id }}">
-                  <a href="#" class="ai-blog-recent-link-{{ ai_gen_id }}">
-                    Sample Article Title {{ i }}
-                  </a>
-                  <div class="ai-blog-recent-date-{{ ai_gen_id }}">
-                    Oct {{ i | times: 5 }}, 2025
-                  </div>
+                  <a href="#" class="ai-blog-recent-link-{{ ai_gen_id }}"> Sample Article Title {{ i }} </a>
+                  <div class="ai-blog-recent-date-{{ ai_gen_id }}">Oct {{ i | times: 5 }}, 2025</div>
                 </li>
               {% endfor %}
             {% endif %}
