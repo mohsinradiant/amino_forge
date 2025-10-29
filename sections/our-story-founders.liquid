@@ -20,13 +20,15 @@
         {% endfor %}
       </div>
 
-      {% if section.settings.right_bottom_img != blank %}
-        <img
-          class="our-story-founders-container-right-bottom-img"
-          src="{{ section.settings.right_bottom_img | img_url: 'master' }}"
-          alt="Founders bottom image"
-        >
-      {% endif %}
+      {% comment %}
+        {% if section.settings.right_bottom_img != blank %}
+          <img
+            class="our-story-founders-container-right-bottom-img"
+            src="{{ section.settings.right_bottom_img | img_url: 'master' }}"
+            alt="Founders bottom image"
+          >
+        {% endif %}
+      {% endcomment %}
     </div>
   </div>
 </div>
