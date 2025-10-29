@@ -520,31 +520,33 @@
     </div>
 
     <aside class="ai-blog-sidebar-{{ ai_gen_id }}">
-      {% if block.settings.show_search %}
-        <div class="ai-blog-search-wrapper-{{ ai_gen_id }}">
-          <form action="{{ blog.url }}/search" method="get" class="ai-blog-search-form-{{ ai_gen_id }}">
-            <input
-              type="search"
-              name="q"
-              class="ai-blog-search-input-{{ ai_gen_id }}"
-              placeholder="{{ block.settings.search_placeholder }}"
-              aria-label="Search articles"
-            >
-            <button type="submit" class="ai-blog-search-button-{{ ai_gen_id }}" aria-label="Submit search">
-              <svg
-                class="ai-blog-search-icon-{{ ai_gen_id }}"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
+      {% comment %}
+        {% if block.settings.show_search %}
+          <div class="ai-blog-search-wrapper-{{ ai_gen_id }}">
+            <form action="{{ blog.url }}/search" method="get" class="ai-blog-search-form-{{ ai_gen_id }}">
+              <input
+                type="search"
+                name="q"
+                class="ai-blog-search-input-{{ ai_gen_id }}"
+                placeholder="{{ block.settings.search_placeholder }}"
+                aria-label="Search articles"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-            </button>
-          </form>
-        </div>
-      {% endif %}
+              <button type="submit" class="ai-blog-search-button-{{ ai_gen_id }}" aria-label="Submit search">
+                <svg
+                  class="ai-blog-search-icon-{{ ai_gen_id }}"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        {% endif %}
+      {% endcomment %}
 
       {% comment %}
         {% if block.settings.show_hot_topics %}
