@@ -61,8 +61,8 @@
       "type": "page-intro",
       "name": "Page Intro",
       "settings": {
-        "heading": "FREQUENTLY ASKED QUESTION",
-        "caption": "HAVE QUESTIONS IN MIND? READ FAQS",
+        "heading": "HAVE QUESTIONS IN MIND? READ FAQS",
+        "caption": "",
         "desktop_image": "shopify://shop_images/Baner_1_3.png",
         "mobile_image": "shopify://shop_images/Baner_1_3.png"
       }
