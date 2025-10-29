@@ -43,6 +43,13 @@
     display: flex;
     flex-direction: column;
     text-align: var(--text-align);
+    background: linear-gradient(#fff, #fff) padding-box,
+      /* inner background */ linear-gradient(100deg, #ec68a8, #6c22b7) border-box;
+    border-radius: 15px;
+    overflow: hidden;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid transparent;
   }
 
   .blog-post-card__content {
