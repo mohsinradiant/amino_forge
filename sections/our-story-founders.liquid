@@ -14,8 +14,10 @@
             {% if block.settings.image %}
               <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading }}">
             {% endif %}
-            <h4>{{ block.settings.heading }}</h4>
-            <p>{{ block.settings.subheading }}</p>
+            <div class="">
+              <h4>{{ block.settings.heading }}</h4>
+              <p>{{ block.settings.subheading }}</p>
+            </div>
           </div>
         {% endfor %}
       </div>
