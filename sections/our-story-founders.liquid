@@ -10,14 +10,20 @@
     <div class="our-story-founders-container-right">
       <div class="our-story-founders-container-right-top">
         {% for block in section.blocks %}
-          <div class="our-story-founders-container-right-top-founder">
-            {% if block.settings.image %}
-              <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading }}">
-            {% endif %}
-            <div class="">
-              <h4>{{ block.settings.heading }}</h4>
-              <p>{{ block.settings.subheading }}</p>
+          <div class="our-story-founders-container-right-top-founder-container">
+            <div class="our-story-founders-container-right-top-founder">
+              {% if block.settings.image %}
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading }}">
+              {% endif %}
+              <div class="">
+                <h4>{{ block.settings.heading }}</h4>
+                <p>{{ block.settings.subheading }}</p>
+              </div>
             </div>
+            <p>
+              Amino Forge is the brainchild of Ashim Matthan and Dr. Kanishka Jain born from a simple question — Why
+              aren’t amino acids absorbed efficiently, even when we consume the best supplements?
+            </p>
           </div>
         {% endfor %}
       </div>
