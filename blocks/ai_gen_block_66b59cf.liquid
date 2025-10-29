@@ -27,11 +27,6 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-blog-layout-{{ ai_gen_id }} {
-    background-color: {{ block.settings.background_color }};
-    padding: {{ block.settings.section_padding }}px 20px;
-  }
-
   .ai-blog-layout-container-{{ ai_gen_id }} {
     max-width: 1400px;
     margin: 0 auto;
