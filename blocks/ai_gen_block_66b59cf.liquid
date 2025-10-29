@@ -152,7 +152,7 @@
     .ai-blog-nav-button-{{ ai_gen_id }} {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 40px;
     background-color: #F2F2F2;
     border-radius: 400px;
     text-decoration: none;
@@ -439,16 +439,18 @@
           {% if blog.previous_article %}
             <a href="{{ blog.previous_article.url }}" class="ai-blog-nav-button-{{ ai_gen_id }} previous">
               <span class="ai-blog-nav-label-{{ ai_gen_id }}">
-                <svg
-                  class="ai-blog-nav-arrow-{{ ai_gen_id }}"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
+                {% comment %}
+                  <svg
+                    class="ai-blog-nav-arrow-{{ ai_gen_id }}"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                {% endcomment %}
                 {{ block.settings.previous_label }}
               </span>
               {% comment %} <span class="ai-blog-nav-title-{{ ai_gen_id }}">{{ blog.previous_article.title }}</span> {% endcomment %}
@@ -456,16 +458,18 @@
           {% else %}
             <div class="ai-blog-nav-button-{{ ai_gen_id }} previous disabled">
               <span class="ai-blog-nav-label-{{ ai_gen_id }}">
-                <svg
-                  class="ai-blog-nav-arrow-{{ ai_gen_id }}"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
+                {% comment %}
+                  <svg
+                    class="ai-blog-nav-arrow-{{ ai_gen_id }}"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                {% endcomment %}
                 {{ block.settings.previous_label }}
               </span>
               {% comment %} <span class="ai-blog-nav-title-{{ ai_gen_id }}">No previous article</span> {% endcomment %}
@@ -476,16 +480,18 @@
             <a href="{{ blog.next_article.url }}" class="ai-blog-nav-button-{{ ai_gen_id }} next">
               <span class="ai-blog-nav-label-{{ ai_gen_id }}">
                 {{ block.settings.next_label }}
-                <svg
-                  class="ai-blog-nav-arrow-{{ ai_gen_id }}"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
+                {% comment %}
+                  <svg
+                    class="ai-blog-nav-arrow-{{ ai_gen_id }}"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                {% endcomment %}
               </span>
               {% comment %} <span class="ai-blog-nav-title-{{ ai_gen_id }}">{{ blog.next_article.title }}</span> {% endcomment %}
             </a>
@@ -493,16 +499,18 @@
             <div class="ai-blog-nav-button-{{ ai_gen_id }} next disabled">
               <span class="ai-blog-nav-label-{{ ai_gen_id }}">
                 {{ block.settings.next_label }}
-                <svg
-                  class="ai-blog-nav-arrow-{{ ai_gen_id }}"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
+                {% comment %}
+                  <svg
+                    class="ai-blog-nav-arrow-{{ ai_gen_id }}"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                {% endcomment %}
               </span>
               {% comment %} <span class="ai-blog-nav-title-{{ ai_gen_id }}">No next article</span> {% endcomment %}
             </div>
