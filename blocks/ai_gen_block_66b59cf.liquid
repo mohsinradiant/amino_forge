@@ -452,7 +452,7 @@
                 </svg>
                 {{ block.settings.previous_label }}
               </span>
-              <span class="ai-blog-nav-title-{{ ai_gen_id }}">{{ blog.previous_article.title }}</span>
+              {% comment %} <span class="ai-blog-nav-title-{{ ai_gen_id }}">{{ blog.previous_article.title }}</span> {% endcomment %}
             </a>
           {% else %}
             <div class="ai-blog-nav-button-{{ ai_gen_id }} previous disabled">
@@ -469,7 +469,7 @@
                 </svg>
                 {{ block.settings.previous_label }}
               </span>
-              <span class="ai-blog-nav-title-{{ ai_gen_id }}">No previous article</span>
+              {% comment %} <span class="ai-blog-nav-title-{{ ai_gen_id }}">No previous article</span> {% endcomment %}
             </div>
           {% endif %}
 
@@ -488,7 +488,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </span>
-              <span class="ai-blog-nav-title-{{ ai_gen_id }}">{{ blog.next_article.title }}</span>
+              {% comment %} <span class="ai-blog-nav-title-{{ ai_gen_id }}">{{ blog.next_article.title }}</span> {% endcomment %}
             </a>
           {% else %}
             <div class="ai-blog-nav-button-{{ ai_gen_id }} next disabled">
