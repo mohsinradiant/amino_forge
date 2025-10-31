@@ -69,7 +69,7 @@
             "tag_hover_text": "#ffffff",
             "show_recent_articles": true,
             "recent_articles_title": "Recent Articles",
-            "recent_blog": "",
+            "recent_blog": "all",
             "recent_articles_count": 5,
             "recent_font_size": 14,
             "recent_link_color": "#ffffff",
