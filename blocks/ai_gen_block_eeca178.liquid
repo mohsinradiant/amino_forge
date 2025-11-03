@@ -617,40 +617,93 @@
           this.addToCartButton.disabled = true;
           this.addToCartButton.textContent = 'Adding...';
 
-          fetch('/cart/add.js', {
+          // Collect cart item section IDs so the theme can morph them after add
+          const cartItemsComponents = document.querySelectorAll('cart-items-component');
+          const sectionIds = new Set();
+          cartItemsComponents.forEach((el) => {
+            if (el instanceof HTMLElement && el.dataset.sectionId) sectionIds.add(el.dataset.sectionId);
+          });
+
+          const formData = new FormData();
+          formData.append('id', variantId);
+          formData.append('quantity', String(quantity));
+          if (sectionIds.size > 0) formData.append('sections', Array.from(sectionIds).join(','));
+          formData.append('sections_url', window.location.pathname);
+
+          const addUrl = (window.Theme && window.Theme.routes && window.Theme.routes.cart_add_url) || '/cart/add.js';
+
+          fetch(addUrl, {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
+              Accept: 'text/html'
             },
-            body: JSON.stringify({
-              id: variantId,
-              quantity: quantity
+            body: formData,
+            credentials: 'same-origin'
+          })
+            .then((response) => response.json())
+            .then((response) => {
+              // If Shopify returns an error structure, surface it but still try to notify the theme
+              if (response && response.status) {
+                console.error('Add to cart error:', response.message || response);
+                this.addToCartButton.textContent = 'Error - Try Again';
+                setTimeout(() => {
+                  this.addToCartButton.disabled = false;
+                  this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-original-text') || 'Add to Cart';
+                }, 2000);
+                // Still dispatch cart:update so other components can react (e.g., limits)
+                document.dispatchEvent(
+                  new CustomEvent('cart:update', {
+                    bubbles: true,
+                    detail: {
+                      data: {
+                        didError: true,
+                        source: 'ai-product-feature',
+                        itemCount: quantity,
+                        variantId: variantId
+                      }
+                    }
+                  })
+                );
+                return;
+              }
+
+              // Success UI feedback
+              this.addToCartButton.textContent = 'Added!';
+              setTimeout(() => {
+                this.addToCartButton.disabled = false;
+                this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-original-text') || 'Add to Cart';
+              }, 2000);
+
+              // Notify theme components (cart drawer, header count, cart items) using the theme's event contract
+              document.dispatchEvent(
+                new CustomEvent('cart:update', {
+                  bubbles: true,
+                  detail: {
+                    data: {
+                      source: 'ai-product-feature',
+                      itemCount: quantity,
+                      variantId: variantId,
+                      sections: response.sections
+                    }
+                  }
+                })
+              );
+
+              // If cart drawer exists and is configured to auto open, it will open on the event above.
+              // Optionally open it directly as a fallback.
+              const drawer = document.querySelector('cart-drawer-component');
+              if (drawer && typeof drawer.open === 'function') {
+                drawer.open();
+              }
             })
-          })
-          .then(response => response.json())
-          .then(data => {
-            this.addToCartButton.textContent = 'Added!';
-
-            setTimeout(() => {
+            .catch((error) => {
+              console.error('Error adding to cart:', error);
               this.addToCartButton.disabled = false;
-              this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-original-text') || 'Add to Cart';
-            }, 2000);
-
-            document.dispatchEvent(new CustomEvent('cart:refresh'));
-
-            if (window.theme && window.theme.cart) {
-              window.theme.cart.refresh();
-            }
-          })
-          .catch(error => {
-            console.error('Error adding to cart:', error);
-            this.addToCartButton.disabled = false;
-            this.addToCartButton.textContent = 'Error - Try Again';
-
-            setTimeout(() => {
-              this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-original-text') || 'Add to Cart';
-            }, 2000);
-          });
+              this.addToCartButton.textContent = 'Error - Try Again';
+              setTimeout(() => {
+                this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-original-text') || 'Add to Cart';
+              }, 2000);
+            });
         });
 
         this.addToCartButton.setAttribute('data-original-text', this.addToCartButton.textContent);
