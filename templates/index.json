@@ -17,7 +17,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/hero-banner_1_1.jpg",
-            "url": "shopify://collections/all",
+            "url": "shopify://products/af1-advance-formula-liposomal-amino-supplement",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -44,7 +44,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/hero-banner_1_1.jpg",
-            "url": "shopify://collections/all",
+            "url": "shopify://products/af1-advance-formula-liposomal-amino-supplement",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -71,7 +71,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/hero-banner_1_1.jpg",
-            "url": "shopify://collections/all",
+            "url": "shopify://products/af1-advance-formula-liposomal-amino-supplement",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -476,7 +476,7 @@
       "settings": {
         "desktop_image": "shopify://shop_images/ad-banner_1.png",
         "mobile_image": "shopify://shop_images/ad-banner_1.png",
-        "url": "shopify://collections/all",
+        "url": "shopify://products/af1-advance-formula-liposomal-amino-supplement",
         "layout": "full_width",
         "margin_top_desktop": 80,
         "margin_bottom_desktop": 80,
@@ -649,7 +649,7 @@
       "settings": {
         "desktop_image": "shopify://shop_images/revolution-banner_1.png",
         "mobile_image": "shopify://shop_images/revolution-banner_1.png",
-        "url": "shopify://collections/all",
+        "url": "shopify://products/af1-advance-formula-liposomal-amino-supplement",
         "layout": "full_width",
         "margin_top_desktop": 80,
         "margin_bottom_desktop": 0,
