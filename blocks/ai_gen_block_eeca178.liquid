@@ -617,6 +617,30 @@
           this.addToCartButton.disabled = true;
           this.addToCartButton.textContent = 'Adding...';
 
+          // Optimistic UI: open cart drawer and broadcast a lightweight cart update immediately
+          const drawer = document.querySelector('cart-drawer-component');
+          if (drawer && typeof drawer.open === 'function') drawer.open();
+          document.dispatchEvent(
+            new CustomEvent('cart:update', {
+              bubbles: true,
+              detail: {
+                data: {
+                  source: 'ai-product-feature',
+                  itemCount: quantity,
+                  variantId: variantId
+                }
+              }
+            })
+          );
+
+          // Quick feedback: show "Added!" shortly unless an error occurs
+          let didError = false;
+          const quickSetAdded = setTimeout(() => {
+            if (!didError) {
+              this.addToCartButton.textContent = 'Added!';
+            }
+          }, 250);
+
           // Collect cart item section IDs so the theme can morph them after add
           const cartItemsComponents = document.querySelectorAll('cart-items-component');
           const sectionIds = new Set();
@@ -644,6 +668,7 @@
             .then((response) => {
               // If Shopify returns an error structure, surface it but still try to notify the theme
               if (response && response.status) {
+                didError = true;
                 console.error('Add to cart error:', response.message || response);
                 this.addToCartButton.textContent = 'Error - Try Again';
                 setTimeout(() => {
@@ -668,6 +693,7 @@
               }
 
               // Success UI feedback
+              clearTimeout(quickSetAdded);
               this.addToCartButton.textContent = 'Added!';
               setTimeout(() => {
                 this.addToCartButton.disabled = false;
@@ -688,16 +714,11 @@
                   }
                 })
               );
-
-              // If cart drawer exists and is configured to auto open, it will open on the event above.
-              // Optionally open it directly as a fallback.
-              const drawer = document.querySelector('cart-drawer-component');
-              if (drawer && typeof drawer.open === 'function') {
-                drawer.open();
-              }
             })
             .catch((error) => {
               console.error('Error adding to cart:', error);
+              didError = true;
+              clearTimeout(quickSetAdded);
               this.addToCartButton.disabled = false;
               this.addToCartButton.textContent = 'Error - Try Again';
               setTimeout(() => {
