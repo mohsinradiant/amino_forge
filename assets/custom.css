@@ -239,6 +239,7 @@
 .header-sign-in-img p span {
     color: #333333;
     text-transform: capitalize;
+        font-size: 13px;
 }
 .home_health_benefits_inner {
     display: flex;
