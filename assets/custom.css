@@ -230,13 +230,15 @@
 .header-sign-in-img p {
     font-family: 'Gotham', sans-serif;
     font-size: 10px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 12px;
-    color: #333333;
+    color: #5b5b5b;
     margin: 0;
     text-align: left;
 }
-
+.header-sign-in-img p span {
+    color: #333333;
+}
 .home_health_benefits_inner {
     display: flex;
     flex-direction: column;
