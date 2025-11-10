@@ -2,10 +2,12 @@
     display: flex;
     gap: 50px;
 }
-.pdp_product_usp_container .section_heading{
+
+.pdp_product_usp_container .section_heading {
     text-align: left;
     margin-top: 10px;
 }
+
 .pdp_product_usp_left_img {
     width: 50%;
     height: fit-content;
@@ -15,4 +17,10 @@
     display: flex;
     flex-direction: column;
     width: 50%;
+}
+
+.pdp_product_usp_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
