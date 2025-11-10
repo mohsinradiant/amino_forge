@@ -2,7 +2,7 @@
   <p class="section_caption">CUSTOMER SHARING EXPERIENCES</p>
   <h2 class="section_heading">Product Reviews</h2>
   <div class="pdp-reviews-container-content-1">
-    {% for block in section.blocks.testimonials %}
+    {% for block in section.blocks %}
       <div class="pdp-review-card">
           <div class="pdp-review-card-image">
             <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.name }}">
