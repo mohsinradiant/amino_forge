@@ -1,0 +1,124 @@
+{% schema %}
+{
+  "name": "Product Reviews Firebase",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Reviews"
+    }
+  ]
+}
+{% endschema %}
+
+{% if template contains 'product' %}
+  <div class="product-reviews-wrapper" style="margin-top:40px;">
+    <h2 style="margin-bottom:15px;">Customer Reviews</h2>
+
+    <div id="rating-summary" style="font-weight:600;margin-bottom:15px;">⭐ 0 (0 reviews)</div>
+
+    <form id="review-form" style="margin-bottom:20px;">
+      <input
+        id="review-name"
+        type="text"
+        placeholder="Your Name"
+        required
+        style="margin-bottom:8px;display:block;width:100%;max-width:300px;"
+      >
+      <select id="review-rating" required style="margin-bottom:8px;display:block;width:100%;max-width:300px;">
+        <option value="">Select rating</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="1">⭐</option>
+      </select>
+      <textarea
+        id="review-comment"
+        placeholder="Write your review..."
+        required
+        style="margin-bottom:8px;width:100%;max-width:500px;height:100px;"
+      ></textarea>
+      <button
+        type="submit"
+        style="background:#000;color:#fff;padding:8px 16px;border:none;border-radius:6px;cursor:pointer;"
+      >
+        Submit Review
+      </button>
+    </form>
+
+    <div id="reviews-container"></div>
+  </div>
+
+  <script type="module">
+    import {
+      collection,
+      addDoc,
+      getDocs,
+      query,
+      where,
+    } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
+
+    const db = window.db;
+    const productHandle = '{{ product.handle }}';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('review-form');
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = form.querySelector('#review-name').value.trim();
+        const rating = form.querySelector('#review-rating').value;
+        const comment = form.querySelector('#review-comment').value.trim();
+
+        if (!name || !rating || !comment) {
+          alert('Please fill all fields.');
+          return;
+        }
+
+        await addDoc(collection(db, 'reviews'), {
+          product: productHandle,
+          name,
+          rating: parseInt(rating),
+          comment,
+          createdAt: new Date(),
+        });
+
+        alert('Review submitted successfully!');
+        form.reset();
+        loadReviews();
+      });
+
+      loadReviews();
+    });
+
+    async function loadReviews() {
+      const q = query(collection(db, 'reviews'), where('product', '==', productHandle));
+      const snapshot = await getDocs(q);
+
+      let total = 0;
+      const reviewsContainer = document.getElementById('reviews-container');
+      reviewsContainer.innerHTML = '';
+
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        total += data.rating;
+
+        const reviewEl = document.createElement('div');
+        reviewEl.classList.add('review');
+        reviewEl.style.marginBottom = '12px';
+        reviewEl.innerHTML = `
+        <p><strong>${data.name}</strong> - ${'⭐'.repeat(data.rating)}</p>
+        <p>${data.comment}</p>
+        <hr>
+      `;
+        reviewsContainer.appendChild(reviewEl);
+      });
+
+      const count = snapshot.size;
+      const avgRating = count ? (total / count).toFixed(1) : 0;
+      document.getElementById('rating-summary').innerHTML = `⭐ ${avgRating} (${count} reviews)`;
+    }
+  </script>
+{% endif %}
