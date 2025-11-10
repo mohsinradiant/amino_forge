@@ -809,7 +809,7 @@ footer .text-block h3 {
 .rating-snapshot p {
     font-weight: 700;
     font-size: 21px;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
     text-transform: uppercase;
 }
 
@@ -828,7 +828,7 @@ footer .text-block h3 {
 
 .rating-bar span:first-of-type {
     position: absolute;
-    top: -18px;
+    top: -27px;
     left: 0;
     width: fit-content;
     font-size: 14px;
@@ -836,7 +836,7 @@ footer .text-block h3 {
 
 .rating-bar span:last-of-type {
     position: absolute;
-    top: -18px;
+    top: -27px;
     right: 0;
     width: fit-content;
     font-size: 14px;
@@ -847,7 +847,6 @@ footer .text-block h3 {
     height: 8px;
     background: #ddd;
     border-radius: 4px;
-    margin: 0 10px;
     overflow: hidden;
 }
 
