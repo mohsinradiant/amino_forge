@@ -737,7 +737,7 @@ footer .text-block h3 {
 }
 
 .pdp-reviews-container-content-1 {
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     overflow: hidden;
     border: solid 1px #E4DFED;
     margin-top: 25px;
