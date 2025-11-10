@@ -737,6 +737,7 @@ footer .text-block h3 {
     border-radius: 20px;
     overflow: hidden;
     border: solid 1px #E4DFED;
+    margin-top: 25px;
 }
 
 @media(max-width: 768px) {
