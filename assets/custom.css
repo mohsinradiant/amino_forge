@@ -554,7 +554,9 @@ footer .text-block h3 {
     grid-column: unset !important;
     grid-template-columns: unset !important;
 }
-
+.product-information__media{
+    min-width: 50% !important;
+}
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
