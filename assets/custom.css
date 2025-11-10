@@ -634,6 +634,8 @@ footer .text-block h3 {
 }
 
 .add-to-cart-button {
+
+.add-to-cart-button {
     max-width: fit-content;
 }
 
@@ -879,11 +881,7 @@ footer .text-block h3 {
 .overall-score {
     font-size: 70px;
     font-weight: 700;
-<<<<<<< HEAD
-    color: #222;
-=======
     color: #062E32;
->>>>>>> a34086e (minor changes)
 }
 
 .overall-stars {
