@@ -698,6 +698,38 @@ footer .text-block h3 {
     letter-spacing: 1.2px;
 }
 
+.pdp-review-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdp-review-card-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pdp-review-card-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.pdp-review-card-right-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.pdp-review-card-right-top img {
+    width: 65px;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
