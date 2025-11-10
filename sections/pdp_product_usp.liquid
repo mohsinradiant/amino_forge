@@ -1,0 +1,22 @@
+<div class="section pdp_product_usp_container">
+  <img src="{{ section.settings.image | img_url }}">
+</div>
+
+{% schema %}
+{
+  "name": "PDP Product USP",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "PDP Product USP"
+    }
+  ]
+}
+{% endschema %}
