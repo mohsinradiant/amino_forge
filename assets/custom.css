@@ -556,16 +556,20 @@ footer .text-block h3 {
 .product-information:not(.product-information--media-right) {
     padding: 0;
 }
-.product-details .group-block-content rte-formatter:first-of-type p{
+
+.product-details .group-block-content rte-formatter:first-of-type p {
     color: #9E3EB2;
     font-weight: 500;
     font-size: 14px;
 }
-.product-details .group-block-content rte-formatter:nth-of-type(2) p{
+
+.product-details .group-block-content rte-formatter:nth-of-type(2) p {
     color: #000;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 1.4;
 }
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
