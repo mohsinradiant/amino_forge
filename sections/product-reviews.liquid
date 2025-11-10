@@ -204,6 +204,75 @@
       `;
     }
   }
+  document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('review-popup');
+    const overlay = popup.querySelector('.review-popup-overlay');
+    const closeBtn = popup.querySelector('.close-popup');
+    const openBtn = document.querySelector('.open-review-popup');
+    const starContainer = document.getElementById('star-rating');
+    const starURL = 'https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Vector.svg?v=1762802576';
+    let selectedRating = 0;
+
+    // Inject 5 clickable stars
+    for (let i = 1; i <= 5; i++) {
+      const star = document.createElement('img');
+      star.src = starURL;
+      star.classList.add('star-icon', 'empty');
+      star.dataset.value = i;
+      starContainer.appendChild(star);
+    }
+
+    function updateStars(value) {
+      const stars = starContainer.querySelectorAll('img');
+      stars.forEach((star, index) => {
+        star.classList.toggle('filled', index < value);
+        star.classList.toggle('empty', index >= value);
+      });
+    }
+
+    starContainer.addEventListener('click', (e) => {
+      if (e.target.tagName === 'IMG') {
+        selectedRating = parseInt(e.target.dataset.value);
+        updateStars(selectedRating);
+      }
+    });
+
+    // Open popup
+    openBtn.addEventListener('click', () => {
+      popup.classList.remove('hidden');
+    });
+
+    // Close popup when clicking overlay or X
+    overlay.addEventListener('click', () => popup.classList.add('hidden'));
+    closeBtn.addEventListener('click', () => popup.classList.add('hidden'));
+
+    // Handle form submit
+    const form = document.getElementById('review-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = form.querySelector('#review-name').value.trim();
+      const comment = form.querySelector('#review-comment').value.trim();
+
+      if (!name || !comment || selectedRating === 0) {
+        alert('Please fill all fields and select a rating.');
+        return;
+      }
+
+      await addDoc(collection(db, 'reviews'), {
+        product: productHandle,
+        name,
+        rating: selectedRating,
+        comment,
+        createdAt: new Date(),
+      });
+
+      form.reset();
+      selectedRating = 0;
+      updateStars(0);
+      popup.classList.add('hidden');
+      loadReviews();
+    });
+  });
 </script>
 {% schema %}
 {
