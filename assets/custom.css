@@ -554,6 +554,8 @@ footer .text-block h3 {
 }
 
 .product-information:not(.product-information--media-right) {
+
+.product-information:not(.product-information--media-right) {
     padding: 0;
 }
 
@@ -630,11 +632,7 @@ footer .text-block h3 {
     font-size: 16px;
     background: transparent;
     color: #222222;
-<<<<<<< HEAD
-    padding-left: 14px;
-=======
     /* padding-left: 14px; */
->>>>>>> e51eb3c (minor changes)
 }
 .add-to-cart-button{
     max-width: fit-content;
