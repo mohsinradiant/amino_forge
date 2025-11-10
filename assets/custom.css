@@ -763,7 +763,7 @@ footer .text-block h3 {
     width: 70%;
 }
 .pdp-review-card-right-top-title-container img{
-    width: 100%;
+    width: 100px;
 }
 @media(max-width: 768px) {
     .testimonials-carousel-container {
