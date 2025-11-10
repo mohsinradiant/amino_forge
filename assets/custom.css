@@ -1019,6 +1019,19 @@ footer .text-block h3 {
     animation: popupIn 0.3s ease;
 }
 
+.review-popup-content h3 {
+    font-weight: 700;
+    font-size: 21px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.review-popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 @keyframes popupIn {
     from {
         transform: scale(0.8);
