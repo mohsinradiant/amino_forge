@@ -1,145 +1,267 @@
-{% if template contains 'product' %}
-  <div class="product-reviews-wrapper" style="margin-top:40px;">
-    <h2 style="margin-bottom:15px;">Customer Reviews</h2>
+<div class="product-reviews-wrapper">
+  <h2>Customer Reviews</h2>
 
-    <div id="rating-summary" style="font-weight:600;margin-bottom:15px;">⭐ 0 (0 reviews)</div>
+  <div class="reviews-grid">
+    <div class="rating-snapshot">
+      <h3>Rating Snapshot</h3>
+      <div id="rating-bars"></div>
+    </div>
 
-    <form id="review-form" style="margin-bottom:20px;">
-      <input
-        id="review-name"
-        type="text"
-        placeholder="Your Name"
-        required
-        style="margin-bottom:8px;display:block;width:100%;max-width:300px;"
-      >
-      <select id="review-rating" required style="margin-bottom:8px;display:block;width:100%;max-width:300px;">
-        <option value="">Select rating</option>
-        <option value="5">⭐⭐⭐⭐⭐</option>
-        <option value="4">⭐⭐⭐⭐</option>
-        <option value="3">⭐⭐⭐</option>
-        <option value="2">⭐⭐</option>
-        <option value="1">⭐</option>
-      </select>
-      <textarea
-        id="review-comment"
-        placeholder="Write your review..."
-        required
-        style="margin-bottom:8px;width:100%;max-width:500px;height:100px;"
-      ></textarea>
-      <button
-        type="submit"
-        style="background:#000;color:#fff;padding:8px 16px;border:none;border-radius:6px;cursor:pointer;"
-      >
-        Submit Review
-      </button>
-    </form>
+    <div class="overall-rating">
+      <h3>Overall Rating</h3>
+      <div>
+        <span class="overall-score" id="avg-rating">0.0</span>
+        <span class="overall-stars" id="avg-stars">☆☆☆☆☆</span>
+      </div>
+      <p id="total-reviews" style="font-weight:600;">0 REVIEWS</p>
 
-    <div id="reviews-container"></div>
+      <div class="review-form">
+        <h4>Review this Product</h4>
+        <form id="review-form">
+          <input id="review-name" type="text" placeholder="Your Name" required>
+          <select id="review-rating" required>
+            <option value="">Select Rating</option>
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Good</option>
+            <option value="3">3 - Average</option>
+            <option value="2">2 - Poor</option>
+            <option value="1">1 - Terrible</option>
+          </select>
+          <textarea id="review-comment" placeholder="Write your review..." required></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
-    import {
-      getFirestore,
-      collection,
-      addDoc,
-      getDocs,
-      query,
-      where,
-    } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
+  <div class="reviews-list" id="reviews-container"></div>
+</div>
 
-    // ✅ Use the same config as in theme.liquid
-    const firebaseConfig = {
-      apiKey: 'AIzaSyAp18R6kC6JqdnEFb-hUmEyq0PsKPEJgAY',
-      authDomain: 'amino-forge-product-reviews.firebaseapp.com',
-      projectId: 'amino-forge-product-reviews',
-      storageBucket: 'amino-forge-product-reviews.firebasestorage.app',
-      messagingSenderId: '577965437155',
-      appId: '1:577965437155:web:9cb889cd942e471f1215d6',
-      measurementId: 'G-ESVSTBHCZZ',
-    };
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    query,
+    where,
+  } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
 
-    // ✅ Initialize Firebase (check if already initialized)
-    let app;
-    if (!window.firebaseApp) {
-      app = initializeApp(firebaseConfig);
-      window.firebaseApp = app;
-    } else {
-      app = window.firebaseApp;
-    }
+  const firebaseConfig = {
+    apiKey: 'AIzaSyAp18R6kC6JqdnEFb-hUmEyq0PsKPEJgAY',
+    authDomain: 'amino-forge-product-reviews.firebaseapp.com',
+    projectId: 'amino-forge-product-reviews',
+    storageBucket: 'amino-forge-product-reviews.firebasestorage.app',
+    messagingSenderId: '577965437155',
+    appId: '1:577965437155:web:9cb889cd942e471f1215d6',
+    measurementId: 'G-ESVSTBHCZZ',
+  };
 
-    const db = getFirestore(app);
-    const productHandle = '{{ product.handle }}';
+  let app;
+  if (!window.firebaseApp) {
+    app = initializeApp(firebaseConfig);
+    window.firebaseApp = app;
+  } else {
+    app = window.firebaseApp;
+  }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('review-form');
-      if (!form) return;
+  const db = getFirestore(app);
+  const productHandle = '{{ product.handle }}';
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('review-form');
+    if (!form) return;
 
-        const name = form.querySelector('#review-name').value.trim();
-        const rating = form.querySelector('#review-rating').value;
-        const comment = form.querySelector('#review-comment').value.trim();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = form.querySelector('#review-name').value.trim();
+      const rating = parseInt(form.querySelector('#review-rating').value);
+      const comment = form.querySelector('#review-comment').value.trim();
 
-        if (!name || !rating || !comment) {
-          alert('Please fill all fields.');
-          return;
-        }
+      if (!name || !rating || !comment) {
+        alert('Please fill all fields.');
+        return;
+      }
 
-        try {
-          await addDoc(collection(db, 'reviews'), {
-            product: productHandle,
-            name,
-            rating: parseInt(rating),
-            comment,
-            createdAt: new Date(),
-          });
-
-          alert('Review submitted successfully!');
-          form.reset();
-          loadReviews();
-        } catch (err) {
-          console.error('Error adding review:', err);
-        }
+      await addDoc(collection(db, 'reviews'), {
+        product: productHandle,
+        name,
+        rating,
+        comment,
+        createdAt: new Date(),
       });
 
+      form.reset();
       loadReviews();
     });
 
-    async function loadReviews() {
-      try {
-        const q = query(collection(db, 'reviews'), where('product', '==', productHandle));
-        const snapshot = await getDocs(q);
+    loadReviews();
+  });
 
-        let total = 0;
-        const reviewsContainer = document.getElementById('reviews-container');
-        reviewsContainer.innerHTML = '';
+  async function loadReviews() {
+    const q = query(collection(db, 'reviews'), where('product', '==', productHandle));
+    const snapshot = await getDocs(q);
 
-        snapshot.forEach((doc) => {
-          const data = doc.data();
-          total += data.rating;
+    let total = 0;
+    let ratingCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    const reviewsContainer = document.getElementById('reviews-container');
+    reviewsContainer.innerHTML = '';
 
-          const reviewEl = document.createElement('div');
-          reviewEl.classList.add('review');
-          reviewEl.style.marginBottom = '12px';
-          reviewEl.innerHTML = `
-          <p><strong>${data.name}</strong> - ${'⭐'.repeat(data.rating)}</p>
-          <p>${data.comment}</p>
-          <hr>
-        `;
-          reviewsContainer.appendChild(reviewEl);
-        });
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+      total += data.rating;
+      ratingCounts[data.rating]++;
 
-        const count = snapshot.size;
-        const avgRating = count ? (total / count).toFixed(1) : 0;
-        document.getElementById('rating-summary').innerHTML = `⭐ ${avgRating} (${count} reviews)`;
-      } catch (err) {
-        console.error('Error loading reviews:', err);
-      }
+      const reviewEl = document.createElement('div');
+      reviewEl.classList.add('review-card');
+      reviewEl.innerHTML = `
+        <p><strong>${data.name}</strong> - ${'⭐'.repeat(data.rating)}</p>
+        <p>${data.comment}</p>
+      `;
+      reviewsContainer.appendChild(reviewEl);
+    });
+
+    const count = snapshot.size;
+    const avgRating = count ? (total / count).toFixed(1) : 0;
+    document.getElementById('avg-rating').textContent = avgRating;
+    document.getElementById('avg-stars').textContent =
+      '⭐'.repeat(Math.round(avgRating)) + '☆'.repeat(5 - Math.round(avgRating));
+    document.getElementById('total-reviews').textContent = `${count} REVIEW${count === 1 ? '' : 'S'}`;
+
+    // Build Rating Snapshot
+    const ratingBars = document.getElementById('rating-bars');
+    ratingBars.innerHTML = '';
+    for (let i = 5; i >= 1; i--) {
+      const percentage = count ? (ratingCounts[i] / count) * 100 : 0;
+      ratingBars.innerHTML += `
+        <div class="rating-bar">
+          <span>${i} Stars</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:${percentage}%;"></div>
+          </div>
+          <span class="rating-count">${ratingCounts[i]}</span>
+        </div>
+      `;
     }
-  </script>
-{% endif %}
+  }
+</script>
+
+<style>
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .rating-snapshot {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .rating-snapshot h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .rating-bar {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+  }
+
+  .rating-bar span {
+    width: 60px;
+    font-weight: 500;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 8px;
+    background: #f6b600;
+    border-radius: 4px;
+  }
+
+  .rating-count {
+    font-weight: 600;
+    color: #333;
+  }
+
+  .overall-rating {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .overall-rating h3 {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .overall-score {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #222;
+  }
+
+  .overall-stars {
+    color: #f6b600;
+    font-size: 1.4rem;
+    margin-left: 5px;
+  }
+
+  .review-form {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+  }
+
+  .review-form input,
+  .review-form textarea,
+  .review-form select {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .review-form button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .reviews-list {
+    margin-top: 40px;
+  }
+
+  .review-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .review-card strong {
+    color: #111;
+  }
+</style>
 
 {% schema %}
 {
