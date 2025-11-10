@@ -635,6 +635,16 @@ footer .text-block h3 {
 .add-to-cart-button{
     max-width: fit-content;
 }
+ .product-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+  .product-rating .stars {
+    display: flex;
+    gap: 10px;
+  }
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
