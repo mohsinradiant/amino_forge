@@ -733,6 +733,12 @@ footer .text-block h3 {
     width: 65px;
 }
 
+.pdp-reviews-container-content-1 {
+    border-radius: 20px;
+    overflow: hidden;
+    border: solid 1px #E4DFED;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
