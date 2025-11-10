@@ -1,15 +1,3 @@
-{% schema %}
-{
-  "name": "Product Reviews Firebase",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Product Reviews"
-    }
-  ]
-}
-{% endschema %}
-
 {% if template contains 'product' %}
   <div class="product-reviews-wrapper" style="margin-top:40px;">
     <h2 style="margin-bottom:15px;">Customer Reviews</h2>
@@ -50,7 +38,9 @@
   </div>
 
   <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
     import {
+      getFirestore,
       collection,
       addDoc,
       getDocs,
@@ -58,7 +48,27 @@
       where,
     } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
 
-    const db = window.db;
+    // ✅ Use the same config as in theme.liquid
+    const firebaseConfig = {
+      apiKey: 'AIzaSyAp18R6kC6JqdnEFb-hUmEyq0PsKPEJgAY',
+      authDomain: 'amino-forge-product-reviews.firebaseapp.com',
+      projectId: 'amino-forge-product-reviews',
+      storageBucket: 'amino-forge-product-reviews.firebasestorage.app',
+      messagingSenderId: '577965437155',
+      appId: '1:577965437155:web:9cb889cd942e471f1215d6',
+      measurementId: 'G-ESVSTBHCZZ',
+    };
+
+    // ✅ Initialize Firebase (check if already initialized)
+    let app;
+    if (!window.firebaseApp) {
+      app = initializeApp(firebaseConfig);
+      window.firebaseApp = app;
+    } else {
+      app = window.firebaseApp;
+    }
+
+    const db = getFirestore(app);
     const productHandle = '{{ product.handle }}';
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -77,48 +87,68 @@
           return;
         }
 
-        await addDoc(collection(db, 'reviews'), {
-          product: productHandle,
-          name,
-          rating: parseInt(rating),
-          comment,
-          createdAt: new Date(),
-        });
+        try {
+          await addDoc(collection(db, 'reviews'), {
+            product: productHandle,
+            name,
+            rating: parseInt(rating),
+            comment,
+            createdAt: new Date(),
+          });
 
-        alert('Review submitted successfully!');
-        form.reset();
-        loadReviews();
+          alert('Review submitted successfully!');
+          form.reset();
+          loadReviews();
+        } catch (err) {
+          console.error('Error adding review:', err);
+        }
       });
 
       loadReviews();
     });
 
     async function loadReviews() {
-      const q = query(collection(db, 'reviews'), where('product', '==', productHandle));
-      const snapshot = await getDocs(q);
+      try {
+        const q = query(collection(db, 'reviews'), where('product', '==', productHandle));
+        const snapshot = await getDocs(q);
 
-      let total = 0;
-      const reviewsContainer = document.getElementById('reviews-container');
-      reviewsContainer.innerHTML = '';
+        let total = 0;
+        const reviewsContainer = document.getElementById('reviews-container');
+        reviewsContainer.innerHTML = '';
 
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        total += data.rating;
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          total += data.rating;
 
-        const reviewEl = document.createElement('div');
-        reviewEl.classList.add('review');
-        reviewEl.style.marginBottom = '12px';
-        reviewEl.innerHTML = `
-        <p><strong>${data.name}</strong> - ${'⭐'.repeat(data.rating)}</p>
-        <p>${data.comment}</p>
-        <hr>
-      `;
-        reviewsContainer.appendChild(reviewEl);
-      });
+          const reviewEl = document.createElement('div');
+          reviewEl.classList.add('review');
+          reviewEl.style.marginBottom = '12px';
+          reviewEl.innerHTML = `
+          <p><strong>${data.name}</strong> - ${'⭐'.repeat(data.rating)}</p>
+          <p>${data.comment}</p>
+          <hr>
+        `;
+          reviewsContainer.appendChild(reviewEl);
+        });
 
-      const count = snapshot.size;
-      const avgRating = count ? (total / count).toFixed(1) : 0;
-      document.getElementById('rating-summary').innerHTML = `⭐ ${avgRating} (${count} reviews)`;
+        const count = snapshot.size;
+        const avgRating = count ? (total / count).toFixed(1) : 0;
+        document.getElementById('rating-summary').innerHTML = `⭐ ${avgRating} (${count} reviews)`;
+      } catch (err) {
+        console.error('Error loading reviews:', err);
+      }
     }
   </script>
 {% endif %}
+
+{% schema %}
+{
+  "name": "Product Reviews Firebase",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Reviews"
+    }
+  ]
+}
+{% endschema %}
