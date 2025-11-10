@@ -576,17 +576,26 @@ footer .text-block h3 {
     font-size: 17px;
     line-height: 1.5;
 }
-.product-details .group-block-content rte-formatter:nth-of-type(4) p {  
+
+.product-details .group-block-content rte-formatter:nth-of-type(4) p {
     color: #000;
     font-weight: 500;
     font-size: 14px;
     margin-top: 30px;
 }
-.product-details .group-block-content rte-formatter:nth-of-type(4) p strong{  
+
+.product-details .group-block-content rte-formatter:nth-of-type(4) p strong {
     color: #818181;
     font-weight: 400;
     font-size: 12px;
 }
+
+.product-details .product-price .price {
+    font-size: 19px;
+    color: #000000;
+    font-weight: 600;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
