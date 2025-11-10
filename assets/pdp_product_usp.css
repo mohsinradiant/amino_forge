@@ -1,7 +1,5 @@
 .pdp_product_usp_container {
     display: flex;
-    justify-content: center;
-    align-items: start;
 }
 
 .pdp_product_usp_container img:first-of-type {
