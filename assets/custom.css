@@ -817,7 +817,7 @@ footer .text-block h3 {
 }
 
 .rating-bar span {
-    width: 10px;
+    width: fit-content;
     text-align: center;
     font-weight: 500;
     text-wrap: nowrap;
