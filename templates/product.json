@@ -274,7 +274,7 @@
         "usp_T8tWXj": {
           "type": "USP",
           "settings": {
-            "svg_filename": "'PDP_USP_2'",
+            "svg_filename": "PDP_USP_2",
             "heading": "Accelerated Muscle Recovery",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -282,7 +282,7 @@
         "usp_6LTxDx": {
           "type": "USP",
           "settings": {
-            "svg_filename": "",
+            "svg_filename": "PDP_USP_3",
             "heading": "Enhanced Cognitive Focus",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -290,7 +290,7 @@
         "usp_6e67kV": {
           "type": "USP",
           "settings": {
-            "svg_filename": "",
+            "svg_filename": "PDP_USP_4",
             "heading": "Sustained Energy & Endurance",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -298,7 +298,7 @@
         "usp_QVNtxp": {
           "type": "USP",
           "settings": {
-            "svg_filename": "",
+            "svg_filename": "PDP_USP_5",
             "heading": "9 Essential Amino Acids",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -306,7 +306,7 @@
         "usp_GkANdM": {
           "type": "USP",
           "settings": {
-            "svg_filename": "",
+            "svg_filename": "PDP_USP_6",
             "heading": "Pure And Potent",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
