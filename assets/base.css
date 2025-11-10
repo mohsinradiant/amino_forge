@@ -3666,7 +3666,7 @@ slideshow-component[autoplay] slideshow-controls {
     width: clamp(44px, 7vw, var(--thumbnail-width));
     height: auto;
     aspect-ratio: var(--aspect-ratio);
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
 
 

@@ -545,7 +545,7 @@ footer .text-block h3 {
 
 .media-gallery--carousel slideshow-container {
     border: solid 1px #00000020;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 @media(max-width: 768px) {
