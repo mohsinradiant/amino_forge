@@ -952,7 +952,9 @@ footer .text-block h3 {
 .star-icon.filled {
     opacity: 1;
 }
-
+#total-reviews{
+    margin: 0;
+}
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
