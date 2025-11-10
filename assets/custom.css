@@ -663,14 +663,16 @@ footer .text-block h3 {
 
 .product-rating .rating-value { font-weight: 600; margin-right: 2px; }
 .product-rating-spacer { color: #bdbdbd; margin: 0 4px; }
-.product-rating a, .product-rating span.write-review {
+.product-rating a {
   cursor: pointer;
   text-decoration: underline;
   font-size: 12px;
 }
 .product-rating .write-review {
+  margin-left: 4px;
+  font-size: 12px;
+  text-decoration: underline;
   cursor: pointer;
-
 }
 
 
