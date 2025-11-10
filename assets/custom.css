@@ -885,7 +885,7 @@ footer .text-block h3 {
 .overall-stars {
     color: #FFA105;
     font-size: 1.4rem;
-    margin-left: 5px;
+    display: flex;
 }
 
 .review-form {
@@ -937,17 +937,20 @@ footer .text-block h3 {
     width: 100%;
     gap: 15px;
 }
+
 .star-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 3px;
-  transition: opacity 0.2s ease;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    transition: opacity 0.2s ease;
 }
+
 .star-icon.empty {
-  opacity: 0.2;
+    opacity: 0.2;
 }
+
 .star-icon.filled {
-  opacity: 1;
+    opacity: 1;
 }
 
 @media(max-width: 768px) {
