@@ -686,6 +686,9 @@ footer .text-block h3 {
     text-transform: uppercase;
 }
 
+.pdp-reviews-container {
+    background-color: #FCFAFF;
+}
 
 @media(max-width: 768px) {
     .testimonials-carousel-container {
