@@ -927,7 +927,9 @@ footer .text-block h3 {
 }
 
 .reviews-list {
-    margin-top: 40px;
+    opacity: 0;
+    height: 0;
+    margin: 0;
 }
 
 .review-card {
