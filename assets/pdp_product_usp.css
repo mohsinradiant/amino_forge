@@ -6,7 +6,7 @@
     text-align: left;
     margin-top: 10px;
 }
-.pdp_product_usp_container img:first-child {
+.pdp_product_usp_left_img {
     width: 50%;
     height: fit-content;
 }
