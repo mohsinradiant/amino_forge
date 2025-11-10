@@ -688,10 +688,13 @@ footer .text-block h3 {
 
 .pdp-reviews-container {
     background: #FCFAFF !important;
+    padding-top: 100px;
 }
-.pdp-reviews-container .section_caption{
+
+.pdp-reviews-container .section_caption {
     text-align: center;
 }
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
