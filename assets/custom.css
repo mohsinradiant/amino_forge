@@ -774,6 +774,13 @@ footer .text-block h3 {
     margin-top: 7px;
 }
 
+.pdp-review-card-right-bottom p {
+    margin-top: 20px;
+    color: #333333;
+    font-weight: 300;
+    font-size: 17px;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
