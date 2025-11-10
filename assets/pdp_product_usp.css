@@ -44,3 +44,7 @@
     font-weight: 300;
     margin: 0;
 }
+
+.pdp_product_usp_icon svg {
+    fill: #d6d6d6;
+}
