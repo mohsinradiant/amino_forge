@@ -1,6 +1,6 @@
 .pdp_product_usp_container {
     display: flex;
-    gap: 30px;
+    gap: 50px;
 }
 .pdp_product_usp_container .section_heading{
     text-align: left;
