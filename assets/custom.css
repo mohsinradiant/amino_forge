@@ -902,6 +902,10 @@ footer .text-block h3 {
     font-family: 'Gotham', sans-serif !important;
 }
 
+.review-form p:last-of-type {
+    margin: 0 !important;
+}
+
 .review-form input,
 .review-form textarea,
 .review-form select {
