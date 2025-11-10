@@ -38,9 +38,13 @@
           <span class="overall-score" id="avg-rating">0.0</span>
           <div class="overall-stars-container">
             <span class="overall-stars" id="avg-stars">☆☆☆☆☆</span>
-            <p id="total-reviews" style="font-weight:600;">0 REVIEWS</p>
+            <p class="total-reviews" style="font-weight:600;">0 REVIEWS</p>
           </div>
         </div>
+        <p>
+          <span class="total-reviews"></span> out of <span class="total-reviews"></span> (100%) reviewers recommend this
+          product
+        </p>
 
         <div class="review-form">
           <h4>Review this Product</h4>
@@ -164,7 +168,7 @@
       starsHTML += `<img src="${starURL}" alt="star" class="star-icon ${cls}" />`;
     }
     starsContainer.innerHTML = starsHTML;
-    document.getElementById('total-reviews').textContent = `${count} REVIEW${count === 1 ? '' : 'S'}`;
+    document.querySelectorAll('total-reviews').textContent = `${count} REVIEW${count === 1 ? '' : 'S'}`;
 
     // Build Rating Snapshot
     const ratingBars = document.getElementById('rating-bars');

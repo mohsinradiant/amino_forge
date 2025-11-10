@@ -953,7 +953,7 @@ footer .text-block h3 {
     opacity: 1;
 }
 
-#total-reviews {
+.total-reviews {
     margin: 11px 0 0px;
     font-size: 14px;
 }
