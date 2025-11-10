@@ -126,6 +126,13 @@
         border: solid 1px #9e3eb2;
       }
     </style>
+    {% if page.template == 'product' %}
+      <style>
+        .section-content-wrapper.section-content-wrapper .button {
+          margin-bottom: 100px;
+        }
+      </style>
+    {% endif %}
     <main
       id="MainContent"
       class="content-for-layout"
