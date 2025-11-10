@@ -260,6 +260,79 @@
         "padding-block-end": 0
       }
     },
+    "pdp_product_usp_Tq47Jb": {
+      "type": "pdp_product_usp",
+      "blocks": {
+        "usp_Mfg9Jc": {
+          "type": "USP",
+          "settings": {
+            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_116.svg?v=1762816688",
+            "image": "shopify://shop_images/image_116.svg",
+            "heading": "3X Higher Absorption",
+            "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
+          }
+        },
+        "usp_T8tWXj": {
+          "type": "USP",
+          "settings": {
+            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Mask_group.svg?v=1762816734",
+            "image": "shopify://shop_images/image_116.svg",
+            "heading": "Accelerated Muscle Recovery",
+            "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
+          }
+        },
+        "usp_6LTxDx": {
+          "type": "USP",
+          "settings": {
+            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_114.svg?v=1762816687",
+            "image": "shopify://shop_images/image_116.svg",
+            "heading": "Enhanced Cognitive Focus",
+            "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
+          }
+        },
+        "usp_6e67kV": {
+          "type": "USP",
+          "settings": {
+            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_111.svg?v=1762816688",
+            "image": "shopify://shop_images/image_116.svg",
+            "heading": "Sustained Energy & Endurance",
+            "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
+          }
+        },
+        "usp_QVNtxp": {
+          "type": "USP",
+          "settings": {
+            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_112.svg?v=1762816688",
+            "image": "shopify://shop_images/image_116.svg",
+            "heading": "9 Essential Amino Acids",
+            "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
+          }
+        },
+        "usp_GkANdM": {
+          "type": "USP",
+          "settings": {
+            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_113.svg?v=1762816688",
+            "image": "shopify://shop_images/image_116.svg",
+            "heading": "Pure And Potent",
+            "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
+          }
+        }
+      },
+      "block_order": [
+        "usp_Mfg9Jc",
+        "usp_T8tWXj",
+        "usp_6LTxDx",
+        "usp_6e67kV",
+        "usp_QVNtxp",
+        "usp_GkANdM"
+      ],
+      "name": "PDP Product USP",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_527.png",
+        "heading": "Engineered for Peak Mind & Body Performance",
+        "caption": "Why do I need it?"
+      }
+    },
     "product_reviews_Rdwmkf": {
       "type": "product-reviews",
       "blocks": {
@@ -623,6 +696,7 @@
   },
   "order": [
     "main",
+    "pdp_product_usp_Tq47Jb",
     "product_reviews_Rdwmkf",
     "section_UJQGQ9"
   ]
