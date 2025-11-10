@@ -687,7 +687,7 @@ footer .text-block h3 {
 }
 
 .pdp-reviews-container {
-    background-color: #FCFAFF;
+    background: #FCFAFF !important;
 }
 
 @media(max-width: 768px) {
