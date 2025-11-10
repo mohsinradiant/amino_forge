@@ -1,5 +1,6 @@
 <div class="section pdp_product_usp_container">
   <img src="{{ section.settings.image | img_url }}">
+  <div class="pdp_product_usp_container_right_column"></div>
 </div>
 
 {% schema %}
@@ -10,7 +11,9 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
-    }
+    },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Heading" },
+    { "type": "text", "id": "caption", "label": "Caption", "default": "Caption" }
   ],
   "blocks": [],
   "presets": [
