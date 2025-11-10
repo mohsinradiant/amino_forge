@@ -123,7 +123,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<div class=\"product-rating\" data-product-handle=\"{{ product.handle }}\">\n  <div class=\"stars\">★★★★★</div>\n  <span class=\"rating-value\">0.0</span>\n  <span class=\"rating-count\">(0)</span>\n</div>"
+                "custom_liquid": "<div class=\"product-rating\" data-product-handle=\"{{ product.handle }}\">\n  <div class=\"stars\"></div>\n  <span class=\"rating-value\">0.0</span>\n  <span class=\"rating-count\">(0)</span>\n</div>"
               },
               "blocks": {}
             },
