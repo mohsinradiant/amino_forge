@@ -3681,6 +3681,10 @@ slideshow-component[autoplay] slideshow-controls {
       border: solid 1px #9E3EB2;
       background: #F8F5FE;
     }
+
+        &:is([aria-selected='true']) img {
+      background: transparent;
+    }
   }
 }
 
