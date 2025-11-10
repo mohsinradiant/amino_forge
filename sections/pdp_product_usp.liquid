@@ -11,12 +11,14 @@
       <div class="pdp_product_usp_wrapper">
         {% for block in section.blocks %}
           <div class="pdp_product_usp_item">
-            {% assign svg_file = block.settings.svg_filename | append: '.svg' %}
-            <img
-              src="{{ svg_file | asset_url }}"
-              alt="{{ block.settings.heading }}"
-              class="pdp_product_usp_icon"
-            >
+            {% assign svg_filename = block.settings.svg_filename | append: '.svg' %}
+            {% capture svg_code %}
+              {% include svg_filename %}
+            {% endcapture %}
+            <div class="pdp_product_usp_icon">
+              {{ svg_code }}
+            </div>
+
             <div class="pdp_product_usp_item_content">
               <h3 class="pdp_product_usp_item_heading">{{ block.settings.heading }}</h3>
               <p class="pdp_product_usp_item_caption">{{ block.settings.caption }}</p>
