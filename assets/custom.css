@@ -937,6 +937,18 @@ footer .text-block h3 {
     width: 100%;
     gap: 15px;
 }
+.star-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  transition: opacity 0.2s ease;
+}
+.star-icon.empty {
+  opacity: 0.2;
+}
+.star-icon.filled {
+  opacity: 1;
+}
 
 @media(max-width: 768px) {
     .testimonials-carousel-container {
