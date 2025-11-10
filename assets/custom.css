@@ -743,6 +743,13 @@ footer .text-block h3 {
     margin-top: 25px;
 }
 
+.pdp-testimonial-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
