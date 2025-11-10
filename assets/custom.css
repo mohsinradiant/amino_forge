@@ -833,7 +833,7 @@ footer .text-block h3 {
 
 .bar-fill {
     height: 8px;
-    background: #f6b600;
+    background: #FFA105;
     border-radius: 4px;
 }
 
@@ -864,7 +864,7 @@ footer .text-block h3 {
 }
 
 .overall-stars {
-    color: #f6b600;
+    color: #FFA105;
     font-size: 1.4rem;
     margin-left: 5px;
 }
