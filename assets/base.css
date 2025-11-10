@@ -1321,6 +1321,7 @@ button.shopify-payment-button__button--unbranded {
   font-family: var(--button-font-family-secondary);
   text-transform: var(--button-text-case-secondary);
   border-radius: var(--style-border-radius-buttons-secondary);
+  font-weight: 400;
 }
 
 button.shopify-payment-button__button--unbranded {
