@@ -1042,6 +1042,28 @@ footer .text-block h3 {
     background: #F9F4FD;
 }
 
+#review-form button {
+    background-color: #9e3eb2;
+    color: #fff;
+    font-family: 'Gotham', sans-serif;
+    border: none;
+    padding: 16px;
+    width: 100%;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    height: 50px;
+    line-height: 0;
+    border-radius: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
 @keyframes popupIn {
     from {
         transform: scale(0.8);
