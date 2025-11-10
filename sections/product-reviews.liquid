@@ -168,7 +168,9 @@
       starsHTML += `<img src="${starURL}" alt="star" class="star-icon ${cls}" />`;
     }
     starsContainer.innerHTML = starsHTML;
-    document.querySelectorAll('.total-reviews').textContent = `${count} REVIEW${count === 1 ? '' : 'S'}`;
+    document.querySelectorAll('.total-reviews').forEach((el) => {
+      el.textContent = `${count} REVIEW${count === 1 ? '' : 'S'}`;
+    });
 
     // Build Rating Snapshot
     const ratingBars = document.getElementById('rating-bars');
