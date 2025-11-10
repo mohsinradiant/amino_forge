@@ -545,7 +545,7 @@ footer .text-block h3 {
 
 .media-gallery--carousel slideshow-container {
     border: solid 1px #00000020;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .product-information__grid:not(.product-information__grid--half, :has(.product-information__media:empty)).product-information--media-left {
