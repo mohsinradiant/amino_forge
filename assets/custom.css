@@ -654,6 +654,12 @@ footer .text-block h3 {
     width: 18px;
 }
 
+.product-rating span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #3F3C42;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
