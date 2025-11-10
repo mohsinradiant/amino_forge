@@ -93,14 +93,6 @@
               },
               "blocks": {}
             },
-            "custom_liquid_JbQDBB": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": ""
-              },
-              "blocks": {}
-            },
             "text_Rt4ynQ": {
               "type": "text",
               "name": "t:names.text",
@@ -124,6 +116,14 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "custom_liquid_JbQDBB": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<div class=\"product-rating\" data-product-handle=\"{{ product.handle }}\">\n  <div class=\"stars\">★★★★★</div>\n  <span class=\"rating-value\">0.0</span>\n  <span class=\"rating-count\">(0)</span>\n</div>"
               },
               "blocks": {}
             },
@@ -240,8 +240,8 @@
           },
           "block_order": [
             "text_qRiVhN",
-            "custom_liquid_JbQDBB",
             "text_Rt4ynQ",
+            "custom_liquid_JbQDBB",
             "text_A9ze9N",
             "text_GCpmCK",
             "price_a7krng",
