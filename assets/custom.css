@@ -705,6 +705,7 @@ footer .text-block h3 {
     background: #fff;
     padding: 40px 80px;
     border-bottom: solid 1px #E4DFED;
+    gap: 90px;
 }
 
 .pdp-review-card-left {
@@ -713,6 +714,7 @@ footer .text-block h3 {
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 15%;
 }
 
 .pdp-review-card-right {
@@ -720,6 +722,7 @@ footer .text-block h3 {
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    width: 85%;
 }
 
 .pdp-review-card-right-top {
