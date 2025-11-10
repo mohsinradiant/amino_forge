@@ -20,6 +20,14 @@
     assign product_grid_class = product_grid_class | append: ' product-information--media-left'
   endif
 
+  if section.settings.equal_columns
+    assign product_grid_class = product_grid_class | append: ' product-information__grid--half'
+
+    if section.settings.limit_details_width
+      assign product_grid_class = product_grid_class | append: ' product-information__grid--limit-details'
+    endif
+  endif
+
   case section.settings.content_width
     when 'content-center-aligned'
       assign content_width = 'page-width'
@@ -34,7 +42,7 @@
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
-  class="product-information section section--{{ content_width }} spacing-style color-{{ section.settings.color_scheme }} relative"
+  class="section product-information section section--{{ content_width }} spacing-style color-{{ section.settings.color_scheme }} relative"
   style="{% render 'spacing-style', settings: section.settings %} --gap: {{ section.settings.gap }}px;"
 >
   {% if section.settings.desktop_media_position == 'left' and product_has_media %}
