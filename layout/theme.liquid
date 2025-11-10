@@ -51,79 +51,77 @@
       async
       blocking="render"
     ></script>
-    {% if page.handle == 'faq' %}
-      <style>
-        rte-formatter h3 {
-          font-family: 'Gotham', sans-serif;
-          font-weight: 700;
-          color: #382d43;
-          font-size: 1.9rem;
-        }
+    <style>
+      rte-formatter h3 {
+        font-family: 'Gotham', sans-serif;
+        font-weight: 700;
+        color: #382d43;
+        font-size: 1.9rem;
+      }
 
-        .accordion {
-          width: 65%;
-          gap: 15px;
-          display: flex;
-          flex-direction: column;
-        }
+      .accordion {
+        width: 65%;
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+      }
 
-        accordion-custom details[open] .details__header {
-          font-size: 1rem !important;
-          color: #4b0081 !important;
-          font-weight: 400 !important;
-          padding: 0;
-          z-index: 2;
-        }
-        accordion-custom details .details__header {
-          font-size: 1rem !important;
-          color: #211e24 !important;
-          font-weight: 400 !important;
-          padding: 0;
-          z-index: 2;
-        }
+      accordion-custom details[open] .details__header {
+        font-size: 1rem !important;
+        color: #4b0081 !important;
+        font-weight: 400 !important;
+        padding: 0;
+        z-index: 2;
+      }
+      accordion-custom details .details__header {
+        font-size: 1rem !important;
+        color: #211e24 !important;
+        font-weight: 400 !important;
+        padding: 0;
+        z-index: 2;
+      }
 
-        .details__header span {
-          background: #9e3eb2;
-          color: #fff;
-          height: 30px;
-          width: 30px;
-          border-radius: 50%;
-        }
+      .details__header span {
+        background: #9e3eb2;
+        color: #fff;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+      }
 
-        .details-content p {
-          font-size: 1rem;
-          color: #382d43;
-          font-weight: 300;
-          margin-top: 15px !important;
-          z-index: 2;
-        }
+      .details-content p {
+        font-size: 1rem;
+        color: #382d43;
+        font-weight: 300;
+        margin-top: 15px !important;
+        z-index: 2;
+      }
 
-        .details {
-          position: relative;
-          border: 1px solid transparent;
-          /* controls border thickness */
-          border-radius: 10px;
-          background: linear-gradient(#fff, #fff) padding-box,
-            /* inner background */ linear-gradient(100deg, #ec68a8, #6c22b7) border-box;
-          /* gradient border */
-          background-origin: border-box;
-          background-clip: padding-box, border-box;
-          padding: 13px 20px;
-        }
+      .details {
+        position: relative;
+        border: 1px solid transparent;
+        /* controls border thickness */
+        border-radius: 10px;
+        background: linear-gradient(#fff, #fff) padding-box,
+          /* inner background */ linear-gradient(100deg, #ec68a8, #6c22b7) border-box;
+        /* gradient border */
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        padding: 13px 20px;
+      }
 
-        .section-content-wrapper.section-content-wrapper {
-          gap: 20px;
-          padding-bottom: 0;
-        }
-        .section-content-wrapper.section-content-wrapper .button {
-          font-family: 'Gotham', sans-serif;
-          font-weight: 400;
-          font-size: 0.65rem;
-          margin-bottom: 60px;
-          padding: 20px 90px;
-        }
-      </style>
-    {% endif %}
+      .section-content-wrapper.section-content-wrapper {
+        gap: 20px;
+        padding-bottom: 0;
+      }
+      .section-content-wrapper.section-content-wrapper .button {
+        font-family: 'Gotham', sans-serif;
+        font-weight: 400;
+        font-size: 0.65rem;
+        margin-bottom: 60px;
+        padding: 20px 90px;
+      }
+    </style>
     <main
       id="MainContent"
       class="content-for-layout"
