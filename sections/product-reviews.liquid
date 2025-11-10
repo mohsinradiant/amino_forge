@@ -48,20 +48,31 @@
 
         <div class="review-form">
           <h4>Review this Product</h4>
-          <form id="review-form">
-            <input id="review-name" type="text" placeholder="Your Name" required>
-            <select id="review-rating" required>
-              <option value="">Select Rating</option>
-              <option value="5">5 - Excellent</option>
-              <option value="4">4 - Good</option>
-              <option value="3">3 - Average</option>
-              <option value="2">2 - Poor</option>
-              <option value="1">1 - Terrible</option>
-            </select>
-            <textarea id="review-comment" placeholder="Write your review..." required></textarea>
-            <button type="submit">Submit Review</button>
-          </form>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Group_365_3f569eae-1328-4ec6-810b-681c77ad8253.png?v=1762809509"
+            alt="Add Review"
+            class="open-review-popup"
+          >
           <p class="total-reviews-caption">Adding a review will require a valid email for verification</p>
+        </div>
+
+        <!-- Popup Modal -->
+        <div id="review-popup" class="review-popup hidden">
+          <div class="review-popup-overlay"></div>
+          <div class="review-popup-content">
+            <span class="close-popup">&times;</span>
+            <h3>Write a Review</h3>
+            <form id="review-form">
+              <input id="review-name" type="text" placeholder="Your Name" required>
+
+              <div class="star-rating" id="star-rating">
+                <!-- Stars injected via JS -->
+              </div>
+
+              <textarea id="review-comment" placeholder="Write your review..." required></textarea>
+              <button type="submit">Submit Review</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
