@@ -667,7 +667,7 @@ footer .text-block h3 {
 }
 
 .product-rating-spacer {
-    margin: 0 4px;
+    margin: 0 6px;
 }
 
 .product-rating a {
@@ -677,10 +677,10 @@ footer .text-block h3 {
 }
 
 .product-rating .write-review {
-    margin-left: 4px;
     font-size: 12px;
     text-decoration: underline;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 
