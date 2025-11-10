@@ -119,12 +119,10 @@
               },
               "blocks": {}
             },
-            "custom_liquid_JbQDBB": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "<div class=\"product-rating\" data-product-handle=\"{{ product.handle }}\">\n  <div class=\"stars\"></div>\n  <span class=\"rating-value\">0.0</span>\n  <span class=\"rating-count\">(0)</span>\n</div>"
-              },
+            "rating_Vj7ECn": {
+              "type": "rating",
+              "name": "Ratings",
+              "settings": {},
               "blocks": {}
             },
             "text_A9ze9N": {
@@ -241,7 +239,7 @@
           "block_order": [
             "text_qRiVhN",
             "text_Rt4ynQ",
-            "custom_liquid_JbQDBB",
+            "rating_Vj7ECn",
             "text_A9ze9N",
             "text_GCpmCK",
             "price_a7krng",
