@@ -8,11 +8,7 @@
       <div class="pdp_product_usp_wrapper">
         {% for block in section.blocks %}
           <div class="pdp_product_usp_item">
-            {% if block.settings.svg_icon != blank %}
-              <img src="{{ block.settings.svg_icon }}" alt="" class="pdp_product_usp_icon" loading="lazy">
-            {% elsif block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url }}" alt="" class="pdp_product_usp_icon" loading="lazy">
-            {% endif %}
+            <img src="{{ block.settings.svg_icon }}" alt="" class="pdp_product_usp_icon" loading="lazy">
             <div class="pdp_product_usp_item_content">
               <h3 class="pdp_product_usp_item_heading">{{ block.settings.heading }}</h3>
               <p class="pdp_product_usp_item_caption">{{ block.settings.caption }}</p>
@@ -46,11 +42,6 @@
           "id": "svg_icon",
           "label": "SVG File URL",
           "info": "Upload SVG in Settings → Files and paste the file URL here"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Fallback Icon (optional)"
         },
         { "type": "text", "id": "heading", "label": "USP Heading", "default": "USP Heading" },
         { "type": "text", "id": "caption", "label": "USP Caption", "default": "USP Caption" }
