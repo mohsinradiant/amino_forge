@@ -161,7 +161,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Price {{ closest.product.metafields.custom.pdp_price_caption.value }}</p>",
+                "text": "{{ closest.product.metafields.custom.pdp_price_caption | metafield_tag }}",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
