@@ -581,6 +581,10 @@ footer .text-block h3 {
     font-weight: 500;
     font-size: 14px;
 }
+.product-details .group-block-content rte-formatter:nth-of-type(4) p strong{  
+    color: #818181;
+    font-size: 12px;
+}
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
