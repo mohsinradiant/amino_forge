@@ -3,6 +3,71 @@
   <span class="rating-value">0.0</span>
   <span class="rating-count">(0)</span>
 </div>
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+  import {
+    getFirestore,
+    collection,
+    getDocs,
+    query,
+    where,
+  } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
+
+  const firebaseConfig = {
+    apiKey: 'AIzaSyAp18R6kC6JqdnEFb-hUmEyq0PsKPEJgAY',
+    authDomain: 'amino-forge-product-reviews.firebaseapp.com',
+    projectId: 'amino-forge-product-reviews',
+    storageBucket: 'amino-forge-product-reviews.firebasestorage.app',
+    messagingSenderId: '577965437155',
+    appId: '1:577965437155:web:9cb889cd942e471f1215d6',
+    measurementId: 'G-ESVSTBHCZZ',
+  };
+
+  let app;
+  if (!window.firebaseApp) {
+    app = initializeApp(firebaseConfig);
+    window.firebaseApp = app;
+  } else {
+    app = window.firebaseApp;
+  }
+
+  const db = getFirestore(app);
+  const starURL = 'https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Vector.svg?v=1762802576';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    const ratingEls = document.querySelectorAll('.product-rating');
+
+    for (const el of ratingEls) {
+      const handle = el.getAttribute('data-product-handle');
+      const q = query(collection(db, 'reviews'), where('product', '==', handle));
+      const snapshot = await getDocs(q);
+
+      let total = 0;
+      snapshot.forEach((doc) => (total += doc.data().rating));
+      const count = snapshot.size;
+      const avg = count ? (total / count).toFixed(1) : '0.0';
+
+      el.querySelector('.rating-value').textContent = avg;
+      el.querySelector('.rating-count').textContent = `(${count})`;
+
+      const filledStars = Math.round(avg);
+      const starsHTML = Array.from(
+        { length: 5 },
+        (_, i) => `
+        <img 
+          src="${starURL}" 
+          alt="star" 
+          class="star-icon ${i < filledStars ? 'filled' : 'empty'}" 
+        />
+      `
+      ).join('');
+      el.querySelector('.stars').innerHTML = starsHTML;
+
+      // Hide rating if there are no reviews
+      if (count === 0) el.style.display = 'none';
+    }
+  });
+</script>
 
 {% schema %}
 {
