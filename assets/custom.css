@@ -669,6 +669,14 @@ footer .text-block h3 {
   color: inherit;
   font-size: 12px;
 }
+.product-rating .write-review {
+  margin-left: 4px;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #3F3C42;
+}
+
 
 @media(max-width: 768px) {
     .testimonials-carousel-container {
