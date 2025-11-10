@@ -781,7 +781,7 @@ footer .text-block h3 {
     font-size: 17px;
 }
 
-  .reviews-grid {
+.reviews-grid {
     display: flex;
     gap: 40px;
     border-radius: 0 0 20px 20px;
@@ -789,119 +789,123 @@ footer .text-block h3 {
     border: solid 1px #e4dfed;
     border-top: none;
     background-color: #fff;
-  }
+}
 
-  .rating-snapshot {
+.rating-snapshot {
     padding: 40px 0 40px 80px;
     width: 50%;
-  }
-  #rating-bars {
+}
+
+#rating-bars {
     padding-right: 80px;
     border-right: solid 1px #e4dfed;
-  }
-  .rating-snapshot p {
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.rating-snapshot p {
     font-weight: 700;
     font-size: 21px;
     margin-bottom: 15px;
     text-transform: uppercase;
-  }
+}
 
-  .rating-bar {
+.rating-bar {
     display: flex;
     align-items: center;
     margin: 8px 0;
-  }
+}
 
-  .rating-bar span {
+.rating-bar span {
     width: 60px;
     font-weight: 500;
-  }
+}
 
-  .bar-track {
+.bar-track {
     flex: 1;
     height: 8px;
     background: #ddd;
     border-radius: 4px;
     margin: 0 10px;
     overflow: hidden;
-  }
+}
 
-  .bar-fill {
+.bar-fill {
     height: 8px;
     background: #f6b600;
     border-radius: 4px;
-  }
+}
 
-  .rating-count {
+.rating-count {
     font-weight: 600;
     color: #333;
-  }
+}
 
-  .overall-rating {
+.overall-rating {
     padding: 40px 80px;
     width: 50%;
-  }
+}
 
-  .overall-rating p {
+.overall-rating p {
     font-weight: 700;
     font-size: 21px;
     margin-bottom: 15px;
     text-transform: uppercase;
-  }
+}
 
-  .overall-score {
+.overall-score {
     font-size: 3rem;
     font-weight: 700;
     color: #222;
-  }
+}
 
-  .overall-stars {
+.overall-stars {
     color: #f6b600;
     font-size: 1.4rem;
     margin-left: 5px;
-  }
+}
 
-  .review-form {
+.review-form {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #ddd;
-  }
+}
 
-  .review-form input,
-  .review-form textarea,
-  .review-form select {
+.review-form input,
+.review-form textarea,
+.review-form select {
     width: 100%;
     max-width: 400px;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
-  }
+}
 
-  .review-form button {
+.review-form button {
     background: #000;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
-  }
+}
 
-  .reviews-list {
+.reviews-list {
     margin-top: 40px;
-  }
+}
 
-  .review-card {
+.review-card {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     padding: 15px;
     margin-bottom: 10px;
-  }
+}
 
-  .review-card strong {
+.review-card strong {
     color: #111;
-  }
+}
 
 @media(max-width: 768px) {
     .testimonials-carousel-container {
