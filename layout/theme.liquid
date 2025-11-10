@@ -182,60 +182,148 @@
         measurementId: 'G-ESVSTBHCZZ',
       };
 
+      // Init Firebase (once)
       let app;
       if (!window.firebaseApp) {
-        app = initializeApp(firebaseConfig);
-        window.firebaseApp = app;
+        try {
+          app = initializeApp(firebaseConfig);
+          window.firebaseApp = app;
+          console.log('[Ratings] Firebase initialized');
+        } catch (err) {
+          console.error('[Ratings] Firebase init error', err);
+        }
       } else {
         app = window.firebaseApp;
+        console.log('[Ratings] Firebase already initialized');
       }
 
       const db = getFirestore(app);
       const starURL = 'https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Vector.svg?v=1762802576';
 
-      document.addEventListener('DOMContentLoaded', async () => {
-        const ratingEls = document.querySelectorAll('.product-rating');
+      // Utility: safe query + rendering for each rating element
+      async function renderRatingElement(el) {
+        if (!el) return;
+        const handle = el.getAttribute('data-product-handle');
+        if (!handle) {
+          console.warn('[Ratings] missing data-product-handle on element', el);
+          return;
+        }
 
-        for (const el of ratingEls) {
-          const handle = el.getAttribute('data-product-handle');
+        // Ensure children exist (create fallback containers if not)
+        if (!el.querySelector('.stars')) {
+          const s = document.createElement('div');
+          s.className = 'stars';
+          el.insertBefore(s, el.firstChild);
+        }
+        if (!el.querySelector('.rating-value')) {
+          const v = document.createElement('span');
+          v.className = 'rating-value';
+          v.textContent = '0.0';
+          el.appendChild(v);
+        }
+        if (!el.querySelector('.rating-count')) {
+          const c = document.createElement('span');
+          c.className = 'rating-count';
+          c.textContent = '(0)';
+          el.appendChild(c);
+        }
+        if (!el.querySelector('.product-rating-spacer')) {
+          const sp = document.createElement('span');
+          sp.className = 'product-rating-spacer';
+          sp.textContent = '|';
+          el.appendChild(sp);
+        }
+
+        const starsContainer = el.querySelector('.stars');
+        const valueEl = el.querySelector('.rating-value');
+        const countEl = el.querySelector('.rating-count');
+        const spacer = el.querySelector('.product-rating-spacer');
+
+        // Set default visible state (so theme editor shows them)
+        starsContainer.style.display = 'inline-flex';
+        valueEl.style.display = 'inline';
+        countEl.style.display = 'inline';
+        spacer.style.display = 'inline';
+
+        try {
           const q = query(collection(db, 'reviews'), where('product', '==', handle));
           const snapshot = await getDocs(q);
 
           let total = 0;
-          snapshot.forEach((doc) => (total += doc.data().rating));
-          const count = snapshot.size;
-          const avg = count ? (total / count).toFixed(1) : '0.0';
+          snapshot.forEach((doc) => {
+            const data = doc.data();
+            // defensive: ensure rating numeric
+            const r = Number(data.rating) || 0;
+            total += r;
+          });
 
-          el.querySelector('.rating-value').textContent = avg;
-          el.querySelector('.rating-count').textContent = `(${count})`;
+          const count = snapshot.size || 0;
+          const avgRaw = count ? total / count : 0;
+          const avg = avgRaw ? avgRaw.toFixed(1) : '0.0';
 
-          const filledStars = Math.round(avg);
-          const starsHTML = Array.from(
-            { length: 5 },
-            (_, i) => `
-        <img 
-          src="${starURL}" 
-          alt="star" 
-          class="star-icon ${i < filledStars ? 'filled' : 'empty'}" 
-        />
-      `
-          ).join('');
-          el.querySelector('.stars').innerHTML = starsHTML;
+          // Update text values
+          valueEl.textContent = avg;
+          countEl.textContent = `(${count})`;
 
-          // Hide rating if there are no reviews
-          if (count === 0) {
-            el.querySelector('.stars').style.display = 'none';
-            el.querySelector('.rating-value').style.display = 'none';
-            el.querySelector('.rating-count').style.display = 'none';
-            el.querySelector('.product-rating-spacer').style.display = 'none';
-          } else {
-            el.querySelector('.stars').style.display = 'flex';
-            el.querySelector('.rating-value').style.display = 'inline';
-            el.querySelector('.rating-count').style.display = 'inline';
-            el.querySelector('.product-rating-spacer').style.display = 'inline';
+          // Render star SVGs (filled vs empty)
+          const filled = Math.round(avgRaw);
+          let starsHTML = '';
+          for (let i = 0; i < 5; i++) {
+            const cls = i < filled ? 'filled' : 'empty';
+            starsHTML += `<img src="${starURL}" alt="star" class="star-icon ${cls}" />`;
           }
+          starsContainer.innerHTML = starsHTML;
+
+          // If no reviews: hide numeric rating but KEEP "Write a review"
+          if (count === 0) {
+            starsContainer.style.display = 'none';
+            valueEl.style.display = 'none';
+            countEl.style.display = 'none';
+            // spacer hide is optional — keep spacer visible only if you prefer
+            spacer.style.display = 'none';
+            // ensure "Write a review" (last child) remains visible:
+            const writeLink = Array.from(el.children).find(
+              (ch) => ch.tagName === 'A' || (ch.tagName === 'SPAN' && /write/i.test(ch.textContent))
+            );
+            if (writeLink) writeLink.style.display = 'inline';
+          } else {
+            // ensure all are visible when reviews exist
+            starsContainer.style.display = 'inline-flex';
+            valueEl.style.display = 'inline';
+            countEl.style.display = 'inline';
+            spacer.style.display = 'inline';
+          }
+        } catch (err) {
+          console.error('[Ratings] error loading reviews for', handle, err);
+          // On error, do not hide "Write a review"
+          starsContainer.style.display = 'none';
+          valueEl.style.display = 'none';
+          countEl.style.display = 'none';
+          spacer.style.display = 'none';
         }
-      });
+      }
+
+      // Render all rating elements on page or on section re-load
+      async function renderAllRatings() {
+        const ratingEls = document.querySelectorAll('.product-rating');
+        if (!ratingEls || ratingEls.length === 0) {
+          console.log('[Ratings] no .product-rating elements found');
+          return;
+        }
+        for (const el of ratingEls) {
+          // call but don't await to render in parallel
+          renderRatingElement(el);
+        }
+      }
+
+      // Events for normal page load and Shopify theme editor dynamic loads
+      document.addEventListener('DOMContentLoaded', renderAllRatings);
+      document.addEventListener('shopify:section:load', renderAllRatings);
+      document.addEventListener('shopify:section:reorder', renderAllRatings);
+      document.addEventListener('shopify:block:select', renderAllRatings);
+      // also listen for ajaxified content (if your theme uses PJAX)
+      document.addEventListener('turbolinks:load', renderAllRatings);
+      document.addEventListener('pjax:complete', renderAllRatings);
     </script>
   </body>
 </html>
