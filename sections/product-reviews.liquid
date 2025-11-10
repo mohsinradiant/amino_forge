@@ -153,8 +153,17 @@
     const count = snapshot.size;
     const avgRating = count ? (total / count).toFixed(1) : 0;
     document.getElementById('avg-rating').textContent = avgRating;
-    document.getElementById('avg-stars').textContent =
-      '⭐'.repeat(Math.round(avgRating)) + '☆'.repeat(5 - Math.round(avgRating));
+    const starsContainer = document.getElementById('avg-stars');
+    const starURL = 'https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Vector.svg?v=1762802576';
+
+    // Render star SVGs (filled vs empty)
+    const filled = Math.round(avgRating);
+    let starsHTML = '';
+    for (let i = 0; i < 5; i++) {
+      const cls = i < filled ? 'filled' : 'empty';
+      starsHTML += `<img src="${starURL}" alt="star" class="star-icon ${cls}" />`;
+    }
+    starsContainer.innerHTML = starsHTML;
     document.getElementById('total-reviews').textContent = `${count} REVIEW${count === 1 ? '' : 'S'}`;
 
     // Build Rating Snapshot
