@@ -746,7 +746,7 @@ footer .text-block h3 {
 .pdp-testimonial-name {
     text-transform: uppercase;
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: 20px !important;
     margin-bottom: 0;
 }
 
