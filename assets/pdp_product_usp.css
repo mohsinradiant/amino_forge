@@ -48,3 +48,9 @@
 .pdp_product_usp_icon svg {
     fill: #d6d6d6;
 }
+
+.pdp_product_usp_item_caption {
+    font-size: 17px;
+    font-weight: 300;
+    height: 0;
+}
