@@ -223,7 +223,17 @@
           el.querySelector('.stars').innerHTML = starsHTML;
 
           // Hide rating if there are no reviews
-          if (count === 0) el.style.display = 'none';
+          if (count === 0) {
+            el.querySelector('.stars').style.display = 'none';
+            el.querySelector('.rating-value').style.display = 'none';
+            el.querySelector('.rating-count').style.display = 'none';
+            el.querySelector('.product-rating-spacer').style.display = 'none';
+          } else {
+            el.querySelector('.stars').style.display = 'flex';
+            el.querySelector('.rating-value').style.display = 'inline';
+            el.querySelector('.rating-count').style.display = 'inline';
+            el.querySelector('.product-rating-spacer').style.display = 'inline';
+          }
         }
       });
     </script>
