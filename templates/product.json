@@ -595,7 +595,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>Product</h3>",
+            "text": "<p>Frequently Asked Questions</p>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
