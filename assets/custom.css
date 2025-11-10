@@ -548,11 +548,15 @@ footer .text-block h3 {
     border-radius: 10px;
 }
 
+.product-information__grid {
+    display: flex;
+    gap: 30px;
+}
+
 .product-information__media {
-    /* display: flex !important;
-    grid-column: unset !important; */
-    /* grid-template-columns: unset !important; */
-    /* min-width: 50% !important; */
+    min-width: unset;
+    width: 60%;
+    max-width: unset;
 }
 
 @media(max-width: 768px) {
