@@ -580,6 +580,7 @@ footer .text-block h3 {
     color: #000;
     font-weight: 500;
     font-size: 14px;
+    margin-top: 30px;
 }
 .product-details .group-block-content rte-formatter:nth-of-type(4) p strong{  
     color: #818181;
