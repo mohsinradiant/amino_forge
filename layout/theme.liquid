@@ -161,5 +161,58 @@
       window.firebaseApp = initializeApp(firebaseConfig);
       window.db = getFirestore(window.firebaseApp);
     </script>
+
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        query,
+        where,
+      } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
+
+      const firebaseConfig = {
+        apiKey: 'AIzaSyAp18R6kC6JqdnEFb-hUmEyq0PsKPEJgAY',
+        authDomain: 'amino-forge-product-reviews.firebaseapp.com',
+        projectId: 'amino-forge-product-reviews',
+        storageBucket: 'amino-forge-product-reviews.firebasestorage.app',
+        messagingSenderId: '577965437155',
+        appId: '1:577965437155:web:9cb889cd942e471f1215d6',
+        measurementId: 'G-ESVSTBHCZZ',
+      };
+
+      // Initialize Firebase only once
+      let app;
+      if (!window.firebaseApp) {
+        app = initializeApp(firebaseConfig);
+        window.firebaseApp = app;
+      } else {
+        app = window.firebaseApp;
+      }
+
+      const db = getFirestore(app);
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        const ratingEls = document.querySelectorAll('.product-rating');
+
+        ratingEls.forEach(async (el) => {
+          const handle = el.getAttribute('data-product-handle');
+          const q = query(collection(db, 'reviews'), where('product', '==', handle));
+          const snapshot = await getDocs(q);
+
+          let total = 0;
+          snapshot.forEach((doc) => (total += doc.data().rating));
+          const count = snapshot.size;
+          const avg = count ? (total / count).toFixed(1) : '0.0';
+
+          el.querySelector('.rating-value').textContent = avg;
+          el.querySelector('.rating-count').textContent = `(${count})`;
+
+          const stars = Math.round(avg);
+          el.querySelector('.stars').innerHTML = '★'.repeat(stars) + '☆'.repeat(5 - stars);
+        });
+      });
+    </script>
   </body>
 </html>
