@@ -839,11 +839,43 @@
             "accordion_row_bEVRCE",
             "accordion_row_KtdiNi"
           ]
+        },
+        "button_ipWCBm": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Read more FAQs",
+            "link": "shopify://pages/faq",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "width": "custom",
+            "custom_width": 25,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
+        "button_UytFNA": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Ask a Question",
+            "link": "shopify://pages/contact",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "custom",
+            "custom_width": 25,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "text_CG7EpV",
-        "accordion_Thntd6"
+        "accordion_Thntd6",
+        "button_ipWCBm",
+        "button_UytFNA"
       ],
       "name": "t:names.faq_section",
       "settings": {
