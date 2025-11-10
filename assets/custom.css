@@ -549,10 +549,10 @@ footer .text-block h3 {
 }
 
 .product-information__media {
-    display: flex !important;
-    grid-column: unset !important;
-    grid-template-columns: unset !important;
-    min-width: 50% !important;
+    /* display: flex !important;
+    grid-column: unset !important; */
+    /* grid-template-columns: unset !important; */
+    /* min-width: 50% !important; */
 }
 
 @media(max-width: 768px) {
