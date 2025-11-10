@@ -33,7 +33,8 @@
   >
     <span class="visually-hidden">{{ 'accessibility.decrease_quantity' | t }}</span
     ><span class="svg-wrapper icon-plus">
-      <{% comment %} {{- 'icon-minus.svg' | inline_asset_content -}} {% endcomment %}
+      <
+      {% comment %} {{- 'icon-minus.svg' | inline_asset_content -}} {% endcomment %}
     </span>
   </button>
   <input
@@ -68,7 +69,8 @@
   >
     <span class="visually-hidden">{{ 'accessibility.increase_quantity' | t }}</span
     ><span class="svg-wrapper icon-plus">
-      {{- 'icon-plus.svg' | inline_asset_content -}}
+      >
+      {% comment %} {{- 'icon-plus.svg' | inline_asset_content -}} {% endcomment %}
     </span>
   </button>
 </quantity-selector-component>
