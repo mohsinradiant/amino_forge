@@ -558,6 +558,8 @@ footer .text-block h3 {
 }
 .product-details .group-block-content rte-formatter:first-of-type p{
     color: #9E3EB2;
+    font-weight: 500;
+    font-size: 14px;
 }
 @media(max-width: 768px) {
     .testimonials-carousel-container {
