@@ -266,8 +266,7 @@
         "usp_Mfg9Jc": {
           "type": "USP",
           "settings": {
-            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_116.svg?v=1762816688",
-            "image": "shopify://shop_images/image_116.svg",
+            "svg_filename": "PDP_USP_1.svg",
             "heading": "3X Higher Absorption",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -275,8 +274,7 @@
         "usp_T8tWXj": {
           "type": "USP",
           "settings": {
-            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/Mask_group.svg?v=1762816734",
-            "image": "shopify://shop_images/image_116.svg",
+            "svg_filename": "PDP_USP_2",
             "heading": "Accelerated Muscle Recovery",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -284,8 +282,7 @@
         "usp_6LTxDx": {
           "type": "USP",
           "settings": {
-            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_114.svg?v=1762816687",
-            "image": "shopify://shop_images/image_116.svg",
+            "svg_filename": "",
             "heading": "Enhanced Cognitive Focus",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -293,8 +290,7 @@
         "usp_6e67kV": {
           "type": "USP",
           "settings": {
-            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_111.svg?v=1762816688",
-            "image": "shopify://shop_images/image_116.svg",
+            "svg_filename": "",
             "heading": "Sustained Energy & Endurance",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -302,8 +298,7 @@
         "usp_QVNtxp": {
           "type": "USP",
           "settings": {
-            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_112.svg?v=1762816688",
-            "image": "shopify://shop_images/image_116.svg",
+            "svg_filename": "",
             "heading": "9 Essential Amino Acids",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
@@ -311,8 +306,7 @@
         "usp_GkANdM": {
           "type": "USP",
           "settings": {
-            "svg_icon": "https://cdn.shopify.com/s/files/1/0961/3190/7863/files/image_113.svg?v=1762816688",
-            "image": "shopify://shop_images/image_116.svg",
+            "svg_filename": "",
             "heading": "Pure And Potent",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
