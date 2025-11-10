@@ -687,8 +687,9 @@ footer .text-block h3 {
 }
 
 .pdp-reviews-container {
-    background: #FCFAFF !important;
+    /* background: #FCFAFF !important; */
     padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .pdp-reviews-container .section_caption {
