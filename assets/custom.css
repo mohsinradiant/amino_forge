@@ -550,6 +550,9 @@ footer .text-block h3 {
 
 .product-information__grid {
     display: flex !important;
+    width: 100%;
+    grid-column: unset !important;
+    grid-template-columns: unset !important;
 }
 
 @media(max-width: 768px) {
