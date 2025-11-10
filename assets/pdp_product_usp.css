@@ -1,9 +1,10 @@
 .pdp_product_usp_container {
     display: flex;
+    gap: 30px;
 }
 .pdp_product_usp_container .section_heading{
     text-align: left;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .pdp_product_usp_container img:first-of-type {
     width: 50%;
