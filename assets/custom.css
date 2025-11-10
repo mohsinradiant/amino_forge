@@ -647,6 +647,7 @@ footer .text-block h3 {
 .product-rating .stars {
     display: flex;
     gap: 3px;
+    margin-right: 8px;
 }
 
 .product-rating img {
