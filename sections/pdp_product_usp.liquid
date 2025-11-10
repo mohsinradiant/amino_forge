@@ -8,7 +8,9 @@
       <div class="pdp_product_usp_wrapper">
         {% for block in section.blocks %}
           <div class="pdp_product_usp_item">
-            <img src="{{ block.settings.svg_icon }}" alt="" class="pdp_product_usp_icon" loading="lazy">
+            {% if block.settings.svg_filename != blank %}
+              {% render block.settings.svg_filename %}
+            {% endif %}
             <div class="pdp_product_usp_item_content">
               <h3 class="pdp_product_usp_item_heading">{{ block.settings.heading }}</h3>
               <p class="pdp_product_usp_item_caption">{{ block.settings.caption }}</p>
@@ -38,10 +40,9 @@
       "name": "USP",
       "settings": [
         {
-          "type": "url",
-          "id": "svg_icon",
-          "label": "SVG File URL",
-          "info": "Upload SVG in Settings → Files and paste the file URL here"
+          "type": "text",
+          "id": "svg_filename",
+          "label": "SVG File Name (in assets folder)"
         },
         { "type": "text", "id": "heading", "label": "USP Heading", "default": "USP Heading" },
         { "type": "text", "id": "caption", "label": "USP Caption", "default": "USP Caption" }
