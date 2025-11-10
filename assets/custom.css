@@ -894,6 +894,14 @@ footer .text-block h3 {
     border-top: 1px solid #ddd;
 }
 
+.review-form h4 {
+    font-weight: 700;
+    font-size: 21px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: 'Gotham', sans-serif !important;
+}
+
 .review-form input,
 .review-form textarea,
 .review-form select {
