@@ -548,6 +548,10 @@ footer .text-block h3 {
     border-radius: 10px;
 }
 
+.product-information__grid {
+    display: flex !important;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
