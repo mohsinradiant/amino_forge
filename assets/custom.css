@@ -694,6 +694,8 @@ footer .text-block h3 {
 
 .pdp-reviews-container .section_caption {
     text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
 }
 
 @media(max-width: 768px) {
