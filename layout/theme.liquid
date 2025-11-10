@@ -275,23 +275,31 @@
           starsContainer.innerHTML = starsHTML;
 
           // If no reviews: hide numeric rating but KEEP "Write a review"
-          if (count === 0) {
-            starsContainer.style.display = 'none';
-            valueEl.style.display = 'none';
-            countEl.style.display = 'none';
-            // spacer hide is optional — keep spacer visible only if you prefer
-            spacer.style.display = 'none';
-            // ensure "Write a review" (last child) remains visible:
-            const writeLink = Array.from(el.children).find(
-              (ch) => ch.tagName === 'A' || (ch.tagName === 'SPAN' && /write/i.test(ch.textContent))
-            );
-            if (writeLink) writeLink.style.display = 'inline';
-          } else {
-            // ensure all are visible when reviews exist
-            starsContainer.style.display = 'inline-flex';
-            valueEl.style.display = 'inline';
-            countEl.style.display = 'inline';
-            spacer.style.display = 'inline';
+          if (count === 0) el.style.display = 'none';
+
+          // Inject spacer if not present
+          if (!el.querySelector('.product-rating-spacer')) {
+            const spacer = document.createElement('span');
+            spacer.className = 'product-rating-spacer';
+            spacer.textContent = '|';
+            el.appendChild(spacer);
+          }
+
+          // Inject “Write a review” link if missing
+          if (!el.querySelector('.write-review')) {
+            const write = document.createElement('span');
+            write.className = 'write-review';
+            write.textContent = 'Write a review';
+            el.appendChild(write);
+
+            // Add smooth scroll behavior
+            write.addEventListener('click', (e) => {
+              e.preventDefault();
+              const reviewForm = document.querySelector('.review-form');
+              if (reviewForm) {
+                reviewForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            });
           }
         } catch (err) {
           console.error('[Ratings] error loading reviews for', handle, err);
