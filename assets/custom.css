@@ -548,7 +548,7 @@ footer .text-block h3 {
     border-radius: 10px;
 }
 
-.product-information__grid {
+/* .product-information__grid {
     display: flex;
     gap: 30px;
     grid-column: unset !important;
@@ -558,7 +558,7 @@ footer .text-block h3 {
     min-width: unset;
     width: 60%;
     max-width: unset;
-}
+} */
 
 @media(max-width: 768px) {
     .testimonials-carousel-container {
