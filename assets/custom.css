@@ -570,6 +570,13 @@ footer .text-block h3 {
     line-height: 1.4;
 }
 
+.product-details .group-block-content rte-formatter:nth-of-type(3) p {
+    color: #000;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
