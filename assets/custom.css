@@ -540,7 +540,8 @@ footer .text-block h3 {
 }
 
 .product-information {
-    margin-top: 150px;
+    margin-top: 0;
+    padding-top: 0 !important;
 }
 
 .media-gallery--carousel slideshow-container {
