@@ -1064,6 +1064,12 @@ footer .text-block h3 {
     transition: all 0.3s ease-in-out;
 }
 
+#review-form button:hover {
+    background-color: #fff;
+    color: #9e3eb2;
+    border: solid 1px #9e3eb2;
+}
+
 @keyframes popupIn {
     from {
         transform: scale(0.8);
