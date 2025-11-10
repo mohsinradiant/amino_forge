@@ -556,7 +556,9 @@ footer .text-block h3 {
 .product-information:not(.product-information--media-right) {
     padding: 0;
 }
-
+.product-details p:first-of-type{
+    color: #9E3EB2;
+}
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
