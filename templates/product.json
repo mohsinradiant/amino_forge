@@ -558,10 +558,32 @@
             "title": "Game-Changer for Recovery & Performance!",
             "content": "\"Since incorporating this amino supplement, my endurance during high-intensity sessions has skyrocketed. The reduction in muscle soreness is remarkable, allowing me and my clients to train more consistently. It's an essential part of my regimen now.\""
           }
+        },
+        "testimonial_KiW3ha": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_368_4bdf7739-7a5e-42e0-8687-a1df04cad512.png",
+            "name": "Priya Sharma",
+            "profession": "Marathon Runner & Yoga Instructor",
+            "title": "My Secret Weapon for Long Runs!",
+            "content": "\"This product is a revelation. It doesn't upset my stomach like other supplements, and I genuinely feel it helps my muscles recover faster after those 20+ km runs. I feel stronger and less fatigued, which is crucial for my training.\""
+          }
+        },
+        "testimonial_QG9fGt": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_547.png",
+            "name": "Rohan Malhotra",
+            "profession": "Software Engineer, Fitness Enthusiast",
+            "title": "Visible Results in Muscle Definition & Strength!",
+            "content": "\"As someone who juggles a demanding job with serious training, optimal recovery is everything. This supplement has noticeably improved my muscle fullness and helped me push through plateaus. The focus and energy I get intra-workout are an added bonus!\""
+          }
         }
       },
       "block_order": [
-        "testimonial_xrVGYG"
+        "testimonial_xrVGYG",
+        "testimonial_KiW3ha",
+        "testimonial_QG9fGt"
       ],
       "name": "Product Reviews",
       "settings": {}
