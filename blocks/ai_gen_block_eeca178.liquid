@@ -468,8 +468,8 @@
               src="{{ product.metafields.custom.home_featured_image | image_url: width: 1000 }}"
               alt="{{ product.metafields.custom.home_featured_image.alt | escape }}"
               loading="lazy"
-              width="{{ product.featured_image.width }}"
-              height="{{ product.featured_image.height }}"
+              width="{{ product.metafields.custom.home_featured_image.width }}"
+              height="{{ product.metafields.custom.home_featured_image.height }}"
               class="ai-product-feature__image-{{ ai_gen_id }}"
             >
           {% else %}
