@@ -1034,6 +1034,14 @@ footer .text-block h3 {
     gap: 15px;
 }
 
+#review-name,
+#review-comment {
+    border: solid 1px #828282;
+    border-radius: 15px;
+    padding: 10px;
+    background: #F9F4FD;
+}
+
 @keyframes popupIn {
     from {
         transform: scale(0.8);
