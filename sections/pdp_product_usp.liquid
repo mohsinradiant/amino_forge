@@ -3,6 +3,17 @@
   <div class="pdp_product_usp_container_right_column">
     <p class="section_caption">{{ section.settings.caption }}</p>
     <h2 class="section_heading">{{ section.settings.heading }}</h2>
+    <div class="pdp_product_usp_wrapper">
+      {% for block in section.blocks %}
+        <div class="pdp_product_usp_item">
+          <img src="{{ block.settings.image | img_url }}">
+          <div class="pdp_product_usp_item_content">
+            <h3 class="pdp_product_usp_item_heading">{{ block.settings.heading }}</h3>
+            <p class="pdp_product_usp_item_caption">{{ block.settings.caption }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
@@ -18,7 +29,17 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Heading" },
     { "type": "text", "id": "caption", "label": "Caption", "default": "Caption" }
   ],
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "USP",
+      "name": "USP",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "USP Icon" },
+        { "type": "text", "id": "heading", "label": "USP Heading", "default": "USP Heading" },
+        { "type": "text", "id": "caption", "label": "USP Caption", "default": "USP Caption" }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "PDP Product USP"
