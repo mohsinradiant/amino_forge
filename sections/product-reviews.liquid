@@ -4,9 +4,12 @@
   <div class="pdp-reviews-container-content-1">
     {% for block in section.blocks %}
       <div class="pdp-review-card">
-          <div class="pdp-review-card-image">
-            <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.name }}">
-          </div>  
+        <div class="pdp-review-card-left">
+          <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.name }}">
+          <p class="pdp-testimonial-name">{{ block.settings.name }}</p>
+          <p class="pdp-testimonial-profession">{{ block.settings.profession }}</p>
+        </div>
+      </div>
     {% endfor %}
   </div>
 
