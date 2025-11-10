@@ -1544,7 +1544,7 @@ media-gallery {
 
   display: flex;
   /* aspect-ratio: var(--gallery-aspect-ratio, var(--media-preview-ratio)); */
-  aspect-ratio: 1.2/1;
+  aspect-ratio: 1.1/1;
   max-height: var(--constrained-height);
   width: 100%;
 
