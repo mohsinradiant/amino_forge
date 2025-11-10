@@ -666,14 +666,13 @@ footer .text-block h3 {
 .product-rating a, .product-rating span.write-review {
   cursor: pointer;
   text-decoration: underline;
-  color: inherit;
   font-size: 12px;
 }
 .product-rating .write-review {
   margin-left: 4px;
   font-size: 12px;
-  text-decoration: underline;
   cursor: pointer;
+
 }
 
 
