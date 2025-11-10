@@ -266,7 +266,7 @@
         "usp_Mfg9Jc": {
           "type": "USP",
           "settings": {
-            "svg_filename": "'PDP_USP_1'",
+            "svg_filename": "PDP_USP_1",
             "heading": "3X Higher Absorption",
             "caption": "Reduces post-workout fatigue and speeds up repair for faster results."
           }
