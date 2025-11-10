@@ -548,6 +548,21 @@
     },
     "product_reviews_Rdwmkf": {
       "type": "product-reviews",
+      "blocks": {
+        "testimonial_xrVGYG": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_367_d94a769c-7a04-4f10-9ca1-8cfcd3b87fec.png",
+            "name": "Aditya Verma",
+            "profession": "Fitness Coach & Personal Trainer",
+            "title": "Game-Changer for Recovery & Performance!",
+            "content": "\"Since incorporating this amino supplement, my endurance during high-intensity sessions has skyrocketed. The reduction in muscle soreness is remarkable, allowing me and my clients to train more consistently. It's an essential part of my regimen now.\""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_xrVGYG"
+      ],
       "name": "Product Reviews",
       "settings": {}
     }
