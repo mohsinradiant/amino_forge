@@ -813,6 +813,7 @@ footer .text-block h3 {
 .rating-bar {
     display: flex;
     align-items: center;
+    position: relative;
     margin: 8px 0;
 }
 
