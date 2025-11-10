@@ -702,6 +702,8 @@ footer .text-block h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #fff;
+    padding: 40px 80px;
 }
 
 .pdp-review-card-left {
