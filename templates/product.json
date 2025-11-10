@@ -93,6 +93,14 @@
               },
               "blocks": {}
             },
+            "custom_liquid_JbQDBB": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": ""
+              },
+              "blocks": {}
+            },
             "text_Rt4ynQ": {
               "type": "text",
               "name": "t:names.text",
@@ -116,18 +124,6 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "review_x94DxX": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "alignment": "left"
               },
               "blocks": {}
             },
@@ -244,8 +240,8 @@
           },
           "block_order": [
             "text_qRiVhN",
+            "custom_liquid_JbQDBB",
             "text_Rt4ynQ",
-            "review_x94DxX",
             "text_A9ze9N",
             "text_GCpmCK",
             "price_a7krng",
