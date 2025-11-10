@@ -549,10 +549,16 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "product_reviews_Rdwmkf": {
+      "type": "product-reviews",
+      "name": "Product Reviews",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "product_recommendations_qnzPkn"
+    "product_recommendations_qnzPkn",
+    "product_reviews_Rdwmkf"
   ]
 }
