@@ -161,11 +161,11 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "{{ closest.product.metafields.custom.pdp_price_caption | metafield_tag }}",
+                "text": "<p>Price <strong>(Per 30 Sachets (10g each)</strong></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "custom",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
