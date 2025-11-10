@@ -236,11 +236,13 @@
     margin: 0;
     text-align: left;
 }
+
 .header-sign-in-img p span {
     color: #333333;
     text-transform: capitalize;
-        font-size: 13px;
+    font-size: 13px;
 }
+
 .home_health_benefits_inner {
     display: flex;
     flex-direction: column;
@@ -535,6 +537,10 @@ footer .text-block h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.product-information {
+    margin-top: 150px;
 }
 
 @media(max-width: 768px) {
