@@ -602,6 +602,7 @@ footer .text-block h3 {
     border: 1px solid #DFDFDF;
     border-radius: 70px;
     overflow: hidden;
+    --quantity-selector-width: unset !important
 }
 
 .product-details .quantity-selector .quantity-minus,
