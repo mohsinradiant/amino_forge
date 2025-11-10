@@ -714,7 +714,7 @@ footer .text-block h3 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 15%;
+    width: 20%;
 }
 
 .pdp-review-card-right {
@@ -722,7 +722,7 @@ footer .text-block h3 {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    width: 85%;
+    width: 80%;
 }
 
 .pdp-review-card-right-top {
@@ -758,7 +758,9 @@ footer .text-block h3 {
     margin-top: 3px;
     line-height: 1.3;
 }
-
+.pdp-review-card-left img{
+    width: 80%;
+}
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
