@@ -957,7 +957,9 @@ footer .text-block h3 {
     margin: 11px 0 0px;
     font-size: 14px;
 }
-
+.total-reviews-caption{
+    font-size: 20px;
+}
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
