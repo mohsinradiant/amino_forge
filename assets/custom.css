@@ -551,7 +551,9 @@ footer .text-block h3 {
 .product-information__grid:not(.product-information__grid--half, :has(.product-information__media:empty)).product-information--media-left {
     grid-template-columns: 7fr 5fr;
 }
-
+.product-information:not(.product-information--media-right){
+    padding: 0;
+}
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
