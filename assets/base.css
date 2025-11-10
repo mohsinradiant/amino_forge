@@ -1319,6 +1319,7 @@ button.shopify-payment-button__button--unbranded {
 
 .button-secondary {
   font-family: 'Gotham', sans-serif;
+  font-size: 0.65rem;
   text-transform: var(--button-text-case-secondary);
   border-radius: var(--style-border-radius-buttons-secondary);
   font-weight: 400 !important;
