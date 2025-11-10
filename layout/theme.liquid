@@ -143,7 +143,10 @@
       {% render 'quick-add-modal' %}
     {% endif %}
     <script type="module">
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+      import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
+
+      // Firebase config
       const firebaseConfig = {
         apiKey: 'AIzaSyAp18R6kC6JqdnEFb-hUmEyq0PsKPEJgAY',
         authDomain: 'amino-forge-product-reviews.firebaseapp.com',
@@ -153,6 +156,10 @@
         appId: '1:577965437155:web:9cb889cd942e471f1215d6',
         measurementId: 'G-ESVSTBHCZZ',
       };
+
+      // Initialize globally
+      window.firebaseApp = initializeApp(firebaseConfig);
+      window.db = getFirestore(window.firebaseApp);
     </script>
   </body>
 </html>
