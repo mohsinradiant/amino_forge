@@ -554,8 +554,6 @@ footer .text-block h3 {
 }
 
 .product-information:not(.product-information--media-right) {
-
-.product-information:not(.product-information--media-right) {
     padding: 0;
 }
 
