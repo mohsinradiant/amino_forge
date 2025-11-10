@@ -1,38 +1,42 @@
-<div class="section product-reviews-wrapper">
-  <div class="reviews-grid">
-    <div class="rating-snapshot">
-      <h3>Rating Snapshot</h3>
-      <div id="rating-bars"></div>
+<div class="section pdp-reviews-container">
+  <p class="section_caption">CUSTOMER SHARING EXPERIENCES</p>
+  <h2 class="section_heading">Product Reviews</h2>
+  <div class="product-reviews-wrapper">
+    <div class="reviews-grid">
+      <div class="rating-snapshot">
+        <h3>Rating Snapshot</h3>
+        <div id="rating-bars"></div>
+      </div>
+
+      <div class="overall-rating">
+        <h3>Overall Rating</h3>
+        <div>
+          <span class="overall-score" id="avg-rating">0.0</span>
+          <span class="overall-stars" id="avg-stars">☆☆☆☆☆</span>
+        </div>
+        <p id="total-reviews" style="font-weight:600;">0 REVIEWS</p>
+
+        <div class="review-form">
+          <h4>Review this Product</h4>
+          <form id="review-form">
+            <input id="review-name" type="text" placeholder="Your Name" required>
+            <select id="review-rating" required>
+              <option value="">Select Rating</option>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Good</option>
+              <option value="3">3 - Average</option>
+              <option value="2">2 - Poor</option>
+              <option value="1">1 - Terrible</option>
+            </select>
+            <textarea id="review-comment" placeholder="Write your review..." required></textarea>
+            <button type="submit">Submit Review</button>
+          </form>
+        </div>
+      </div>
     </div>
 
-    <div class="overall-rating">
-      <h3>Overall Rating</h3>
-      <div>
-        <span class="overall-score" id="avg-rating">0.0</span>
-        <span class="overall-stars" id="avg-stars">☆☆☆☆☆</span>
-      </div>
-      <p id="total-reviews" style="font-weight:600;">0 REVIEWS</p>
-
-      <div class="review-form">
-        <h4>Review this Product</h4>
-        <form id="review-form">
-          <input id="review-name" type="text" placeholder="Your Name" required>
-          <select id="review-rating" required>
-            <option value="">Select Rating</option>
-            <option value="5">5 - Excellent</option>
-            <option value="4">4 - Good</option>
-            <option value="3">3 - Average</option>
-            <option value="2">2 - Poor</option>
-            <option value="1">1 - Terrible</option>
-          </select>
-          <textarea id="review-comment" placeholder="Write your review..." required></textarea>
-          <button type="submit">Submit Review</button>
-        </form>
-      </div>
-    </div>
+    <div class="reviews-list" id="reviews-container"></div>
   </div>
-
-  <div class="reviews-list" id="reviews-container"></div>
 </div>
 
 <script type="module">
