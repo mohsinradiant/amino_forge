@@ -841,6 +841,8 @@ footer .text-block h3 {
 .rating-count {
     font-weight: 600;
     color: #333;
+    width: 10px;
+    text-align: center;
 }
 
 .overall-rating {
