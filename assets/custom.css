@@ -548,17 +548,9 @@ footer .text-block h3 {
     border-radius: 10px;
 }
 
-/* .product-information__grid {
-    display: flex;
-    gap: 30px;
-    grid-column: unset !important;
+.product-information__grid:not(.product-information__grid--half, :has(.product-information__media:empty)).product-information--media-left {
+    grid-template-columns: 7fr 5fr;
 }
-
-.product-information__media {
-    min-width: unset;
-    width: 60%;
-    max-width: unset;
-} */
 
 @media(max-width: 768px) {
     .testimonials-carousel-container {
