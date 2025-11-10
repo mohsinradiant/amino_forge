@@ -463,10 +463,10 @@
         </div>
 
         <div class="ai-product-feature__media-{{ ai_gen_id }}">
-          {% if product.featured_image %}
+          {% if product.metafields.custom.home_featured_image %}
             <img
-              src="{{ product.featured_image | image_url: width: 1000 }}"
-              alt="{{ product.featured_image.alt | escape }}"
+              src="{{ product.metafields.custom.home_featured_image | image_url: width: 1000 }}"
+              alt="{{ product.metafields.custom.home_featured_image.alt | escape }}"
               loading="lazy"
               width="{{ product.featured_image.width }}"
               height="{{ product.featured_image.height }}"
