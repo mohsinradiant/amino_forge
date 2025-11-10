@@ -548,7 +548,7 @@ footer .text-block h3 {
     border-radius: 10px;
 }
 
-.product-information__grid {
+.product-information__media {
     display: flex !important;
     width: 100% !important;
     grid-column: unset !important;
