@@ -551,6 +551,7 @@ footer .text-block h3 {
 .product-information__grid {
     display: flex;
     gap: 30px;
+    grid-column: unset;
 }
 
 .product-information__media {
