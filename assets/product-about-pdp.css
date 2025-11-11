@@ -37,6 +37,7 @@
     justify-content: start;
     gap: 30px;
     align-items: start;
+    margin-top: -50px;
 }
 
 .product-about-left_column-item-text {
@@ -45,11 +46,7 @@
     padding: 50px 0;
 }
 
-.product-about-left_column-item:first-of-type .product-about-left_column-item-text{
-    padding-top: 0;
-}
-
-.product-about-left_column-item:last-of-type .product-about-left_column-item-text{
+.product-about-left_column-item:last-of-type .product-about-left_column-item-text {
     padding-bottom: 0;
 }
 
