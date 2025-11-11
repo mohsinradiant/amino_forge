@@ -1,5 +1,6 @@
 .product-about-container {
     display: flex;
+    font-family: 'Gotham', sans-serif !important;
 }
 
 .product-about-container-wrapper {
