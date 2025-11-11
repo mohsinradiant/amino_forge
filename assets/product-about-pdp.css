@@ -143,6 +143,6 @@
     border: none;
 }
 
-.product-about-container-left-bottom-row:nth-child(even) {
+.product-about-container-right-bottom:nth-child(even) {
     background-color: #E4DFED;
 }
