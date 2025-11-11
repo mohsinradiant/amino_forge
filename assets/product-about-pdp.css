@@ -67,3 +67,7 @@
     font-weight: 300;
     font-size: 14px;
 }
+
+.product-about-left_column-item-text li {
+    font-weight: 500 !important;
+}
