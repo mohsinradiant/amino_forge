@@ -34,16 +34,23 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.pdp_product_usp_item');
+    let currentIndex = 0;
+    const intervalTime = 3000; // 3 seconds per block
 
-    items.forEach((item) => {
-      item.addEventListener('click', () => {
-        items.forEach((i) => i.classList.remove('active')); // deactivate all
-        item.classList.add('active'); // activate clicked one
-      });
-    });
+    function activateItem(index) {
+      items.forEach((i) => i.classList.remove('active'));
+      items[index].classList.add('active');
+    }
 
-    // Optionally, activate first one by default
-    if (items.length) items[0].classList.add('active');
+    function autoplay() {
+      activateItem(currentIndex);
+      currentIndex = (currentIndex + 1) % items.length;
+    }
+
+    if (items.length > 0) {
+      autoplay(); // start first
+      setInterval(autoplay, intervalTime);
+    }
   });
 </script>
 
