@@ -15,7 +15,7 @@
     justify-content: start;
     align-items: start;
     text-align: left;
-    width: 55%;
+    width: 53%;
 }
 
 .product-about-container-right {
@@ -24,7 +24,7 @@
     justify-content: start;
     align-items: start;
     text-align: left;
-    width: 45%;
+    width: 47%;
 }
 
 .product-about-container-right .section_heading {
@@ -141,6 +141,7 @@
     display: flex;
     padding: 15px;
     border-bottom: solid 1px #E4DFED;
+    gap: 7px;
 }
 
 .product-about-container-right-bottom-row:last-of-type {
