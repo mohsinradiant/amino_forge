@@ -27,6 +27,7 @@
 .product-about-container-left-bottom {
     display: flex;
     flex-direction: column;
+    margin-top: 40px;
 }
 
 .product-about-left_column-item {
