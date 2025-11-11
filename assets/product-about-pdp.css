@@ -1,6 +1,5 @@
 .product-about-container {
     display: flex;
-    font-family: 'Gotham', sans-serif !important;
 }
 
 .product-about-container-wrapper {
@@ -52,4 +51,8 @@
 }
 .product-about-left_column-item img{
     width: 70px;
+}
+.product-about-item-title{
+    font-family: 'Gotham', sans-serif !important;
+    font-size: 20px;
 }
