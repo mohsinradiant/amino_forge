@@ -260,6 +260,42 @@
         "padding-block-end": 0
       }
     },
+    "product_about_44bj4K": {
+      "type": "product-about",
+      "blocks": {
+        "left_column_ENiWNg": {
+          "type": "left_column",
+          "settings": {
+            "image": "shopify://shop_images/image_101_c93da16f-69c7-49df-b887-b0f7c3e311b9.png",
+            "title": "Beyond Supplementation. Cellular Regeneration.",
+            "text": "<p>Amino Forge AF9 is the pinnacle of intelligent nutrition. We've engineered the world's first liposomal amino acid supplement, moving beyond ordinary powders and pills to deliver nutrients directly to your cells.</p>"
+          }
+        },
+        "left_column_tMiC6V": {
+          "type": "left_column",
+          "settings": {
+            "image": "shopify://shop_images/image_99_c1239578-a64b-4643-8f7f-312763a4b14c.png",
+            "title": "The Absorption Problem, Solved.",
+            "text": "<p>Amino Forge AF9 is the pinnacle of intelligent nutrition. We've engineered the world's first liposomal amino acid supplement, moving beyond ordinary powders and pills to deliver nutrients directly to your cells.</p>"
+          }
+        },
+        "left_column_zyHLgq": {
+          "type": "left_column",
+          "settings": {
+            "image": "shopify://shop_images/image_98_be6df9f6-a3bc-41f5-9406-d3a6b94d9ae2.png",
+            "title": "Your Foundational Regimen.",
+            "text": "<p>Whether you're an athlete pushing limits, an entrepreneur in a high-stress environment, or a wellness enthusiast optimizing your health, Amino Forge is your foundational tool. It’s designed to repair, recover, and rebuild at the cellular level, supporting:</p><ul><li>Muscle Health & Recovery</li><li>Cognitive Function & Focus</li><li>Sustained Energy & Endurance</li><li>Overall Cellular Vitality</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "left_column_ENiWNg",
+        "left_column_tMiC6V",
+        "left_column_zyHLgq"
+      ],
+      "name": "Product About",
+      "settings": {}
+    },
     "pdp_product_usp_Tq47Jb": {
       "type": "pdp_product_usp",
       "blocks": {
@@ -690,6 +726,7 @@
   },
   "order": [
     "main",
+    "product_about_44bj4K",
     "pdp_product_usp_Tq47Jb",
     "product_reviews_Rdwmkf",
     "section_UJQGQ9"
