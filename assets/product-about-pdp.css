@@ -104,15 +104,24 @@
     margin-top: 20px;
     padding: 20px;
 }
-.product-about-container-right-bottom p{
+
+.product-about-container-right-bottom p {
     margin: 0;
 }
-.product-about-container-right-bottom p:first-of-type{
+
+.product-about-container-right-bottom p:first-of-type {
     font-weight: 500;
     width: 30%;
     color: #000;
 }
-.product-about-container-right-bottom-header{
+
+.product-about-container-right-bottom p:last-of-type {
+    font-weight: 300;
+    width: 70%;
+    color: #222222;
+}
+
+.product-about-container-right-bottom-header {
     display: flex;
 
 }
