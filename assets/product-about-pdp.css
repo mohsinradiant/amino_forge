@@ -13,4 +13,20 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    text-align: left;
+}
+
+.product-about-container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    text-align: left;
+}
+.product-about-container-left-bottom{
+    display: flex;
+    flex-direction: column;
+}
+.product-about-left_column-item{
+    display: flex;
 }
