@@ -4,6 +4,7 @@
     <div class="product-about-container-left-bottom">
       {% for block in section.blocks.left_column %}
         <div class="product-about-left_column-item">
+          <img src="{{block.settings.image |  image_url }}">
           <h3 class="product-about-item-title">{{ block.settings.title }}</h3>
           <p class="product-about-item-text">{{ block.settings.text }}</p>
         </div>
@@ -15,7 +16,31 @@
 {
   "name": "Product About",
   "settings": [],
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "left_column",
+      "name": "Left Column Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Sample Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Sample description text goes here."
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Product About"
