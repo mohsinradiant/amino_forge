@@ -10,8 +10,10 @@
               {% if block.settings.image %}
                 <img src="{{ block.settings.image | image_url }}" alt="">
               {% endif %}
-              <h3 class="product-about-item-title">{{ block.settings.title }}</h3>
-              <p class="product-about-item-text">{{ block.settings.text }}</p>
+              <div class="product-about-left_column-item-text">
+                <h3 class="product-about-item-title">{{ block.settings.title }}</h3>
+                <p class="product-about-item-text">{{ block.settings.text }}</p>
+              </div>
             </div>
           {% endif %}
         {% endfor %}
