@@ -74,9 +74,11 @@
     width: 70px;
     padding: 100px 0 0;
 }
-.product-about-left_column-item img:first-of-type {
+
+.product-about-left_column-item:first-of-type img {
     padding: 50px 0 0;
 }
+
 .product-about-item-title {
     font-family: 'Gotham', sans-serif !important;
     font-size: 23px;
