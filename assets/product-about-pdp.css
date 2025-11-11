@@ -37,12 +37,12 @@
     justify-content: start;
     gap: 30px;
     align-items: start;
-    padding: 50px 0;
 }
 
 .product-about-left_column-item-text {
     display: flex;
     flex-direction: column;
+    padding: 50px 0;
 }
 
 .product-about-left_column-item-text:first-of-type {
