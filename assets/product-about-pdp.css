@@ -95,3 +95,9 @@
     font-weight: 500 !important;
     margin: 0;
 }
+.product-about-container-left-bottom{
+    border: solid 1px #E4DFED;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
