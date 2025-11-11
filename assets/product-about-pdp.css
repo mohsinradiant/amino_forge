@@ -35,9 +35,9 @@
 
 .product-about-left_column-item {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     gap: 30px;
-    align-items: center;
+    align-items: start;
 }
 
 .product-about-left_column-item-text {
@@ -49,4 +49,7 @@
     text-align: left;
     margin-top: 10px;
     font-size: 33px;
+}
+.product-about-left_column-item img{
+    width: 70px;
 }
