@@ -124,9 +124,16 @@
     display: flex;
     font-size: 16px;
     font-weight: 500 !important;
+    border-bottom: solid 1px #E4DFED;
     padding: 15px;
 }
-.product-about-container-right-bottom-row{
+
+.product-about-container-right-bottom-row {
     display: flex;
     padding: 15px;
+    border-bottom: solid 1px #E4DFED;
+}
+
+.product-about-container-right-bottom-row:last-of-type {
+    border: none;
 }
