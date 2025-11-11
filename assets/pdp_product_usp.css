@@ -30,7 +30,7 @@
 .pdp_product_usp_item {
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     gap: 30px;
 }
 
