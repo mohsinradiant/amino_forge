@@ -99,7 +99,7 @@
 /* Loader animation synced with autoplay (default: 3s) */
 .pdp_product_usp_item.active .pdp_product_usp_loader {
     animation: loaderGrow 3s linear forwards;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .pdp_product_usp_icon svg {
