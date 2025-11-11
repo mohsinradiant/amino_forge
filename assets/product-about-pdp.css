@@ -115,7 +115,7 @@
     color: #000;
 }
 
-.product-about-container-right-bottom p:last-of-type {
+.product-about-container-right-bottom .product-about-container-right-bottom-row p:last-of-type {
     font-weight: 300;
     width: 70%;
     color: #222222;
