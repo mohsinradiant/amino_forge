@@ -123,6 +123,9 @@
 
 .product-about-container-right-bottom-header {
     display: flex;
+    font-size: 20px;
+    font-weight: 500 !im;
+    
 
 }
 .product-about-container-right-bottom-row{
