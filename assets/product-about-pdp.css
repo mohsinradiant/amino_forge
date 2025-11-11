@@ -15,6 +15,7 @@
     justify-content: start;
     align-items: start;
     text-align: left;
+    width: 50%;
 }
 
 .product-about-container-right {
@@ -23,6 +24,7 @@
     justify-content: start;
     align-items: start;
     text-align: left;
+    width: 50%;
 }
 
 .product-about-container-left-bottom {
