@@ -26,10 +26,13 @@
     text-align: left;
     width: 50%;
 }
-.product-about-container-right .section_heading{
+
+.product-about-container-right .section_heading {
     color: #9E3EB2;
-    font-size: 20px;
+    font-size: 23px !important;
+    font-weight: 400;
 }
+
 .product-about-container-left-bottom {
     display: flex;
     flex-direction: column;
