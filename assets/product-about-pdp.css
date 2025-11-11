@@ -49,10 +49,14 @@
     margin-top: 10px;
     font-size: 33px;
 }
-.product-about-left_column-item img{
+
+.product-about-left_column-item img {
     width: 70px;
 }
-.product-about-item-title{
+
+.product-about-item-title {
     font-family: 'Gotham', sans-serif !important;
-    font-size: 20px;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.3;
 }
