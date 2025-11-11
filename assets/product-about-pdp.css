@@ -123,10 +123,14 @@
 
 .product-about-container-right-bottom-header {
     display: flex;
-    font-size: 18px;
-    font-weight: 500 !important;
     border-bottom: solid 1px #E4DFED;
     padding: 15px;
+}
+
+.product-about-container-right-bottom-header p {
+    font-size: 16px;
+    font-weight: 500 !important;
+
 }
 
 .product-about-container-right-bottom-row {
