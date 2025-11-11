@@ -102,7 +102,6 @@
     border-radius: 15px;
     overflow: hidden;
     margin-top: 20px;
-    padding: 20px;
 }
 
 .product-about-container-right-bottom p {
@@ -125,7 +124,7 @@
     display: flex;
     font-size: 20px;
     font-weight: 500 !important;
-
+    padding: 15px;
 }
 .product-about-container-right-bottom-row{
     display: flex;
