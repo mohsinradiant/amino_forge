@@ -10,7 +10,7 @@
 
       <div class="pdp_product_usp_wrapper">
         {% for block in section.blocks %}
-          <div class="pdp_product_usp_item">
+          <div class="pdp_product_usp_item" data-index="{{ forloop.index }}">
             {% assign svg_filename = block.settings.svg_filename %}
             {% capture svg_code %}
               {% include svg_filename %}
@@ -22,6 +22,7 @@
             <div class="pdp_product_usp_item_content">
               <h3 class="pdp_product_usp_item_heading">{{ block.settings.heading }}</h3>
               <p class="pdp_product_usp_item_caption">{{ block.settings.caption }}</p>
+              <div class="pdp_product_usp_loader"></div>
             </div>
           </div>
         {% endfor %}
@@ -29,6 +30,22 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.pdp_product_usp_item');
+
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        items.forEach((i) => i.classList.remove('active')); // deactivate all
+        item.classList.add('active'); // activate clicked one
+      });
+    });
+
+    // Optionally, activate first one by default
+    if (items.length) items[0].classList.add('active');
+  });
+</script>
 
 {% schema %}
 {
