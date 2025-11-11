@@ -54,36 +54,20 @@
     font-weight: 300;
 }
 
-/* === PDP Product USP Animated Interactivity Additions === */
+/* === PDP Product USP Enhancements === */
 
-/* Inactive to active transition base */
+/* Increase icon size a little */
+.pdp_product_usp_icon svg {
+  width: 90px;
+  height: auto;
+  transition: fill 0.4s ease, transform 0.3s ease;
+}
+
+/* Keep all other transitions smooth */
 .pdp_product_usp_item {
   cursor: pointer;
   position: relative;
   transition: all 0.4s ease;
-}
-
-/* Active state styles */
-.pdp_product_usp_item.active .pdp_product_usp_icon svg {
-  fill: #9E3EB2;
-  transition: fill 0.4s ease;
-}
-
-.pdp_product_usp_item.active .pdp_product_usp_item_heading {
-  font-weight: 500;
-  transition: font-weight 0.3s ease;
-}
-
-.pdp_product_usp_item.active .pdp_product_usp_item_caption {
-  opacity: 1;
-  max-height: 100px;
-  transition: opacity 0.4s ease, max-height 0.4s ease;
-}
-
-.pdp_product_usp_item .pdp_product_usp_item_caption {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
 }
 
 .pdp_product_usp_loader {
@@ -95,7 +79,7 @@
   transition: width 0.3s ease;
 }
 
-/* Loader animation synced with autoplay (default: 3s) */
+/* Loader animation synced with autoplay (default 3s) */
 .pdp_product_usp_item.active .pdp_product_usp_loader {
   animation: loaderGrow 3s linear forwards;
 }
@@ -114,9 +98,8 @@
   }
 }
 
-/* Hover feedback */
-.pdp_product_usp_item:hover:not(.active) .pdp_product_usp_icon svg {
-  fill: #b9b9b9;
+/* Optional subtle scale effect for active icon */
+.pdp_product_usp_item.active .pdp_product_usp_icon svg {
   transform: scale(1.05);
-  transition: fill 0.3s ease, transform 0.3s ease;
+  fill: #9E3EB2;
 }
