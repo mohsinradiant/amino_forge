@@ -104,6 +104,10 @@
     margin-top: 20px;
     padding: 20px;
 }
+.product-about-container-right-bottom p{
+    margin: 0;
+}
 .product-about-container-right-bottom-header{
     display: flex;
+
 }
