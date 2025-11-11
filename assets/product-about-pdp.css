@@ -13,4 +13,13 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    text-align: left;
+}
+
+.product-about-container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    text-align: left;
 }
