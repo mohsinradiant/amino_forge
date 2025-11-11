@@ -45,11 +45,11 @@
     padding: 50px 0;
 }
 
-.product-about-left_column-item-text:first-of-type {
+.product-about-left_column-item:first-of-type .product-about-left_column-item-text{
     padding-top: 0;
 }
 
-.product-about-left_column-item-text:last-of-type {
+.product-about-left_column-item:last-of-type .product-about-left_column-item-text{
     padding-bottom: 0;
 }
 
