@@ -142,3 +142,7 @@
 .product-about-container-right-bottom-row:last-of-type {
     border: none;
 }
+
+.product-about-container-left-bottom-row:nth-child(even) {
+    background-color: #E4DFED;
+}
