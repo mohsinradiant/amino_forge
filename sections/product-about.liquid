@@ -1,0 +1,25 @@
+<div class="section product-about-container">
+  <div class="product-about-container-left">
+    <h2 class="section_heading">About Amino Forge AF9</h2>
+    <div class="product-about-container-left-bottom">
+      {% for block in section.blocks.left_column %}
+        <div class="product-about-left_column-item">
+          <h3 class="product-about-item-title">{{ block.settings.title }}</h3>
+          <p class="product-about-item-text">{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product About",
+  "settings": [],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Product About"
+    }
+  ]
+}
+{% endschema %}
