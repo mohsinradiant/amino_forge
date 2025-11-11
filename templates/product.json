@@ -286,12 +286,92 @@
             "title": "Your Foundational Regimen.",
             "text": "<p>Whether you're an athlete pushing limits, an entrepreneur in a high-stress environment, or a wellness enthusiast optimizing your health, Amino Forge is your foundational tool. It’s designed to repair, recover, and rebuild at the cellular level, supporting:</p><ul><li>Muscle Health & Recovery</li><li>Cognitive Function & Focus</li><li>Sustained Energy & Endurance</li><li>Overall Cellular Vitality</li></ul>"
           }
+        },
+        "right_column_zw9h7f": {
+          "type": "right_column",
+          "settings": {
+            "title": "Glutamine",
+            "text": "Aids in gut repair, muscle recovery, and immune function."
+          }
+        },
+        "right_column_dyNbQk": {
+          "type": "right_column",
+          "settings": {
+            "title": "L-Arginine",
+            "text": "Improves circulation and supports nitric oxide production for energy."
+          }
+        },
+        "right_column_77fQFf": {
+          "type": "right_column",
+          "settings": {
+            "title": "Taurine",
+            "text": "Enhances hydration, endurance, and heart health."
+          }
+        },
+        "right_column_zGLXUH": {
+          "type": "right_column",
+          "settings": {
+            "title": "Serine",
+            "text": "Supports neural communication and memory."
+          }
+        },
+        "right_column_94kcQD": {
+          "type": "right_column",
+          "settings": {
+            "title": "Proline",
+            "text": "Strengthens connective tissues and promotes collagen formation."
+          }
+        },
+        "right_column_33Ejwk": {
+          "type": "right_column",
+          "settings": {
+            "title": "Phenylalanine",
+            "text": "Boosts dopamine and mood regulation."
+          }
+        },
+        "right_column_eLMDW4": {
+          "type": "right_column",
+          "settings": {
+            "title": "Tyrosine",
+            "text": "Improves mental alertness and stress response."
+          }
+        },
+        "right_column_VDHphR": {
+          "type": "right_column",
+          "settings": {
+            "title": "Lysine",
+            "text": "Essential for muscle protein synthesis and calcium absorption."
+          }
+        },
+        "right_column_LjUW7y": {
+          "type": "right_column",
+          "settings": {
+            "title": "Glycine(Non-liposomal)",
+            "text": "Improves sleep quality, joint flexibility, and antioxidant activity."
+          }
+        },
+        "right_column_tnMXYP": {
+          "type": "right_column",
+          "settings": {
+            "title": "Thiamine(Vitamin B1)",
+            "text": "Converts food into energy and supports nervous system health."
+          }
         }
       },
       "block_order": [
         "left_column_ENiWNg",
         "left_column_tMiC6V",
-        "left_column_zyHLgq"
+        "left_column_zyHLgq",
+        "right_column_zw9h7f",
+        "right_column_dyNbQk",
+        "right_column_77fQFf",
+        "right_column_zGLXUH",
+        "right_column_94kcQD",
+        "right_column_33Ejwk",
+        "right_column_eLMDW4",
+        "right_column_VDHphR",
+        "right_column_LjUW7y",
+        "right_column_tnMXYP"
       ],
       "name": "Product About",
       "settings": {}
