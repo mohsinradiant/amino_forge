@@ -109,6 +109,7 @@
 }
 .product-about-container-right-bottom p:first-of-type{
     font-weight: 500;
+    width: 30%;
     color: #000;
 }
 .product-about-container-right-bottom-header{
