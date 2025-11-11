@@ -46,9 +46,14 @@
     padding: 50px 0;
     border-bottom: solid 1px #C4C4C4;
 }
+
 .product-about-left_column-item:last-of-type .product-about-left_column-item-text {
     padding-bottom: 0;
     border: none;
+}
+
+.product-about-left_column-item:first-of-type .product-about-item-title {
+    padding-top: 0;
 }
 
 .product-about-container .section_heading {
