@@ -46,11 +46,9 @@
     padding: 50px 0;
     border-bottom: solid 1px #C4C4C4;
 }
-.product-about-left_column-item-text:last-of-type{
-    border: none;
-}
 .product-about-left_column-item:last-of-type .product-about-left_column-item-text {
     padding-bottom: 0;
+    border: none;
 }
 
 .product-about-container .section_heading {
@@ -70,6 +68,7 @@
     font-weight: 500;
     line-height: 1.3;
     margin: 0;
+    padding-top: 50px;
 }
 
 .product-about-left_column-item-text p,
