@@ -2,15 +2,20 @@
   <div class="product-about-container-left">
     <h2 class="section_heading">About Amino Forge AF9</h2>
     <div class="product-about-container-left-bottom">
-      {% for block in section.blocks.left_column %}
-        <div class="product-about-left_column-item">
-          <img src="{{block.settings.image |  image_url }}">
-          <h3 class="product-about-item-title">{{ block.settings.title }}</h3>
-          <p class="product-about-item-text">{{ block.settings.text }}</p>
-        </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'left_column' %}
+          <div class="product-about-left_column-item">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | image_url }}" alt="">
+            {% endif %}
+            <h3 class="product-about-item-title">{{ block.settings.title }}</h3>
+            <p class="product-about-item-text">{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
+
   <div class="product-about-container-right">
     <h2 class="section_heading">The Science Inside Every Sachet:</h2>
     <div class="product-about-container-left-bottom">
@@ -18,15 +23,18 @@
         <p>Ingredient</p>
         <p>Role in the Body</p>
       </div>
-      {% for block in section.blocks.right_column %}
-        <div class="product-about-container-left-bottom-row">
-          <p class="product-about-container-left-bottom-row-left">{{ block.settings.title }}</p>
-          <p class="product-about-container-left-bottom-row-right">{{ block.settings.text }}</p>
-        </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'right_column' %}
+          <div class="product-about-container-left-bottom-row">
+            <p class="product-about-container-left-bottom-row-left">{{ block.settings.title }}</p>
+            <p class="product-about-container-left-bottom-row-right">{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
 </div>
+
 {% schema %}
 {
   "name": "Product About",
