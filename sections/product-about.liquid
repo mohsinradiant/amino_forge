@@ -22,16 +22,16 @@
 
     <div class="product-about-container-right">
       <h2 class="section_heading">The Science Inside Every Sachet:</h2>
-      <div class="product-about-container-left-bottom">
-        <div class="product-about-container-left-bottom-header">
+      <div class="product-about-container-right-bottom">
+        <div class="product-about-container-right-bottom-header">
           <p>Ingredient</p>
           <p>Role in the Body</p>
         </div>
         {% for block in section.blocks %}
           {% if block.type == 'right_column' %}
-            <div class="product-about-container-left-bottom-row">
-              <p class="product-about-container-left-bottom-row-left">{{ block.settings.title }}</p>
-              <p class="product-about-container-left-bottom-row-right">{{ block.settings.text }}</p>
+            <div class="product-about-container-right-bottom-row">
+              <p class="product-about-container-right-bottom-row-left">{{ block.settings.title }}</p>
+              <p class="product-about-container-right-bottom-row-right">{{ block.settings.text }}</p>
             </div>
           {% endif %}
         {% endfor %}
