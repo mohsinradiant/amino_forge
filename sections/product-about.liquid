@@ -11,6 +11,21 @@
       {% endfor %}
     </div>
   </div>
+  <div class="product-about-container-right">
+    <h2 class="section_heading">The Science Inside Every Sachet:</h2>
+    <div class="product-about-container-left-bottom">
+      <div class="product-about-container-left-bottom-header">
+        <p>Ingredient</p>
+        <p>Role in the Body</p>
+      </div>
+      {% for block in section.blocks.right_column %}
+        <div class="product-about-container-left-bottom-row">
+          <p class="product-about-container-left-bottom-row-left">{{ block.settings.title }}</p>
+          <p class="product-about-container-left-bottom-row-right">{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 {% schema %}
 {
@@ -35,6 +50,22 @@
           "type": "richtext",
           "id": "text",
           "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "right_column",
+      "name": "Right Column Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Ingredient"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Role in the Body"
         }
       ]
     }
