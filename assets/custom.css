@@ -1482,10 +1482,17 @@ footer .text-block h3 {
     .product-details .group-block-content rte-formatter:nth-of-type(4) p {
         margin-top: 15px;
     }
-    .add-to-cart-button{
+
+    .add-to-cart-button {
         max-width: unset;
     }
-    .product-information:not(.product-information--media-right){
+
+    .product-information:not(.product-information--media-right) {
         margin-bottom: 30px;
+    }
+
+    .product-about-container-wrapper {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
     }
 }
