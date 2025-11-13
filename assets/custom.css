@@ -1448,8 +1448,8 @@ footer .text-block h3 {
 
     slideshow-controls:not([controls-on-media]) {
         &:is([pagination-position='left']) {
-           
-                display: flex !important;
+            padding-left: 20px;
+            display: flex !important;
         }
     }
 }
