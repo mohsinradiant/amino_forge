@@ -1457,4 +1457,9 @@ footer .text-block h3 {
         padding-right: 20px;
         border: none;
     }
+
+    .product-information__grid:not(.product-information__grid--half, :has(.product-information__media:empty)).product-information--media-left {
+        display: flex;
+        flex-direction: column;
+    }
 }
