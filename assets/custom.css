@@ -312,7 +312,9 @@ slideshow-arrows {
 .ingredient_img:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
+#shopify-section-template--25358822277399__slideshow_Pb7dBN .slideshow-controls__dots button{
+    filter: invert(1);
+}
 /* Container */
 .testimonials-carousel-section {
     text-align: center;
