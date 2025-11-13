@@ -1246,7 +1246,9 @@ footer .text-block h3 {
         width: 100% !important;
         font-size: 23px !important;
     }
-
+.our-story-founders-container-left p{
+    font-size: 13px !important;
+}
     .testimonials-carousel-section {
         margin-top: 40px;
     }
