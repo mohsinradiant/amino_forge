@@ -1259,13 +1259,21 @@ footer .text-block h3 {
     .our-story-founders-container-right-top {
         gap: 20px !important;
     }
-    .our-story-results-content{
+
+    .our-story-results-content {
         font-size: 13px !important;
     }
-.our-story-results-container h2{
-    font-size: 23px !important;
-    margin-bottom: 20px !important;
-}
+
+    .our-story-results-container h2 {
+        font-size: 23px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .our-story-results-container {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
