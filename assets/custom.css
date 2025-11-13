@@ -1478,4 +1478,8 @@ footer .text-block h3 {
     .product-details .group-block-content rte-formatter:nth-of-type(2) p {
         font-size: 20px;
     }
+
+    .product-details .group-block-content rte-formatter:nth-of-type(4) p {
+        margin-top: 15px;
+    }
 }
