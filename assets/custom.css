@@ -1659,4 +1659,8 @@ footer .text-block h3 {
         padding-right: 0 !important;
         height: unset !important;
     }
+    .overall-rating{
+        width: 100%;
+    padding: 20px 20px;
+    }
 }
