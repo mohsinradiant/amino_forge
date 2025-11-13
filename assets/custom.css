@@ -1217,16 +1217,24 @@ footer .text-block h3 {
         aspect-ratio: 1920 / 1900 !important;
         text-align: center;
     }
-.page-intro-container p{
-    font-size: 13px !important;
-    font-weight: 500 !important;
-}
-.page-intro-container h2{
-    font-size: 30px !important;
-}
-.page-intro-container{
-    gap: 5px !important;
-}
+
+    .page-intro-container p {
+        font-size: 13px !important;
+        font-weight: 500 !important;
+    }
+
+    .page-intro-container h2 {
+        font-size: 30px !important;
+    }
+
+    .page-intro-container {
+        gap: 5px !important;
+    }
+
+    .our-story-founders-container {
+        flex-direction: column;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
