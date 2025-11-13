@@ -1302,7 +1302,10 @@ footer .text-block h3 {
         margin-top: 10px !important;
         font-weight: 400 !important;
     }
-
+      .accordion {
+        width: 100% !important;
+        flex-direction: column !important;
+      }
     .our-story-results-cta-cutout a {
         padding: 10px 13px !important;
     }
