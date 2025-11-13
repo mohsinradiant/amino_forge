@@ -1620,4 +1620,7 @@ footer .text-block h3 {
     .pdp-review-card-right-bottom p{
         font-size: 14px !important;
     }
+    .pdp-review-card-right{
+        width: 100% !important;
+    }
 }
