@@ -1668,4 +1668,7 @@ footer .text-block h3 {
     .total-reviews {
         margin-bottom: 0 !important;
     }
+    .rating-snapshot p{
+        text-align: center !important;
+    }
 }
