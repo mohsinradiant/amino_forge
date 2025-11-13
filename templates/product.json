@@ -774,6 +774,7 @@
         "button_ipWCBm",
         "button_UytFNA"
       ],
+      "disabled": true,
       "name": "t:names.faq_section",
       "settings": {
         "content_direction": "column",
