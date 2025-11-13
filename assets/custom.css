@@ -1180,7 +1180,8 @@ footer .text-block h3 {
         flex-direction: column;
     }
 
-    .home_ingredients_desc_top_container_left, .home_ingredients_desc_top_container_right {
+    .home_ingredients_desc_top_container_left,
+    .home_ingredients_desc_top_container_right {
         width: 100%;
     }
 
@@ -1192,6 +1193,12 @@ footer .text-block h3 {
     .home_ingredients_desc_top_container_left h2 {
         text-align: center;
         font-size: 30px;
+    }
+
+    .home_ingredients_desc_top_container_right p {
+        text-align: center;
+        line-height: 1.7;
+        margin-top: 30px;
     }
 
     .testimonials-carousel-container {
