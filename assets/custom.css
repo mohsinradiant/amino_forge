@@ -1643,4 +1643,8 @@ footer .text-block h3 {
     .pdp-review-card-right-top img {
         width: 70px !important;
     }
+    .reviews-grid{
+        flex-direction: column;
+        gap: 30px;
+    }
 }
