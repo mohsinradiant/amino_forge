@@ -1643,10 +1643,10 @@ footer .text-block h3 {
     .pdp-review-card-right-top img {
         width: 70px !important;
     }
-    .reviews-grid{
+    .product-reviews-wrapper .reviews-grid{
         flex-direction: column;
         gap: 30px;
-        border: none;
+        border: none !important;
     }
     .rating-snapshot{
         padding: 20px;
