@@ -1187,6 +1187,14 @@ footer .text-block h3 {
         width: 26%;
     }
 
+    .home_science_container_block div {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        text-align: left;
+    }
+
     .home_science_container_block {
         width: 100%;
         flex-direction: row;
