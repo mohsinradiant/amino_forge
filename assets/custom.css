@@ -1504,4 +1504,8 @@ footer .text-block h3 {
         width: 100%;
         font-size: 20px;
     }
+
+    .product-about-container-left {
+        width: 100% !important;
+    }
 }
