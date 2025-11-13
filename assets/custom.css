@@ -1304,7 +1304,7 @@ footer .text-block h3 {
     }
 
     .our-story-results-cta-cutout a {
-        padding: 10px 13px;
+        padding: 10px 13px !important;
     }
 
     .testimonials-carousel-section {
