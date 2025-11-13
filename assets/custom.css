@@ -1302,16 +1302,20 @@ footer .text-block h3 {
         margin-top: 10px !important;
         font-weight: 400 !important;
     }
-      .accordion {
+
+    .accordion {
         width: 100% !important;
         flex-direction: column !important;
-      }
+    }
+
     .our-story-results-cta-cutout a {
         padding: 10px 13px !important;
     }
-.blog-post-item:has(.blog-post-card__image-container) .blog-post-card__content{
-    padding: 20px !important;
-}
+
+    .blog-post-item:has(.blog-post-card__image-container) .blog-post-card__content {
+        padding: 20px !important;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
@@ -1439,5 +1443,14 @@ footer .text-block h3 {
 
     .image_mobile_banner {
         display: flex;
+    }
+
+
+    slideshow-controls:not([controls-on-media]) {
+        &:is([pagination-position='left']) {
+            .slideshow-controls__thumbnails {
+                display: flex !important;
+            }
+        }
     }
 }
