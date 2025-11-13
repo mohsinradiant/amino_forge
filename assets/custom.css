@@ -1179,6 +1179,10 @@ footer .text-block h3 {
         gap: 20px !important;
     }
 
+    .ai-product-feature__certifications {
+        margin: 40px 0 50px !important;
+    }
+
     .home_ingredients_desc {
         padding-top: 50px;
         padding-bottom: 50px;
