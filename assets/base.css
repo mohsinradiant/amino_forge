@@ -3564,17 +3564,17 @@ slideshow-component[autoplay] slideshow-controls {
 
       @supports not (view-timeline-axis: inline) {
         &[aria-selected='true'] {
-      color: #9E3EB2;
+          --color: var(--color-active);
         }
       }
 
       &:hover {
-      color: #9E3EB2;
+        --color: var(--color-hover);
       }
     }
 
     &[aria-selected='true'] {
-      color: #9E3EB2;
+      --color: var(--color-active);
     }
   }
 }
