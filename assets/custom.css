@@ -1689,4 +1689,14 @@ footer .text-block h3 {
         display: flex;
         flex-direction: column;
     }
+<<<<<<< HEAD
+=======
+    .product-reviews-cta-container a{
+        width: 50% !important;
+        padding: 20px;
+    }
+    .header-actions__cart-icon{
+        margin-right: 9px !important;
+    }
+>>>>>>> b198955 (minor changes)
 }
