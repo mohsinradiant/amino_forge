@@ -1676,4 +1676,7 @@ footer .text-block h3 {
     .overall-score-container {
     justify-content: center;
 }
+.total-reviews-caption{
+    text-align: center;
+}
 }
