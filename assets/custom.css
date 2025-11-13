@@ -1183,6 +1183,11 @@ footer .text-block h3 {
         margin: 40px 0 50px !important;
     }
 
+    .home_science_container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
     .home_ingredients_desc {
         padding-top: 50px;
         padding-bottom: 50px;
