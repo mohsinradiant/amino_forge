@@ -1206,6 +1206,10 @@ footer .text-block h3 {
         flex-direction: column;
     }
 
+    .home_ingredients_desc_bottom_container img {
+        width: 100%;
+    }
+
     .testimonials-carousel-container {
         padding: 0 20px;
     }
