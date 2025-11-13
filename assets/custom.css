@@ -1194,6 +1194,11 @@ footer .text-block h3 {
         margin-bottom: 20px;
     }
 
+    .home_science_container_inner h2 {
+        margin: 0;
+        font-size: 13px;
+    }
+
     .home_ingredients_desc_top_container {
         flex-direction: column;
     }
