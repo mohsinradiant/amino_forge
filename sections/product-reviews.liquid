@@ -77,28 +77,30 @@
     </div>
     <div class="reviews-list" id="reviews-container"></div>
   </div>
-  <a
-    href="/pages/faq"
-    class="
-      size-style
-      button-secondary
-      button-secondary--AaHIza0hRUlgxakdBU__button_ipWCBm
-    "
-    style="--size-style-width:25%;--size-style-height: ;--size-style-width-mobile: fit-content; --size-style-width-mobile-min: fit-content;"
-  >
-    Read more FAQs
-  </a>
-  <a
-    href="/pages/contact"
-    class="
-      size-style
-      button
-      button--ARjkrN1kvdjVPa25Xd__button_UytFNA
-    "
-    style="--size-style-width:25%;--size-style-height: ;--size-style-width-mobile: fit-content; --size-style-width-mobile-min: fit-content;"
-  >
-    Ask a Question
-  </a>
+  <div class="product-reviews-cta-container">
+    <a
+      href="{{ section.settings.faq_link }}"
+      class="
+        size-style
+        button-secondary
+        button-secondary--AaHIza0hRUlgxakdBU__button_ipWCBm
+      "
+      style="--size-style-width:25%;--size-style-height: ;--size-style-width-mobile: fit-content; --size-style-width-mobile-min: fit-content;"
+    >
+      Read more FAQs
+    </a>
+    <a
+      href="{{ section.settings.contact_link }}"
+      class="
+        size-style
+        button
+        button--ARjkrN1kvdjVPa25Xd__button_UytFNA
+      "
+      style="--size-style-width:25%;--size-style-height: ;--size-style-width-mobile: fit-content; --size-style-width-mobile-min: fit-content;"
+    >
+      Ask a Question
+    </a>
+  </div>
 </div>
 
 <script
@@ -297,7 +299,18 @@
 {% schema %}
 {
   "name": "Product Reviews Firebase",
-  "settings": [],
+  "settings": [
+    {
+      "type": "url",
+      "id": "faq_link",
+      "label": "FAQ Page Link"
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact Page Link"
+    }
+  ],
   "blocks": [
     {
       "type": "testimonial",
