@@ -1273,7 +1273,9 @@ footer .text-block h3 {
         padding-top: 40px !important;
         padding-bottom: 40px !important;
     }
-
+.our-story-results-container-inner{
+    margin-top: 40px !important;
+}
     .testimonials-carousel-section {
         margin-top: 40px;
     }
