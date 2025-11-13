@@ -1232,6 +1232,7 @@ footer .text-block h3 {
 
     div:has(> accordion-custom) {
         flex-direction: unset !important;
+        margin-bottom: 20px;
     }
 
     .home_health_benefits-images_container {
