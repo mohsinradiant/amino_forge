@@ -1178,7 +1178,9 @@ footer .text-block h3 {
     .ai-product-feature__certifications-images {
         gap: 20px !important;
     }
-
+.home_science_container_blocks{
+    flex-direction: column;
+}
     .ai-product-feature__certifications {
         margin: 40px 0 50px !important;
     }
