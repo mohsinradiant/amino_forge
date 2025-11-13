@@ -6,8 +6,10 @@
       <div class="pdp-review-card">
         <div class="pdp-review-card-left">
           <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.name }}">
-          <p class="pdp-testimonial-name">{{ block.settings.name }}</p>
-          <p class="pdp-testimonial-profession">{{ block.settings.profession }}</p>
+          <div>
+            <p class="pdp-testimonial-name">{{ block.settings.name }}</p>
+            <p class="pdp-testimonial-profession">{{ block.settings.profession }}</p>
+          </div>
         </div>
         <div class="pdp-review-card-right">
           <div class="pdp-review-card-right-top">
