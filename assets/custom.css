@@ -1690,11 +1690,13 @@ footer .text-block h3 {
         display: flex;
         flex-direction: column;
     }
-    .product-reviews-cta-container a{
+
+    .product-reviews-cta-container a {
         width: 50% !important;
         padding: 20px;
     }
-    .header-actions__cart-icon{
+
+    .header-actions__cart-icon {
         margin-right: 9px !important;
     }
 }
