@@ -1498,6 +1498,7 @@ footer .text-block h3 {
 
     .product-about-container {
         flex-direction: column;
+        gap: 50px !important;
     }
 
     .product-about-container .section_heading {
