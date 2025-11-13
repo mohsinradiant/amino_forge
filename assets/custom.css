@@ -1167,6 +1167,16 @@ footer .text-block h3 {
         aspect-ratio: 1338 / 1562;
     }
 
+    .marquee-item {
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0 20px 0 0px;
+    }
+
+    .bullet-point {
+        margin: 0 0 0 20px;
+    }
+
     .testimonials-carousel-container {
         padding: 0 20px;
     }
