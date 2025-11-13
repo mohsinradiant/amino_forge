@@ -1448,18 +1448,18 @@ footer .text-block h3 {
 
     slideshow-controls:not([controls-on-media]) {
         &:is([pagination-position='left']) {
-            padding-left: 20px;
             display: flex !important;
         }
     }
 
     .media-gallery--carousel slideshow-container {
-        padding-right: 20px;
         border: none;
     }
 
     .product-information__grid:not(.product-information__grid--half, :has(.product-information__media:empty)).product-information--media-left {
         display: flex;
         flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
