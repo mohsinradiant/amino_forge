@@ -1186,7 +1186,8 @@ footer .text-block h3 {
         width: 100%;
     }
 
-    .home_ingredients_desc_top_container_left p, .ai-product-feature__certifications_heading {
+    .home_ingredients_desc_top_container_left p,
+    .ai-product-feature__certifications_heading {
         text-align: center;
         width: 100%;
     }
@@ -1197,7 +1198,8 @@ footer .text-block h3 {
         font-size: 30px;
     }
 
-    .home_ingredients_desc_top_container_right p, .section_subheading {
+    .home_ingredients_desc_top_container_right p,
+    .section_subheading {
         text-align: center;
         line-height: 1.7;
         margin-top: 30px;
@@ -1208,6 +1210,10 @@ footer .text-block h3 {
     .home_ingredients_desc_bottom_container {
         padding-top: 40px;
         flex-direction: column;
+    }
+
+    .ai-product-feature__certifications_subheading {
+        width: 85% !important;
     }
 
     .home_ingredients_desc_bottom_container img {
