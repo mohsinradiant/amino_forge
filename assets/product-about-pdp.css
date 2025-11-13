@@ -99,7 +99,9 @@
 .product-about-left_column-item-text ul {
     margin-left: -100px !important;
 }
-
+.product-about-item-title{
+    font-size: 18px;
+}
 .product-about-left_column-item img {
     padding: 90px 0 0;
 }
