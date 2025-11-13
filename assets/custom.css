@@ -1600,4 +1600,9 @@ footer .text-block h3 {
         text-align: center !important;
         font-size: 23px !important;
     }
+    .pdp-review-card{
+        flex-direction: column;
+        padding: 20px !important;
+        gap: 20px !important;
+    }
 }
