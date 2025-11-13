@@ -1229,9 +1229,7 @@ footer .text-block h3 {
     footer .menu {
         width: 48%;
     }
-.footer-content{
-    padding-bottom: 0;
-}
+
     div:has(> accordion-custom) {
         flex-direction: unset !important;
         margin-bottom: 20px;
