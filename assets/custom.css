@@ -1273,10 +1273,17 @@ footer .text-block h3 {
         padding-top: 40px !important;
         padding-bottom: 40px !important;
     }
-.our-story-results-container-inner{
-    margin-top: 40px !important;
-    padding: 20px !important;
-}
+
+    .our-story-results-container-inner {
+        margin-top: 40px !important;
+        padding: 20px !important;
+    }
+
+    .our-story-results-items {
+        flex-direction: column;
+        display: flex !important;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
