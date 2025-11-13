@@ -1659,8 +1659,13 @@ footer .text-block h3 {
         padding-right: 0 !important;
         height: unset !important;
     }
-    .overall-rating{
+
+    .overall-rating {
         width: 100%;
-    padding: 20px 20px;
+        padding: 20px 20px;
+    }
+
+    .total-reviews {
+        margin-bottom: 0 !important;
     }
 }
