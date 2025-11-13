@@ -1590,10 +1590,12 @@ footer .text-block h3 {
     }
 
     .section_caption {
-        text-align: center !important;
-        font-size: 16px !important;
     }
-
+.pdp-reviews-container .section_caption{
+            text-align: center !important;
+        font-size: 14px !important;
+margin: 0 !important;
+}
     .section_heading {
         text-align: center !important;
         font-size: 23px !important;
