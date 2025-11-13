@@ -1192,9 +1192,14 @@ footer .text-block h3 {
         flex-direction: column;
         justify-content: start;
         align-items: start;
-        text-align: left;
     }
 
+    .home_science_container_block div h3 {
+        text-align: left;
+    }
+    .home_science_container_block div p {
+        text-align: left;
+    }
     .home_science_container_block {
         width: 100%;
         flex-direction: row;
