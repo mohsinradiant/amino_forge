@@ -1190,7 +1190,8 @@ footer .text-block h3 {
         width: 100%;
     }
 
-    .home_ingredients_desc_top_container_left h2 {
+    .home_ingredients_desc_top_container_left h2,
+    .section_heading {
         text-align: center;
         font-size: 30px;
     }
