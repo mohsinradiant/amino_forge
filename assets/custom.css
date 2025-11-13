@@ -1150,7 +1150,7 @@ footer .text-block h3 {
     display: flex;
 }
 
-.slide__image-container .mobile__image {
+.slide__image-container .mobile_image {
     display: none;
 }
 
