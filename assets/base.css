@@ -3574,7 +3574,8 @@ slideshow-component[autoplay] slideshow-controls {
     }
 
     &[aria-selected='true'] {
-      background-color: #9E3EB2;
+      --color: var(--color-active);
+      /* background-color: #9E3EB2; */
     }
   }
 }
