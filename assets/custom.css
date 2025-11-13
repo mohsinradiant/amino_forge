@@ -1175,15 +1175,19 @@ footer .text-block h3 {
         padding-top: 50px;
         padding-bottom: 50px;
     }
-.home_ingredients_desc_top_container{
-    flex-direction: column;
-}
-.home_ingredients_desc_top_container_left{
-    width: 100%;
-}
-.home_ingredients_desc_top_container_left p{
-    text-align: center;
-}
+
+    .home_ingredients_desc_top_container {
+        flex-direction: column;
+    }
+
+    .home_ingredients_desc_top_container_left {
+        width: 100%;
+    }
+
+    .home_ingredients_desc_top_container_left p {
+        text-align: center;
+        width: 100%;
+    }
 
     .testimonials-carousel-container {
         padding: 0 20px;
