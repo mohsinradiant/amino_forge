@@ -3551,10 +3551,11 @@ slideshow-component[autoplay] slideshow-controls {
     margin: calc(var(--size) / -2);
     font-size: 0;
     border-radius: calc(var(--size));
-background-color: #9E3EB250;
+
     &::after {
       content: '';
       display: block;
+      background-color: #9E3EB250;
       height: var(--size);
       width: var(--size);
 
@@ -3573,6 +3574,8 @@ background-color: #9E3EB250;
     }
 
     &[aria-selected='true'] {
+                  width: fit-content;
+            height: fit-content;
       background-color: #9E3EB2;
     }
   }
