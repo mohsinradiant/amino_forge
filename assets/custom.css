@@ -1485,4 +1485,7 @@ footer .text-block h3 {
     .add-to-cart-button{
         max-width: unset;
     }
+    .product-information:not(.product-information--media-right){
+        margin-bottom: 30px;
+    }
 }
