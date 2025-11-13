@@ -478,7 +478,7 @@
       "name": "Image Banner",
       "settings": {
         "desktop_image": "shopify://shop_images/ad-banner_1.png",
-        "mobile_image": "shopify://shop_images/ad-banner_1.png",
+        "mobile_image": "shopify://shop_images/hero_banner_a8df9ba3-9238-4846-b439-6a94ddd8736b.png",
         "url": "shopify://products/af1-advance-formula-liposomal-amino-supplement",
         "layout": "full_width",
         "margin_top_desktop": 80,
