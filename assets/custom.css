@@ -1240,6 +1240,11 @@ footer .text-block h3 {
         text-align: center;
     }
 
+    .our-story-founders-container-left h2 {
+        width: 100% !important;
+        font-size: 23px !important;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
