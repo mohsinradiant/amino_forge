@@ -3539,6 +3539,7 @@ slideshow-component[autoplay] slideshow-controls {
   padding: var(--padding-sm) var(--padding-lg);
   border-radius: 3rem;
   overflow: hidden;
+  gap: 15px;
 
   button {
     --size: 0.5rem;
@@ -3578,10 +3579,6 @@ slideshow-component[autoplay] slideshow-controls {
       background-color: #9E3EB2;
     }
   }
-}
-
-.slideshow-controls__dots {
-  gap: 15px;
 }
 
 .slideshow-controls__dots,
