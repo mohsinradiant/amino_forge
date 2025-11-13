@@ -1229,7 +1229,9 @@ footer .text-block h3 {
     footer .menu {
         width: 48%;
     }
-
+footer .mobile-column{
+    display: flex;
+}
     .home_health_benefits-images_container {
         margin-bottom: 0;
         flex-direction: column;
