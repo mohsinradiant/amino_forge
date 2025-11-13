@@ -1605,4 +1605,8 @@ footer .text-block h3 {
         padding: 20px !important;
         gap: 20px !important;
     }
+    .pdp-review-card-left{
+        width: 100% !important;
+        flex-direction: row !important;
+    }
 }
