@@ -1522,7 +1522,7 @@ footer .text-block h3 {
     margin: 30px 0 0px 0px !important;
 }
 .product-about-left_column-item-text{
-    border: none;
+    border: none !important;
 }
 .product-about-left_column-item-text p,
 .product-about-left_column-item-text ul {
