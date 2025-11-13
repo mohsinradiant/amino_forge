@@ -1547,4 +1547,7 @@ footer .text-block h3 {
     .product-about-left_column-item {
         border-bottom: solid 1px #C4C4C4;
     }
+        .product-about-left_column-item:last-of-type {
+        border-bottom: none;
+    }
 }
