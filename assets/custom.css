@@ -1600,27 +1600,39 @@ footer .text-block h3 {
         text-align: center !important;
         font-size: 23px !important;
     }
-    .pdp-review-card{
+
+    .pdp-review-card {
         flex-direction: column;
         padding: 20px !important;
         gap: 20px !important;
     }
-    .pdp-review-card-left{
+
+    .pdp-review-card-left {
         width: 100% !important;
         flex-direction: row !important;
         text-align: left !important;
         gap: 20px;
     }
-    .pdp-review-card-left img{
+
+    .pdp-review-card-left img {
         width: 30% !important;
     }
-    .pdp-testimonial-name{
+
+    .pdp-testimonial-name {
         margin: 0 !important;
     }
-    .pdp-review-card-right-bottom p{
+
+    .pdp-review-card-right-bottom p {
         font-size: 14px !important;
     }
-    .pdp-review-card-right{
+
+    .pdp-review-card-right {
         width: 100% !important;
+    }
+
+    .pdp-review-card-right-top-title-container p:first-of-type {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-top: 10px;
     }
 }
