@@ -3555,7 +3555,7 @@ slideshow-component[autoplay] slideshow-controls {
     &::after {
       content: '';
       display: block;
-      background-color: var(--color);
+      background-color: #9E3EB250;
       height: var(--size);
       width: var(--size);
 
@@ -3686,7 +3686,7 @@ slideshow-component[autoplay] slideshow-controls {
       background: #F8F5FE;
     }
 
-        &:is([aria-selected='true']) img {
+    &:is([aria-selected='true']) img {
       background: transparent;
     }
   }
