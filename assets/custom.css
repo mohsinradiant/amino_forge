@@ -1604,7 +1604,7 @@ footer .text-block h3 {
     .pdp-review-card {
         flex-direction: column;
         padding: 40px 20px !important;
-        gap:  20px !important;
+        gap: 20px !important;
     }
 
     .pdp-review-card-left {
@@ -1643,13 +1643,20 @@ footer .text-block h3 {
     .pdp-review-card-right-top img {
         width: 70px !important;
     }
-    .product-reviews-wrapper .reviews-grid{
+
+    .product-reviews-wrapper .reviews-grid {
         flex-direction: column;
         gap: 30px;
-        border: none !important;
     }
-    .rating-snapshot{
+
+    .rating-snapshot {
         padding: 20px;
         width: 100%;
+    }
+
+    #rating-bars {
+        border: none !important;
+        padding-right: 0 !important;
+        height: unset !important;
     }
 }
