@@ -102,6 +102,9 @@
 .product-about-item-title{
     font-size: 20px;
 }
+.product-about-left_column-item:first-of-type img {
+    padding: 40px 0 0;
+}
 .product-about-left_column-item img {
     padding: 90px 0 0;
 }
