@@ -1689,4 +1689,8 @@ footer .text-block h3 {
         display: flex;
         flex-direction: column;
     }
+    .product-reviews-cta-container a{
+        width: 50% !important;
+        padding: 20px;
+    }
 }
