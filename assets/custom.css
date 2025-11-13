@@ -1171,9 +1171,12 @@ footer .text-block h3 {
         font-size: 17px !important;
     }
 
-    .bullet-point {
-        margin: 0 0 0 20px;
+    .home_ingredients_desc {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
+
+
 
     .testimonials-carousel-container {
         padding: 0 20px;
