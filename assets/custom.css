@@ -1309,7 +1309,9 @@ footer .text-block h3 {
     .our-story-results-cta-cutout a {
         padding: 10px 13px !important;
     }
-
+.blog-post-item:has(.blog-post-card__image-container) .blog-post-card__content{
+    padding: 20px !important;
+}
     .testimonials-carousel-section {
         margin-top: 40px;
     }
