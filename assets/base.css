@@ -3546,9 +3546,8 @@ slideshow-component[autoplay] slideshow-controls {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(var(--size) * 2);
-    height: calc(var(--size) * 2);
-    margin: calc(var(--size) / -2);
+ width: fit-content;
+            height: fit-content;    margin: calc(var(--size) / -2);
     font-size: 0;
     border-radius: calc(var(--size));
 
@@ -3574,8 +3573,7 @@ slideshow-component[autoplay] slideshow-controls {
     }
 
     &[aria-selected='true'] {
-                  width: fit-content;
-            height: fit-content;
+                 
       background-color: #9E3EB2;
     }
   }
