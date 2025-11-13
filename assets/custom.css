@@ -1583,8 +1583,13 @@ footer .text-block h3 {
         font-size: 14px !important;
 
     }
-    .pdp-reviews-container{
+
+    .pdp-reviews-container {
         padding-top: 30px !important;
         padding-bottom: 30px !important;
+    }
+
+    .section_caption, ..section_heading {
+        text-align: center;
     }
 }
