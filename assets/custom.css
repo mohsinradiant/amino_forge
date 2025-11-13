@@ -1668,7 +1668,12 @@ footer .text-block h3 {
     .total-reviews {
         margin-bottom: 0 !important;
     }
-    .rating-snapshot p, .overall-rating p:first-of-type{
+
+    .rating-snapshot p,
+    .overall-rating p:first-of-type {
         text-align: center !important;
     }
+    .overall-score-container {
+    justify-content: center;
+}
 }
