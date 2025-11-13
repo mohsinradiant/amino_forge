@@ -1233,6 +1233,8 @@ footer .text-block h3 {
 
     .our-story-founders-container {
         flex-direction: column;
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
     }
 
     .our-story-founders-container-left {
