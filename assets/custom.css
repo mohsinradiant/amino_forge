@@ -1259,6 +1259,9 @@ footer .text-block h3 {
     .our-story-founders-container-right-top {
         gap: 20px !important;
     }
+    .our-story-results-content{
+        font-size: 13px !important;
+    }
 
     .testimonials-carousel-section {
         margin-top: 40px;
