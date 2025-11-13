@@ -1285,6 +1285,10 @@ footer .text-block h3 {
         margin-top: 20px !important;
     }
 
+    .our-story-results-cta-cutout {
+        width: 100% !important;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
