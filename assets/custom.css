@@ -1609,8 +1609,12 @@ footer .text-block h3 {
         width: 100% !important;
         flex-direction: row !important;
         text-align: left !important;
+        gap: 20px;
     }
     .pdp-review-card-left img{
         width: 30% !important;
+    }
+    .pdp-testimonial-name{
+        margin: 0;
     }
 }
