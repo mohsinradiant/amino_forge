@@ -1185,7 +1185,7 @@ footer .text-block h3 {
         width: 100%;
     }
 
-    .home_ingredients_desc_top_container_left p {
+    .home_ingredients_desc_top_container_left p, .ai-product-feature__certifications_heading {
         text-align: center;
         width: 100%;
     }
