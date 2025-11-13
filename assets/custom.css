@@ -1662,7 +1662,7 @@ footer .text-block h3 {
 
     .overall-rating {
         width: 100%;
-        padding: 20px 20px;
+        padding: 20px 20px 40px;
     }
 
     .total-reviews {
@@ -1670,10 +1670,23 @@ footer .text-block h3 {
     }
 
     .rating-snapshot p,
-    .overall-rating p:first-of-type {
+    .overall-rating p:first-of-type,
+    .review-form h4 {
         text-align: center !important;
     }
+
     .overall-score-container {
-    justify-content: center;
-}
+        justify-content: center;
+    }
+
+    .total-reviews-caption {
+        text-align: center;
+    }
+
+    .review-form {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
