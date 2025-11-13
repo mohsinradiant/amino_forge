@@ -1178,12 +1178,17 @@ footer .text-block h3 {
     .ai-product-feature__certifications-images {
         gap: 20px !important;
     }
-.home_science_container_blocks{
-    flex-direction: column;
-}
-.home_science_container_block{
-    width: 100%;
-}
+
+    .home_science_container_blocks {
+        flex-direction: column;
+    }
+
+    .home_science_container_block {
+        width: 100%;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
     .ai-product-feature__certifications {
         margin: 40px 0 50px !important;
     }
