@@ -3546,8 +3546,9 @@ slideshow-component[autoplay] slideshow-controls {
     display: flex;
     align-items: center;
     justify-content: center;
- width: fit-content;
-            height: fit-content;    margin: calc(var(--size) / -2);
+    width: fit-content;
+    height: fit-content;
+    margin: calc(var(--size) / -2);
     font-size: 0;
     border-radius: calc(var(--size));
 
@@ -3573,10 +3574,14 @@ slideshow-component[autoplay] slideshow-controls {
     }
 
     &[aria-selected='true'] {
-                 
+
       background-color: #9E3EB2;
     }
   }
+}
+
+.slideshow-controls__dots {
+  gap: 15px;
 }
 
 .slideshow-controls__dots,
