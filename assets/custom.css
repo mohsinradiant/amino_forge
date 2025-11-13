@@ -1146,11 +1146,11 @@ footer .text-block h3 {
     transform: scale(1.05);
 }
 
-slideshow-component .slide__image {
+.slide__image-container .slide__image {
     display: flex;
 }
 
-slideshow-component .mobile__image {
+.slide__image-container .mobile__image {
     display: none;
 }
 
