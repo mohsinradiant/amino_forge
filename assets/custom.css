@@ -1215,6 +1215,7 @@ footer .text-block h3 {
 
     .page-intro-container {
         aspect-ratio: 1920 / 1900 !important;
+        text-align: center;
     }
 
     .testimonials-carousel-section {
