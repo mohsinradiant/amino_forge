@@ -3575,6 +3575,7 @@ slideshow-component[autoplay] slideshow-controls {
 
     &[aria-selected='true'] {
       --color: var(--color-active);
+      background-color: #9E3EB2;
     }
   }
 }
