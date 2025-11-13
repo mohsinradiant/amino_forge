@@ -1199,6 +1199,11 @@ footer .text-block h3 {
         font-size: 13px;
     }
 
+    .home_science_container_inner h3 {
+        text-align: center;
+        font-size: 30px;
+    }
+
     .home_ingredients_desc_top_container {
         flex-direction: column;
     }
