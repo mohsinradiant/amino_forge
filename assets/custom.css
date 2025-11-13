@@ -1508,4 +1508,7 @@ footer .text-block h3 {
     .product-about-container-left {
         width: 100% !important;
     }
+    .product-about-left_column-item:first-of-type img {
+    padding: 40px 0 0;
+}
 }
