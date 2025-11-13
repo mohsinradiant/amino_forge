@@ -1218,6 +1218,8 @@ footer .text-block h3 {
 
     .home_health_benefits-images_container {
         margin-bottom: 0;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .home_science_container_block div p {
