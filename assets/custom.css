@@ -1502,7 +1502,7 @@ footer .text-block h3 {
 
     .product-about-container .section_heading {
         width: 100%;
-        font-size: 20px;
+        font-size: 23px !important;
     }
 
     .product-about-container-left {
