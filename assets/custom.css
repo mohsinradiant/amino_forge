@@ -1646,7 +1646,7 @@ footer .text-block h3 {
 
     .product-reviews-wrapper .reviews-grid {
         flex-direction: column;
-        gap: 30px;
+        gap: 0;
     }
 
     .rating-snapshot {
