@@ -1553,12 +1553,18 @@ footer .text-block h3 {
     .product-about-container-right {
         width: 100% !important;
     }
-    .product-about-container .product-about-container-right .section_heading{
+
+    .product-about-container .product-about-container-right .section_heading {
         margin-top: 0 !important;
         font-size: 23px !important;
         font-weight: 600 !important;
     }
-    .pdp_product_usp_container{
+
+    .pdp_product_usp_container {
         flex-direction: column;
+    }
+
+    .pdp_product_usp_left_img {
+        width: 100% !important;
     }
 }
