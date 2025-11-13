@@ -1555,5 +1555,6 @@ footer .text-block h3 {
     }
     .product-about-container .product-about-container-right .section_heading{
         margin-top: 0 !important;
+        font-size: 23px !important;
     }
 }
