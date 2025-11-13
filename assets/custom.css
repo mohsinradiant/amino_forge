@@ -1288,9 +1288,12 @@ footer .text-block h3 {
     .our-story-results-cta-cutout {
         width: 100% !important;
     }
-.our-story-results-cta-cutout p:first-of-type{
-    font-size: 15px !important;
-}
+
+    .our-story-results-cta-cutout p:first-of-type {
+        font-size: 15px !important;
+        line-height: unset !important;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
