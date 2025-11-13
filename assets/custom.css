@@ -1200,6 +1200,8 @@ footer .text-block h3 {
         text-align: center;
         line-height: 1.7;
         margin-top: 30px;
+        width: 100%;
+        font-size: 14px;
     }
 
     .home_ingredients_desc_bottom_container {
