@@ -1262,7 +1262,9 @@ footer .text-block h3 {
     .our-story-results-content{
         font-size: 13px !important;
     }
-
+.our-story-results-container h2{
+    font-size: 23px !important;
+}
     .testimonials-carousel-section {
         margin-top: 40px;
     }
