@@ -1448,9 +1448,8 @@ footer .text-block h3 {
 
     slideshow-controls:not([controls-on-media]) {
         &:is([pagination-position='left']) {
-            .slideshow-controls__thumbnails {
+           
                 display: flex !important;
-            }
         }
     }
 }
