@@ -1181,6 +1181,9 @@ footer .text-block h3 {
 .home_science_container_blocks{
     flex-direction: column;
 }
+.home_science_container_block{
+    width: 100%;
+}
     .ai-product-feature__certifications {
         margin: 40px 0 50px !important;
     }
