@@ -1452,4 +1452,9 @@ footer .text-block h3 {
             display: flex !important;
         }
     }
+
+    .media-gallery--carousel slideshow-container {
+        padding-right: 20px;
+        border: none;
+    }
 }
