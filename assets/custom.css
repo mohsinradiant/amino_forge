@@ -1470,4 +1470,7 @@ footer .text-block h3 {
     .product-information__grid:not(.product-information__grid--half, :has(.product-information__media:empty)).product-information--media-left .layout-panel-flex {
         gap: 5px;
     }
+    .product-rating{
+        margin-bottom: 0;
+    }
 }
