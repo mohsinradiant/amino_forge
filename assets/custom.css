@@ -1213,6 +1213,10 @@ footer .text-block h3 {
         margin-bottom: 0;
     }
 
+    .page-intro-container {
+        aspect-ratio: 1920 / 1900 !important;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
