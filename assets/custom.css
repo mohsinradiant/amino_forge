@@ -1181,6 +1181,9 @@ footer .text-block h3 {
 .home_ingredients_desc_top_container_left{
     width: 100%;
 }
+.home_ingredients_desc_top_container_left p{
+    text-align: center;
+}
 
     .testimonials-carousel-container {
         padding: 0 20px;
