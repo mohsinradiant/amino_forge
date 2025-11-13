@@ -1647,4 +1647,8 @@ footer .text-block h3 {
         flex-direction: column;
         gap: 30px;
     }
+    .rating-snapshot{
+        padding: 20px;
+        width: 100%;
+    }
 }
