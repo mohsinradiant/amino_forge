@@ -790,6 +790,10 @@ footer .text-block h3 {
     z-index: 2;
 }
 
+.product-reviews-cta-container a:last-of-type:hover {
+    border: solid 2px #9e3eb2;
+}
+
 .reviews-grid {
     display: flex;
     gap: 40px;
