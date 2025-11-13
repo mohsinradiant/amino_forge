@@ -1199,6 +1199,7 @@ footer .text-block h3 {
     .home_science_container_block div h3 {
         text-align: left;
         font-size: 25px;
+        margin: 0;
     }
     .home_science_container_block div p {
         text-align: left;
