@@ -1231,7 +1231,7 @@ footer .text-block h3 {
     }
 
     div:has(> accordion-custom) {
-        border: 1px solid #ccc;
+        flex-direction: unset !important;
     }
 
     .home_health_benefits-images_container {
