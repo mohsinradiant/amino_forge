@@ -1196,7 +1196,7 @@ footer .text-block h3 {
         font-size: 30px;
     }
 
-    .home_ingredients_desc_top_container_right p {
+    .home_ingredients_desc_top_container_right p, .section_subheading {
         text-align: center;
         line-height: 1.7;
         margin-top: 30px;
