@@ -781,6 +781,14 @@ footer .text-block h3 {
     font-size: 17px;
 }
 
+.product-reviews-cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
 .reviews-grid {
     display: flex;
     gap: 40px;
