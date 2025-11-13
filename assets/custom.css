@@ -1513,9 +1513,6 @@ footer .text-block h3 {
         padding: 40px 0 0;
     }
 
-
-
-
     .product-about-left_column-item-text p,
     .product-about-left_column-item-text ul {
         font-weight: 300 !important;
@@ -1547,7 +1544,12 @@ footer .text-block h3 {
     .product-about-left_column-item {
         border-bottom: solid 1px #C4C4C4;
     }
-        .product-about-left_column-item:last-of-type {
+
+    .product-about-left_column-item:last-of-type {
         border-bottom: none;
+    }
+
+    .product-about-container-right {
+        width: 100% !important;
     }
 }
