@@ -1186,7 +1186,9 @@ footer .text-block h3 {
     .home_science_container_block img {
         width: 26%;
     }
-
+.home_science_container_block{
+    gap: 20px;
+}
     .home_science_container_block div {
         display: flex;
         flex-direction: column;
