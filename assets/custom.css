@@ -1256,6 +1256,10 @@ footer .text-block h3 {
         width: 100% !important;
     }
 
+    .our-story-founders-container-right-top {
+        gap: 20px !important;
+    }
+
     .testimonials-carousel-section {
         margin-top: 40px;
     }
