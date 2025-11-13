@@ -787,6 +787,7 @@ footer .text-block h3 {
     align-items: center;
     gap: 20px;
     margin-top: 40px;
+    z-index: 2;
 }
 
 .reviews-grid {
