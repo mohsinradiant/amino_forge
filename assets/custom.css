@@ -1646,6 +1646,7 @@ footer .text-block h3 {
     .reviews-grid{
         flex-direction: column;
         gap: 30px;
+        border: none;
     }
     .rating-snapshot{
         padding: 20px;
