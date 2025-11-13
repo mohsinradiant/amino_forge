@@ -1178,7 +1178,9 @@ footer .text-block h3 {
 .home_ingredients_desc_top_container{
     flex-direction: column;
 }
-
+.home_ingredients_desc_top_container_left{
+    width: 100%;
+}
 
     .testimonials-carousel-container {
         padding: 0 20px;
