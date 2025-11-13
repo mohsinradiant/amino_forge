@@ -59,6 +59,11 @@
           | image_url: width: 3840
           | image_tag: height: height, sizes: sizes, widths: widths, class: 'slide__image', loading: loading, fetchpriority: fetchpriority
         }}
+         {{
+          block_settings.mobile_image
+          | image_url: width: 3840
+          | image_tag: height: height, sizes: sizes, widths: widths, class: 'mobile_image', loading: loading, fetchpriority: fetchpriority
+        }}
         {% if block.settings.url != null %}
         </a>
         {% endif %}
