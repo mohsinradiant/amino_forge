@@ -319,6 +319,7 @@ slideshow-arrows {
     background: #fff;
     overflow: hidden;
     position: relative;
+    margin-top: 100px;
 }
 
 .testimonials-carousel-container {
