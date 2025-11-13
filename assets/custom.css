@@ -1202,6 +1202,7 @@ footer .text-block h3 {
     .home_science_container_inner h3 {
         text-align: center;
         font-size: 30px;
+        margin-top: 5px;
     }
 
     .home_ingredients_desc_top_container {
