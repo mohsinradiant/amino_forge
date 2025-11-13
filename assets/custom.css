@@ -1180,7 +1180,7 @@ footer .text-block h3 {
         flex-direction: column;
     }
 
-    .home_ingredients_desc_top_container_left {
+    .home_ingredients_desc_top_container_left, .home_ingredients_desc_top_container_right {
         width: 100%;
     }
 
