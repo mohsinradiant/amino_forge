@@ -1183,6 +1183,10 @@ footer .text-block h3 {
         flex-direction: column;
     }
 
+    .home_science_container_block img {
+        width: 26%;
+    }
+
     .home_science_container_block {
         width: 100%;
         flex-direction: row;
