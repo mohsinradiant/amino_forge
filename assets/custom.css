@@ -1175,7 +1175,9 @@ footer .text-block h3 {
         padding-top: 50px;
         padding-bottom: 50px;
     }
-
+.home_ingredients_desc_top_container{
+    flex-direction: column;
+}
 
 
     .testimonials-carousel-container {
