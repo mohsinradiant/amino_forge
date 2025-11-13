@@ -95,6 +95,11 @@
     margin: 10px 0 0px 0px;
 }
 
+.product-about-left_column-item-text p,
+.product-about-left_column-item-text ul {
+    margin-left: -100px !important;
+}
+
 .product-about-left_column-item-text li {
     font-weight: 500 !important;
     margin: 0;
