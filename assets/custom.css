@@ -1210,6 +1210,7 @@ footer .text-block h3 {
     .home_health_benefits_inner .section_subheading {
         width: unset;
         margin-top: 10px;
+        margin-bottom: 0;
     }
 
     .home_health_benefits_inner {
