@@ -1282,6 +1282,7 @@ footer .text-block h3 {
     .our-story-results-items {
         flex-direction: column;
         display: flex !important;
+        margin-top: 20px !important;
     }
 
     .testimonials-carousel-section {
