@@ -1288,6 +1288,7 @@ footer .text-block h3 {
     .our-story-results-cta-cutout {
         width: 100% !important;
         position: unset !important;
+        margin-top: 10px !important;
     }
 
     .our-story-results-cta-cutout p:first-of-type {
