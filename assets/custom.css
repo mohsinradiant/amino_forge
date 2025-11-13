@@ -1589,10 +1589,9 @@ footer .text-block h3 {
         padding-bottom: 30px !important;
     }
 
-    .section_caption,
-    .section_heading {
+    .section_caption {
         text-align: center !important;
-        font-size: 14px !important;
+        font-size: 16px !important;
     }
 
     .section_heading {
