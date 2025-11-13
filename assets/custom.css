@@ -1566,5 +1566,6 @@ footer .text-block h3 {
 
     .pdp_product_usp_left_img {
         width: 100% !important;
+        margin-top: 30px !important;
     }
 }
