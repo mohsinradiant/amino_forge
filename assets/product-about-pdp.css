@@ -92,23 +92,7 @@
 .product-about-left_column-item-text li {
     font-weight: 300;
     font-size: 14px;
-    margin: 30px 0 0px 0px;
-}
-.product-about-left_column-item-text{
-    border: none;
-}
-.product-about-left_column-item-text p,
-.product-about-left_column-item-text ul {
-    margin-left: -100px !important;
-}
-.product-about-item-title{
-    font-size: 20px;
-}
-.product-about-left_column-item:first-of-type img {
-    padding: 40px 0 0;
-}
-.product-about-left_column-item img {
-    padding: 90px 0 0;
+    margin: 10px 0 0px 0px;
 }
 
 .product-about-left_column-item-text li {
