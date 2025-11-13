@@ -493,6 +493,7 @@ slideshow-arrows {
     color: #9E3EB2;
     font-size: 13px;
     margin: 0;
+    text-transform: uppercase;
 }
 
 footer,
@@ -1590,12 +1591,11 @@ footer .text-block h3 {
     }
 
     .section_caption {
-    }
-.section_caption{
-            text-align: center !important;
+        text-align: center !important;
         font-size: 14px !important;
-margin: 0 !important;
-}
+        margin: 0 !important;
+    }
+
     .section_heading {
         text-align: center !important;
         font-size: 23px !important;
