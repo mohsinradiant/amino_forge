@@ -1221,6 +1221,12 @@ footer .text-block h3 {
     font-size: 13px !important;
     font-weight: 500 !important;
 }
+.page-intro-container h2{
+    font-size: 30px !important;
+}
+.page-intro-container{
+    gap: 5px !important;
+}
     .testimonials-carousel-section {
         margin-top: 40px;
     }
