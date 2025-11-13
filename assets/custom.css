@@ -1495,7 +1495,13 @@ footer .text-block h3 {
         padding-top: 30px !important;
         padding-bottom: 30px !important;
     }
-    .product-about-container{
+
+    .product-about-container {
         flex-direction: column;
+    }
+
+    .product-about-container .section_heading {
+        width: 100%;
+        font-size: 20px;
     }
 }
