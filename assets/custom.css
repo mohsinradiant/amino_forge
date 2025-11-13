@@ -1146,6 +1146,14 @@ footer .text-block h3 {
     transform: scale(1.05);
 }
 
+slideshow-component .slide__image {
+    display: flex;
+}
+
+slideshow-component .mobile__image {
+    display: none;
+}
+
 @media(max-width: 768px) {
     .testimonials-carousel-container {
         padding: 0 20px;
