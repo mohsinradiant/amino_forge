@@ -1635,4 +1635,7 @@ footer .text-block h3 {
         line-height: 1.4;
         margin-top: 10px;
     }
+    .pdp-review-card-right-top {
+    gap: 20px;
+}
 }
