@@ -71,21 +71,66 @@
 
       let current = 0;
       let isAnimating = false;
-      const leftOffset = -160; // x position for left side image (pixels)
-      const rightOffset = 160; // x position for right side image (pixels)
-      const sideScale = 0.78; // scale for side images
-      const sideOpacity = 0.35; // opacity for side images
-      const centerScale = 1; // center image scale
-      const centerOpacity = 1;
+      // responsive settings: compute offsets/scales for phones/tablets/desktops
+      // Use visualViewport when available and measure the wrapper/item sizes so offsets are reliable
+      let settings = {};
+      const wrapperEl = document.querySelector('.testimonials-profiles');
+      function updateSettings() {
+        const viewportW = (window.visualViewport && window.visualViewport.width) || window.innerWidth;
+        const wrapperW = wrapperEl ? wrapperEl.clientWidth || wrapperEl.getBoundingClientRect().width : viewportW;
+        const sampleItem = items[0];
+        const itemW = sampleItem
+          ? sampleItem.getBoundingClientRect().width
+          : Math.round(Math.min(160, wrapperW * 0.28));
 
-      // helper: get prev/next indices
-      function idxPrev(i) {
-        return (i - 1 + items.length) % items.length;
-      }
-      function idxNext(i) {
-        return (i + 1) % items.length;
+        // base scale/opacity by breakpoint, compute offsets from measured widths so we don't push items off-screen
+        if (viewportW <= 420) {
+          settings.sideScale = 0.68;
+          settings.sideOpacity = 0.28;
+          settings.centerScale = 1;
+          settings.centerOpacity = 1;
+          // offset: put side item near edge of wrapper but keep some padding
+          const offset = Math.round(Math.min(wrapperW * 0.36, viewportW * 0.36, wrapperW / 2 - itemW / 2 - 8));
+          settings.leftOffset = -offset;
+          settings.rightOffset = offset;
+        } else if (viewportW <= 768) {
+          settings.sideScale = 0.74;
+          settings.sideOpacity = 0.32;
+          settings.centerScale = 1;
+          settings.centerOpacity = 1;
+          const offset = Math.round(Math.min(wrapperW * 0.28, viewportW * 0.28, 220));
+          settings.leftOffset = -offset;
+          settings.rightOffset = offset;
+        } else {
+          settings.sideScale = 0.78;
+          settings.sideOpacity = 0.35;
+          settings.centerScale = 1;
+          settings.centerOpacity = 1;
+          // cap desktop offset to keep consistent look
+          const offset = Math.round(Math.min(160, wrapperW * 0.22));
+          settings.leftOffset = -offset;
+          settings.rightOffset = offset;
+        }
       }
 
+      // debounce helper
+      function _debouncedPlace() {
+        clearTimeout(window.__tf_resize_timeout);
+        window.__tf_resize_timeout = setTimeout(() => {
+          updateSettings();
+          placeInitial();
+        }, 80);
+      }
+
+      // respond to visualViewport resize (Chrome/Android UI changes) and orientationchange
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', _debouncedPlace);
+      }
+      window.addEventListener('resize', _debouncedPlace);
+      window.addEventListener('orientationchange', _debouncedPlace);
+
+      // ensure settings are correct now
+      updateSettings();
       // initial setup: place current center, prev left, next right, others hidden off & transparent
       function placeInitial() {
         items.forEach((el, i) => {
@@ -96,31 +141,39 @@
             el.classList.add('is-active');
             // center: at x:0 scale 1, image highlighted border
             gsap.set(el, { x: 0, zIndex: 40 });
-            gsap.set(img, { scale: centerScale, opacity: centerOpacity, x: 0 });
+            gsap.set(img, { scale: settings.centerScale, opacity: settings.centerOpacity, x: 0 });
             img.style.borderColor = '#be1e28';
             // content visible
             gsap.set(el.querySelector('.testimonials-content'), { autoAlpha: 1 });
           } else if (i === idxPrev(current)) {
             el.classList.remove('is-active');
-            gsap.set(el, { x: leftOffset, zIndex: 30 });
-            gsap.set(img, { scale: sideScale, opacity: sideOpacity, x: 0 });
+            gsap.set(el, { x: settings.leftOffset, zIndex: 30 });
+            gsap.set(img, { scale: settings.sideScale, opacity: settings.sideOpacity, x: 0 });
             img.style.borderColor = 'transparent';
             gsap.set(el.querySelector('.testimonials-content'), { autoAlpha: 0 });
           } else if (i === idxNext(current)) {
             el.classList.remove('is-active');
-            gsap.set(el, { x: rightOffset, zIndex: 30 });
-            gsap.set(img, { scale: sideScale, opacity: sideOpacity, x: 0 });
+            gsap.set(el, { x: settings.rightOffset, zIndex: 30 });
+            gsap.set(img, { scale: settings.sideScale, opacity: settings.sideOpacity, x: 0 });
             img.style.borderColor = 'transparent';
             gsap.set(el.querySelector('.testimonials-content'), { autoAlpha: 0 });
           } else {
             // place offscreen and invisible
             el.classList.remove('is-active');
             gsap.set(el, { x: 0, zIndex: 10 });
-            gsap.set(img, { scale: sideScale * 0.9, opacity: 0, x: 0 });
+            gsap.set(img, { scale: settings.sideScale * 0.9, opacity: 0, x: 0 });
             img.style.borderColor = 'transparent';
             gsap.set(el.querySelector('.testimonials-content'), { autoAlpha: 0 });
           }
         });
+      }
+
+      // helper: get prev/next indices
+      function idxPrev(i) {
+        return (i - 1 + items.length) % items.length;
+      }
+      function idxNext(i) {
+        return (i + 1) % items.length;
       }
 
       // orchestrated transition to targetIndex
@@ -164,23 +217,23 @@
           const nextNext = items[nextNextIndex];
 
           // current item slides to left position
-          tl.to(currentItem, { x: leftOffset, zIndex: 30, duration: 0.6 }, 0.12);
-          tl.to(currImg, { scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+          tl.to(currentItem, { x: settings.leftOffset, zIndex: 30, duration: 0.6 }, 0.12);
+          tl.to(currImg, { scale: settings.sideScale, opacity: settings.sideOpacity, duration: 0.6 }, 0.12);
 
           // next item moves from right to center
-          tl.fromTo(nextItem, { x: rightOffset, zIndex: 40 }, { x: 0, zIndex: 40, duration: 0.6 }, 0.12);
+          tl.fromTo(nextItem, { x: settings.rightOffset, zIndex: 40 }, { x: 0, zIndex: 40, duration: 0.6 }, 0.12);
           tl.fromTo(
             nextImg,
-            { scale: sideScale, opacity: sideOpacity },
-            { scale: centerScale, opacity: centerOpacity, duration: 0.6 },
+            { scale: settings.sideScale, opacity: settings.sideOpacity },
+            { scale: settings.centerScale, opacity: settings.centerOpacity, duration: 0.6 },
             0.12
           );
 
           // bring the next-next item into right position
           if (nextNext) {
             const nextNextImg = nextNext.querySelector('.testimonials-profile-img');
-            tl.to(nextNext, { x: rightOffset, zIndex: 30, duration: 0.6 }, 0.12);
-            tl.to(nextNextImg, { scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+            tl.to(nextNext, { x: settings.rightOffset, zIndex: 30, duration: 0.6 }, 0.12);
+            tl.to(nextNextImg, { scale: settings.sideScale, opacity: settings.sideOpacity, duration: 0.6 }, 0.12);
           }
         } else {
           // PREV (direction = -1)
@@ -191,23 +244,23 @@
           const prevPrev = items[prevPrevIndex];
 
           // current item slides to right
-          tl.to(currentItem, { x: rightOffset, zIndex: 30, duration: 0.6 }, 0.12);
-          tl.to(currImg, { scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+          tl.to(currentItem, { x: settings.rightOffset, zIndex: 30, duration: 0.6 }, 0.12);
+          tl.to(currImg, { scale: settings.sideScale, opacity: settings.sideOpacity, duration: 0.6 }, 0.12);
 
           // prev item moves from left to center
-          tl.fromTo(prevItem, { x: leftOffset, zIndex: 40 }, { x: 0, zIndex: 40, duration: 0.6 }, 0.12);
+          tl.fromTo(prevItem, { x: settings.leftOffset, zIndex: 40 }, { x: 0, zIndex: 40, duration: 0.6 }, 0.12);
           tl.fromTo(
             prevImg,
-            { scale: sideScale, opacity: sideOpacity },
-            { scale: centerScale, opacity: centerOpacity, duration: 0.6 },
+            { scale: settings.sideScale, opacity: settings.sideOpacity },
+            { scale: settings.centerScale, opacity: settings.centerOpacity, duration: 0.6 },
             0.12
           );
 
           // bring the prev-prev item into left position
           if (prevPrev) {
             const prevPrevImg = prevPrev.querySelector('.testimonials-profile-img');
-            tl.to(prevPrev, { x: leftOffset, zIndex: 30, duration: 0.6 }, 0.12);
-            tl.to(prevPrevImg, { scale: sideScale, opacity: sideOpacity, duration: 0.6 }, 0.12);
+            tl.to(prevPrev, { x: settings.leftOffset, zIndex: 30, duration: 0.6 }, 0.12);
+            tl.to(prevPrevImg, { scale: settings.sideScale, opacity: settings.sideOpacity, duration: 0.6 }, 0.12);
           }
         }
         // 3) after images moved, fade in the new active content
@@ -266,9 +319,24 @@
       wrapper.addEventListener('mouseenter', stopAutoplay);
       wrapper.addEventListener('mouseleave', startAutoplay);
 
-      // initialize
-      placeInitial();
-      //   startAutoplay();
+      // Wait for images to load (some phones calculate widths after image load)
+      (async function init() {
+        const imgs = Array.from(document.querySelectorAll('.testimonials-profile-img img'));
+        await Promise.all(
+          imgs.map((img) =>
+            img.complete && img.naturalWidth
+              ? Promise.resolve()
+              : new Promise((res) => {
+                  img.onload = img.onerror = res;
+                })
+          )
+        );
+        // update & place after images settled
+        updateSettings();
+        placeInitial();
+        // Uncomment if you want autoplay
+        // startAutoplay();
+      })();
     });
   </script>
 </section>
